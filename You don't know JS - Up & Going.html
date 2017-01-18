@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>You don't know JS - Up & Going</title>
+</head>
+
+<body>
+    <h1>You don't know JS - Up & Going</h1>
+
+    <button id="bot_1">Bot 1</button>
+    <button id="bot_2">Bot 2</button>
+
+    <script src="file:///C:/Users/IUAD0YO0/Desktop/Desktop/SW2/js/jquery.min.js"></script>
+
+    <script>
+        //
+        // >>>> Beginning.
+        //
+
+        // var bankAccountBalance = 20000;
+        //
+        // const phonePrice = 2700;
+        // const accessoriesPrice = 300;
+        // const userSpendingTreshold = 1200;
+        //
+        // const TAX_RATE = 0.2;
+        //
+        // var phonesCount = 0;
+        //
+        // function formatSum(sum) {
+        //     return '$' + sum.toFixed(2);
+        // }
+        //
+        // function priceWithTaxes(price) {
+        //     return price * (1 + TAX_RATE);
+        // }
+        //
+        // console.log('Your bank account balance is: ' + formatSum(bankAccountBalance) + '.');
+        //
+        // while (true) {
+        //     var phonePriceWithTaxes = priceWithTaxes(phonePrice + accessoriesPrice);
+        //     if (bankAccountBalance - phonePriceWithTaxes >= userSpendingTreshold) {
+        //         bankAccountBalance -= phonePriceWithTaxes;
+        //         phonesCount++;
+        //         console.log('You have bought a phone with accessories by ' + formatSum(phonePriceWithTaxes) + ' (including taxes).')
+        //         console.log('Your current bank account balance is: ' + formatSum(bankAccountBalance) + '.');
+        //     }
+        //     else {
+        //         break;
+        //     }
+        // }
+        //
+        // console.log('You have bought ' + phonesCount + ' phone(s).');
+
+
+        //
+        // >>>> Scope
+        //
+
+        // function foo() {
+        //     function bar() {
+        //         console.log('Hello, world! ' + a);
+        //     }
+        //
+        //     bar();
+        //
+        //     var a = 7;
+        // }
+        //
+        // foo();
+
+
+        //
+        // >>>> Call site.
+        //
+
+        // function baz() {
+        //     // call-stack is: `baz`
+        //     // so, our call-site is in the global scope
+        //     console.log("baz");
+        //     bar(); // <-- call-site for `bar`
+        // }
+        //
+        // function bar() {
+        //     // call-stack is: `baz` -> `bar`
+        //     // so, our call-site is in `baz`
+        //     console.log("bar");
+        //     foo(); // <-- call-site for `foo`
+        // }
+        //
+        // function foo() {
+        //     // call-stack is: `baz` -> `bar` -> `foo`
+        //     // so, our call-site is in `bar`
+        //     console.log("foo");
+        // }
+        //
+        // baz(); // <-- call-site for `baz`
+
+
+        //
+        // >>>>
+        //
+
+        // function foo() {
+        //     console.log(this.a);
+        // }
+        //
+        // var obj = {
+        //     a: 2
+        // };
+        //
+        // var bar = function() {
+        //     foo.call(obj);
+        // };
+        //
+        // bar(); // 2
+        // setTimeout(bar, 1000); // 2
+        //
+        // // hard-bound `bar` can no longer have its `this` overridden
+        // bar.call(window); // 2
+
+
+        //
+        // >>>>
+        //
+        // function setupBot(name, selector) {
+        //   $(selector).click(function activator() {
+        //     console.log("Activating: " + name);
+        //   });
+        // }
+        //
+        // setupBot("Closure Bot 1", "#bot_1");
+        // setupBot("Closure Bot 2", "#bot_2");
+
+
+        //
+        // >>>>
+        //
+       // for (var i = 1; i <= 5; i++) { // Replace 'var' to 'let' for changing behavior.
+       //   setTimeout(function timer() {
+       //     console.log(i); // '6 6 6 6 6'
+       //   }, i * 600);
+       // }
+
+        // for (var i = 1; i <= 5; i++) {
+        //   (function() {
+        //     setTimeout(function timer() {
+        //       console.log(i); // '6 6 6 6 6'
+        //     }, i * 600);
+        //   })();
+        // }
+
+        // for (var i = 1; i <= 5; i++) {
+        //   (function() {
+        //     var j = i; // <* added.
+        //     setTimeout(function timer() {
+        //       console.log(j); // '1 2 3 4 5'
+        //     }, j * 600);
+        //   })();
+        // }
+
+        // for (var i = 1; i <= 5; i++) {
+        //   (function(j) { // Even function(i) also works.
+        //     setTimeout(function timer() {
+        //       console.log(j); // '1 2 3 4 5'
+        //     }, j * 600);
+        //   })(i);
+        // }
+
+    </script>
+</body>
+</html>
