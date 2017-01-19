@@ -11,7 +11,7 @@
     <button id="bot_1">Bot 1</button>
     <button id="bot_2">Bot 2</button>
 
-    <script src="file:///C:/Users/IUAD0YO0/Desktop/Desktop/SW2/js/jquery.min.js"></script>
+    <!-- <script src="file:///C:/Users/IUAD0YO0/Desktop/Desktop/SW2/js/jquery.min.js"></script> -->
 
     <script>
         //
@@ -168,6 +168,43 @@
         //   })(i);
         // }
 
+        function baz() {
+          // call-stack is: `baz`
+          // so, our call-site is in the global scope
+          console.log("baz");
+          bar(); // <-- call-site for `bar`
+        }
+
+        function bar() {
+          // call-stack is: `baz` -> `bar`
+          // so, our call-site is in `baz`
+          console.log("bar");
+          foo(); // <-- call-site for `foo`
+        }
+
+        function foo() {
+          // call-stack is: `baz` -> `bar` -> `foo`
+          // so, our call-site is in `bar`
+          console.log("foo");
+        }
+
+        baz(); // <-- call-site for `baz`
+
     </script>
+
+    <!-- Does not work. -->
+    <!--
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel" src="baz.js"></script>
+    -->
+
+    <!-- Does not work too. Yet. -->
+    <!--
+    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+    <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+
+    <script type="module" src="baz.js"></script>
+    -->
 </body>
 </html>
