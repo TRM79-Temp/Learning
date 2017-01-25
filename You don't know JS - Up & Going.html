@@ -168,27 +168,70 @@
         //   })(i);
         // }
 
-        function baz() {
-          // call-stack is: `baz`
-          // so, our call-site is in the global scope
-          console.log("baz");
-          bar(); // <-- call-site for `bar`
+
+        //
+        // Function call-site.
+        //
+        // function baz() {
+        //   // call-stack is: `baz`
+        //   // so, our call-site is in the global scope
+        //   console.log("baz");
+        //   bar(); // <-- call-site for `bar`
+        // }
+        //
+        // function bar() {
+        //   // call-stack is: `baz` -> `bar`
+        //   // so, our call-site is in `baz`
+        //   console.log("bar");
+        //   foo(); // <-- call-site for `foo`
+        // }
+        //
+        // function foo() {
+        //   // call-stack is: `baz` -> `bar` -> `foo`
+        //   // so, our call-site is in `bar`
+        //   console.log("foo");
+        // }
+        //
+        // baz(); // <-- call-site for `baz`
+        
+        
+        //
+        // >>>> * Hard binding
+        //
+        // function foo() {
+        //   console.log(this.a);
+        // }
+        // 
+        // var obj = {
+        //   a: 2
+        // };
+        // 
+        // var bar = function() {
+        //   foo.call(obj);
+        // };
+        // 
+        // bar(); // 2
+        // setTimeout(bar, 1000); // 2
+        // 
+        // // hard-bound `bar` can no longer have its `this` overridden
+        // bar.call(window); // 2
+        
+        
+        function foo(something) {
+          console.log(this.a, something);
+          return this.a + something;
         }
 
-        function bar() {
-          // call-stack is: `baz` -> `bar`
-          // so, our call-site is in `baz`
-          console.log("bar");
-          foo(); // <-- call-site for `foo`
-        }
+        var obj = {
+          a: 2
+        };
 
-        function foo() {
-          // call-stack is: `baz` -> `bar` -> `foo`
-          // so, our call-site is in `bar`
-          console.log("foo");
-        }
+        var bar = function() {
+          return foo.apply(obj, arguments);
+        };
 
-        baz(); // <-- call-site for `baz`
+        var b = bar(3); // 2 3
+        console.log(b); // 5
 
     </script>
 

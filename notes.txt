@@ -1,0 +1,103 @@
+min-width: 1200px - .col-lg-x
+min-width:  992px - .col-md-x
+min-width:  768px - .col-sm-x
+
+
+charmap
+
+Alt-Codes:
+  • - 0149
+  – - 0150
+  — - 0151
+    - 0160 (MS Word nonbreaking space)
+  © - 0169
+  ° - 0176
+  ± - 0177
+  ≈ - none
+  ∙ - 249
+  · - 250
+  Ъ - 154
+  Ы - 155
+  Э - 157
+  Ё - 240
+  ъ - 234
+  ы - 235
+  э - 237
+  ё - 241
+  Ґ - 0165 (UK)
+  ґ - 0180 (UK)
+  ↔ - 29
+    - 09 - tab
+  ‘ - 0145
+  ’ - 0146
+
+&#x301; - Combining Acute Accent (place it after character)
+
+notepad++ shortcuts (remove %APPDATA%\Notepad++\shortcuts.xml to restore defaults)
+  Single Line Comment / Uncomment - Ctrl+K / Ctrl+Shift+K
+  Block Comment / Uncomment - Ctrl+Q / Ctrl+Shift+Q              // Ctrl+Q default action - Toggle Single Line Comment
+
+
+display:
+inline | block | flex | inline-block | inline-flex | inline-table | list-item | run-in | table | table-caption | table-column-group | table-header-group | table-footer-group | table-row-group | table-cell | table-column | table-row | none | initial | inherit
+
+float:
+none | left | right | initial | inherit
+
+position:
+static | absolute | fixed | relative | initial | inherit
+
+
+1920x1080 1280x1024
+
+
+https://gitlab.com/eleks-camp-lviv-2/yellow
+https://gitlab.com/eleks-camp-lviv-2/yellow/branches
+https://gitlab.com/eleks-camp-lviv-2/yellow/tree/develop
+https://gitlab.com/eleks-camp-lviv-2/yellow/tree/master
+
+
+git log
+git log --format=oneline|--graph
+git log --graph --full-history --all --pretty=format:"%h%x09%d%x20%s"
+
+git show-branch --current
+git show-branch -a      <==> git branch [-a]
+
+git show commithash8digits
+
+git pull origin branchname
+git pull --all
+
+git checkout commithash8digits|branchname
+git checkout -b branchname origin/branchname
+
+git reset --hard|--merge|HEAD~
+
+git diff --cached
+
+git remote update + git status -uno
+
+git rm --cached -r somedir
+
+git remote set-url origin https://github.com/USERNAME/OTHERREPOSITORY.git
++ git remote -v
+
+
+==
+
+
+doskey /HISTORY > history.txt
+
+
+>>>>
+Remove tag attribute:
+removeAttribute()
+
+>>>>
+Debug Greasemonkey script:
+host: Tools -> Web Developer -> Developer Toolbar (Shift+F2) -> listen portNumber (6000 - default)
+debugger: Tools -> Web Developer -> WebIDE
+
+>>>>
+Ctrl+Shift+I (Also F12) - Firefox Tools
