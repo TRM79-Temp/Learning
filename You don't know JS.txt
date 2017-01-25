@@ -8,6 +8,23 @@ YOU DON’T KNOW JS – Up & Going                [1]
                   – ES6 & Beyond              [6]
 
 
+window.alert(message);
+
+result = window.prompt(message, default);
+
+
+number, string, boolean
+
+console.log(42) // <- coercion
+
+var b = Number('42') // without 'new' – explicit coercion
+
+eval()
+setTimeout()
+setInterval()
+new Function(..)
+
+
 ** YDKJS -> Scopes & Closures
 
 IIFE (immediately invoked function expression)
