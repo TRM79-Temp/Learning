@@ -193,30 +193,66 @@
         // }
         //
         // baz(); // <-- call-site for `baz`
-        
-        
+
+
         //
         // >>>> * Hard binding
         //
         // function foo() {
         //   console.log(this.a);
         // }
-        // 
+        //
         // var obj = {
         //   a: 2
         // };
-        // 
+        //
         // var bar = function() {
         //   foo.call(obj);
         // };
-        // 
+        //
         // bar(); // 2
         // setTimeout(bar, 1000); // 2
-        // 
+        //
         // // hard-bound `bar` can no longer have its `this` overridden
         // bar.call(window); // 2
-        
-        
+
+
+        // function foo(something) {
+        //   console.log(this.a, something);
+        //   return this.a + something;
+        // }
+        //
+        // var obj = {
+        //   a: 2
+        // };
+        //
+        // var bar = function() {
+        //   return foo.apply(obj, arguments);
+        // };
+        //
+        // var b = bar(3); // 2 3
+        // console.log(b); // 5
+
+
+        //
+        // Strict mode.
+        //
+        //
+        // //"use strict";
+        //
+        // function foo() {
+        //   console.log(this.a);
+        // }
+        //
+        // var a = 2;
+        //
+        // (function() {
+        //   "use strict"; // In this place, it does not imply to next foo() call.
+        //
+        //   foo(); // 2
+        // })();
+
+
         function foo(something) {
           console.log(this.a, something);
           return this.a + something;
@@ -226,10 +262,13 @@
           a: 2
         };
 
-        var bar = function() {
-          return foo.apply(obj, arguments);
-        };
+        var bar = foo.bind(obj);
 
+        var b = bar(3); // 2 3
+        console.log(b); // 5
+        
+        obj.a = 100500;
+        
         var b = bar(3); // 2 3
         console.log(b); // 5
 

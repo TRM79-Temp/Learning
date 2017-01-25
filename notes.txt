@@ -14,22 +14,24 @@ Alt-Codes:
   ° - 0176
   ± - 0177
   ≈ - none
-  ∙ - 249
-  · - 250
-  Ъ - 154
-  Ы - 155
-  Э - 157
-  Ё - 240
-  ъ - 234
-  ы - 235
-  э - 237
-  ё - 241
+  ∙ -  249
+  · -  250
+  Ъ -  154
+  Ы -  155
+  Э -  157
+  Ё -  240
+  ъ -  234
+  ы -  235
+  э -  237
+  ё -  241
   Ґ - 0165 (UK)
   ґ - 0180 (UK)
-  ↔ - 29
-    - 09 - tab
+  ↔ -   29
+    -   09 (tab)
+  ○ -    9
   ‘ - 0145
   ’ - 0146
+
 
 &#x301; - Combining Acute Accent (place it after character)
 
@@ -101,3 +103,20 @@ debugger: Tools -> Web Developer -> WebIDE
 
 >>>>
 Ctrl+Shift+I (Also F12) - Firefox Tools
+
+
+>>>>
+
+// coursera.org
+
+Coursera Honor Code
+
+We’re dedicated to protecting the integrity of your work on Coursera.
+
+As part of this effort, we’ve created an honor code that we ask everyone to follow. Learn more
+
+All learners should:
+
+Submit their own original work
+Avoid sharing answers with others
+Report suspected violations

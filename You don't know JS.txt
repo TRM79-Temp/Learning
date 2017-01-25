@@ -310,18 +310,12 @@ foo.awesome(); // LET ME INTRODUCE: HIPPO
 
 ** YDKJS -> this & Object Prototypes
 
-
-
-
-••••
-••••
-
 //
 // >>>> Default binding.
 //
 
 function foo() {
-    console.log(this.a);
+  console.log(this.a);
 }
 
 var a = 2;
@@ -329,14 +323,13 @@ var a = 2;
 foo(); // 2
 
 
-
 //
 // >>>> Strict mode.
 //
 
 function foo() {
-    "use strict";
-    console.log(this.a);
+  "use strict";
+  console.log(this.a);
 }
 
 var a = 2;
@@ -344,26 +337,24 @@ var a = 2;
 foo(); // TypeError: `this` is `undefined`
 
 
-
 //
 // >>>> Implicit binding.
 //
 
 function foo() {
-    console.log(this.a);
+  console.log(this.a);
 }
 
 var obj = {
-    a: 2,
-    foo: foo
+  a: 2,
+  foo: foo
 };
 
 obj.foo(); // 2
 
 
-
 //
-// >>>> `a: 2` here is not accessible
+// >>>> `a: 2` here is not accessible.
 //
 
 function foo() {
@@ -383,9 +374,8 @@ var obj1 = {
 obj1.obj2.foo(); // 42
 
 
-
 //
-// >>>> * Implicitly lost
+// >>>> * Implicitly lost.
 //
 
 function foo() {
@@ -402,7 +392,6 @@ var bar = obj.foo; // function reference/alias!
 var a = "oops, global"; // `a` also property on global object
 
 bar(); // "oops, global"
-
 
 
 //
@@ -429,7 +418,6 @@ var a = "oops, global"; // `a` also property on global object
 doFoo(obj.foo); // "oops, global"
 
 
-
 //
 // >>>> *
 //
@@ -448,7 +436,6 @@ var a = "oops, global"; // `a` also property on global object
 setTimeout(obj.foo, 100); // "oops, global"
 
 
-
 //
 // >>>> Explicit Binding
 //
@@ -464,9 +451,8 @@ var obj = {
 foo.call(obj); // 2
 
 
-
 //
-// >>>> * Hard binding
+// >>>> * Hard binding.
 //
 
 function foo() {
@@ -488,9 +474,8 @@ setTimeout(bar, 100); // 2
 bar.call(window); // 2
 
 
-
 //
-// >>>> *
+// >>>> * With arguments.
 //
 
 function foo(something) {
@@ -511,23 +496,40 @@ console.log(b); // 5
 
 
 //
-// coursera.org
+// Simple 'bind' helper sample.
 //
-Coursera Honor Code
 
-We’re dedicated to protecting the integrity of your work on Coursera.
+function foo(something) {
+  console.log(this.a, something);
+  return this.a + something;
+}
 
-As part of this effort, we’ve created an honor code that we ask everyone to follow. Learn more
+// simple `bind` helper
+function bind(fn, obj) {
+  return function() {
+    return fn.apply(obj, arguments);
+  };
+}
 
-All learners should:
+var obj = {
+  a: 2
+};
 
-Submit their own original work
-Avoid sharing answers with others
-Report suspected violations
+var bar = bind(foo, obj);
+
+var b = bar(3); // 2 3
+console.log(b); // 5
+
+
+
+Function.prototype.bind()
 
 
 
 
+
+••••
+••••
 
 
 ···· //
