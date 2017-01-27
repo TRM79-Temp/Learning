@@ -31,6 +31,7 @@ Alt-Codes:
   ○ -    9
   ‘ - 0145
   ’ - 0146
+  ø - 0248
 
 
 &#x301; - Combining Acute Accent (place it after character)
@@ -51,6 +52,7 @@ static | absolute | fixed | relative | initial | inherit
 
 
 1920x1080 1280x1024
+Adobe Reader: 0 40 1120 1040; Notepad++: 1120 40 800 1040
 
 
 https://gitlab.com/eleks-camp-lviv-2/yellow

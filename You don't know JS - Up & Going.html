@@ -247,30 +247,68 @@
         // var a = 2;
         //
         // (function() {
-        //   "use strict"; // In this place, it does not imply to next foo() call.
+        //   "use strict"; // In this place, it does not affect the next foo() call.
         //
         //   foo(); // 2
         // })();
 
 
-        function foo(something) {
-          console.log(this.a, something);
-          return this.a + something;
+        // function foo(something) {
+        //   console.log(this.a, something);
+        //   return this.a + something;
+        // }
+        // 
+        // var obj = {
+        //   a: 2
+        // };
+        // 
+        // var bar = foo.bind(obj);
+        // 
+        // var b = bar(3); // 2 3
+        // console.log(b); // 5
+        // 
+        // obj.a = 100500;
+        // 
+        // var b = bar(3); // 2 3
+        // console.log(b); // 5
+        
+        
+        // function foo(something) {
+        //   this.a = something;
+        // }
+        // 
+        // var obj1 = {};
+        // 
+        // var bar = foo.bind(obj1);
+        // bar(2);
+        // console.log(obj1.a); // 2
+        // 
+        // var baz = new bar(3);
+        // console.log(obj1.a); // 2
+        // console.log(baz.a); // 3
+        // 
+        // baz.a = 100500;
+        // console.log(baz.a);
+        
+        
+        function foo() {
+          // return an arrow function
+          return (a) => {
+            // `this` here is lexically inherited from `foo()`
+            console.log(this.a);
+          };
         }
 
-        var obj = {
+        var obj1 = {
           a: 2
         };
 
-        var bar = foo.bind(obj);
+        var obj2 = {
+          a: 3
+        };
 
-        var b = bar(3); // 2 3
-        console.log(b); // 5
-        
-        obj.a = 100500;
-        
-        var b = bar(3); // 2 3
-        console.log(b); // 5
+        var bar = foo.call(obj1);
+        bar.call(obj2); // 2, not 3!
 
     </script>
 

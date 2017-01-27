@@ -13,7 +13,9 @@ window.alert(message);
 result = window.prompt(message, default);
 
 
-number, string, boolean
+string, number, boolean, object, function, null, undefined
+String, Number, Boolean, Object, Function, Array, Date, RegExp, Error
+
 
 console.log(42) // <- coercion
 
@@ -23,6 +25,8 @@ eval()
 setTimeout()
 setInterval()
 new Function(..)
+forEach()
+toString()
 
 
 ** YDKJS -> Scopes & Closures
@@ -371,7 +375,7 @@ obj.foo(); // 2
 
 
 //
-// >>>> `a: 2` here is not accessible.
+// >>>> * `a: 2` here is not accessible.
 //
 
 function foo() {
@@ -454,7 +458,7 @@ setTimeout(obj.foo, 100); // "oops, global"
 
 
 //
-// >>>> Explicit Binding
+// >>>> Explicit binding.
 //
 
 function foo() {
@@ -513,7 +517,7 @@ console.log(b); // 5
 
 
 //
-// Simple 'bind' helper sample.
+// * Simple 'bind' helper sample (see also 'Extended').
 //
 
 function foo(something) {
@@ -542,47 +546,121 @@ console.log(b); // 5
 Function.prototype.bind()
 
 
+//
+// New binding.
+//
+
+function foo(a) {
+  this.a = a;
+}
+
+var bar = new foo(2);
+console.log(bar.a); // 2
 
 
+//
+// Binding precedence.
+//
 
-••••
-••••
+function foo() {
+  console.log(this.a);
+}
+
+var obj1 = {
+  a: 2,
+  foo: foo
+};
+
+var obj2 = {
+  a: 3,
+  foo: foo
+};
+
+obj1.foo(); // 2
+obj2.foo(); // 3
+
+obj1.foo.call(obj2); // 3  – explicit binding has higher precedence
+obj2.foo.call(obj1); // 2  –   than implicit.
 
 
-···· //
-···· //
-···· //
-···· //
+//
+// *
+//
+
+function foo(something) {
+  this.a = something;
+}
+
+var obj1 = {
+  foo: foo
+};
+
+var obj2 = {};
+
+obj1.foo(2);
+console.log(obj1.a); // 2
+
+obj1.foo.call(obj2, 3);
+console.log(obj2.a); // 3
+
+var bar = new obj1.foo(4); //  new binding has higher precedence
+console.log(obj1.a); // 2        than implicit.
+console.log(bar.a); // 4
+
+
+//
+// *
+//
+
+function foo(something) {
+  this.a = something;
+}
+
+var obj1 = {};
+
+var bar = foo.bind(obj1);
+bar(2);
+console.log(obj1.a); // 2
+
+var baz = new bar(3);     // bar() called with 'new' does not affect
+console.log(obj1.a); // 2      initially binded value.
+console.log(baz.a); // 3
+
+
+//
+// * Extended 'bind' helper sample (see also 'Simple').
+//
+
 if (!Function.prototype.bind) {
- Function.prototype.bind = function(oThis) {
-  if (typeof this !== "function") {
-   // closest thing possible to the ECMAScript 5
-   // internal IsCallable function
-   throw new TypeError(
-    "Function.prototype.bind - what is trying " +
-    "to be bound is not callable"
-   );
-  }
+  Function.prototype.bind = function(oThis) {
+    if (typeof this !== "function") {
+      // closest thing possible to the ECMAScript 5
+      // internal IsCallable function
+      throw new TypeError(
+        "Function.prototype.bind - what is trying " +
+        "to be bound is not callable"
+      );
+    }
 
-  var aArgs = Array.prototype.slice.call(arguments, 1),
-   fToBind = this,
-   fNOP = function() {},
-   fBound = function() {
-    return fToBind.apply(
-     (
-      this instanceof fNOP &&
-      oThis ? this : oThis
-     ),
-     aArgs.concat(
-      Array.prototype.slice.call(arguments)
-     );
-   };
+    var aArgs = Array.prototype.slice.call(arguments, 1),
+      fToBind = this,
+      fNOP = function() {},
+      fBound = function() {
+        return fToBind.apply(
+          (
+            this instanceof fNOP &&
+            oThis ? this : oThis
+          ),
+          aArgs.concat(
+            Array.prototype.slice.call(arguments)
+          );
+      };
 
-  fNOP.prototype = this.prototype;
-  fBound.prototype = new fNOP();
+    fNOP.prototype = this.prototype;
+    fBound.prototype = new fNOP();
 
-  return fBound;
- };
+    return fBound;
+  };
 }
 
 //</script>
