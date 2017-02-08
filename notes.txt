@@ -32,7 +32,13 @@ Alt-Codes:
   ‘ - 0145
   ’ - 0146
   ø - 0248
-
+  < -   60
+  > -   62
+  ≤ - none &#8804;	&#x2264;
+  ≥ - none &#8805;	&#x2265;
+  € - 0128
+  ¢ - 0162
+  £ - 0163
 
 &#x301; - Combining Acute Accent (place it after character)
 
@@ -122,3 +128,44 @@ All learners should:
 Submit their own original work
 Avoid sharing answers with others
 Report suspected violations
+
+
+>>>>
+'
+' http://www.cpearson.com/excel/UnSelect.aspx (the next 2 scripts)
+'
+Sub UnSelectActiveCell()
+    Dim R As Range
+    Dim RR As Range
+    For Each R In Selection.Cells
+        If StrComp(R.Address, ActiveCell.Address, vbBinaryCompare) <> 0 Then
+            If RR Is Nothing Then
+                Set RR = R
+            Else
+                Set RR = Application.Union(RR, R)
+            End If
+        End If
+    Next R
+    If Not RR Is Nothing Then
+        RR.Select
+    End If
+End Sub
+
+Sub UnSelectCurrentArea()
+    Dim Area As Range
+    Dim RR As Range
+    
+    For Each Area In Selection.Areas
+        If Application.Intersect(Area, ActiveCell) Is Nothing Then
+            If RR Is Nothing Then
+                Set RR = Area
+            Else
+                Set RR = Application.Union(RR, Area)
+            End If
+        End If
+    Next Area
+    If Not RR Is Nothing Then
+        RR.Select
+    End If
+End Sub
+

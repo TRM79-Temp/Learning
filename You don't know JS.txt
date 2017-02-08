@@ -1,12 +1,19 @@
 //<script>
 
-YOU DON’T KNOW JS – Up & Going                [1]
-                  – Scope & Closures          [2]
-                  – this & Object Prototypes  [3]
-                  – Types & Grammar           [4]
-                  – Async & Performance       [5]
-                  – ES6 & Beyond              [6]
+[1] YOU DON’T KNOW JS – Up & Going
+[2]                   – Scope & Closures
+[3]                   – this & Object Prototypes
+[4]                   – Types & Grammar
+[5]                   – Async & Performance
+[6]                   – ES6 & Beyond
 
+
+
+
+
+//
+//
+//
 
 window.alert(message);
 
