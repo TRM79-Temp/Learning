@@ -39,6 +39,8 @@ Alt-Codes:
   € - 0128
   ¢ - 0162
   £ - 0163
+  ✓
+  ✔ (more at http://www.alt-codes.net/miscellaneous-symbols -> Check Mark Symbols)
 
 &#x301; - Combining Acute Accent (place it after character)
 
