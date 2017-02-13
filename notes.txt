@@ -98,8 +98,8 @@ git remote set-url origin https://github.com/USERNAME/OTHERREPOSITORY.git
 >>>>
 Перекидання репозиторію на інший account:
 1. '+' -> Import repository
-2. - git config user.name newUser
-   -  git config user.email newUserEmail
+// 2. - git config user.name newUser
+//    -  git config user.email newUserEmail
 3. [remote "origin"]
     url = git@github.com:newUser/repo.git
 4. Для нового користувача був згенерований ключ, може, то було зайве:
