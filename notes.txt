@@ -95,6 +95,29 @@ git rm --cached -r somedir
 git remote set-url origin https://github.com/USERNAME/OTHERREPOSITORY.git
 + git remote -v
 
+>>>>
+Перекидання репозиторію на інший account:
+1. '+' -> Import repository
+2. - git config user.name newUser
+   -  git config user.email newUserEmail
+3. [remote "origin"]
+    url = git@github.com:newUser/repo.git
+4. Для нового користувача був згенерований ключ, може, то було зайве:
+C:\Users\Roman\GitHub\Learning>git push [origin master] – може, тут тільки git push.
+The authenticity of host 'github.com (192.30.253.112)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no)? y
+Please type 'yes' or 'no': yes
+Warning: Permanently added 'github.com,192.30.253.112' (RSA) to the list of known hosts.
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 303 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local objects.
+To github.com:TRM79Temp/Learning.git
+   00fcc46..c58dcdf  master -> master
+
 
 ==
 
