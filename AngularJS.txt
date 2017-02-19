@@ -1,4 +1,9 @@
-ng-show атрибут:
+У виразах {{}} AngularJS можуть бути використані тернарні оператори, переноси на новий рядок; They can contain literals, operators, and variables.
+AngularJS expressions do not support conditionals, loops, and exceptions...
+AngularJS expressions support filters...
+
+
+ng-show атрибут (директива):
 
         <form ng-app="" name="myForm">
             Email:
@@ -6,8 +11,8 @@ ng-show атрибут:
             <span ng-show="myForm.myAddress.$error.email">Not a valid e-mail address</span>
         </form>
 
-        
-ng-model атрибут, статуси:
+
+ng-model атрибут (директива), статуси:
 
         <form ng-app="" name="myForm" ng-init="myText = 'post@myweb.com'">
             Email:
@@ -19,4 +24,36 @@ ng-model атрибут, статуси:
             {{myForm.myAddress.$touched}}
             {{myForm.myAddress.$error}}
         </form>
+        
+    Змінна, оголошена в ng-model, стає доступною в контролері через $scope.
 
+Класи, які можуть бути використані з ng-model:
+ .ng-empty
+ .ng-not-empty
+ .ng-touched
+ .ng-untouched
+ .ng-valid
+ .ng-invalid
+ .ng-dirty
+ .ng-pending
+ .ng-pristine
+
+ng-bind атрибут (директива):
+
+ng-controller атрибут (директива):
+
+Створення власних директив – у розділі 'Angular Modules' і 'Angular Directives'.
+Створені директиви можуть викликатись як: елементи, атрибути, класи, коментарі.
+
+myApp.js
+var app = angular.module("myApp", []);
+// Без аргумента [] відбувається не створення нового модуля,
+// а доступ до існуючого.
+>
+myCtrl.js
+app.controller("myCtrl", function($scope) {
+    $scope.firstName = "John";
+    $scope.lastName = "Doe";
+});
+
+ng-repeat="x in xxx"

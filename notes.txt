@@ -6,7 +6,9 @@ min-width:  768px - .col-sm-x
 charmap
 
 Alt-Codes:
-  • - 0149
+  • -    7
+  ◘ -    8
+  ○ -    9
   – - 0150
   — - 0151
     - 0160 (MS Word nonbreaking space)
@@ -28,7 +30,6 @@ Alt-Codes:
   ґ - 0180 (UK)
   ↔ -   29
     -   09 (tab)
-  ○ -    9
   ‘ - 0145
   ’ - 0146
   ø - 0248
@@ -57,6 +58,21 @@ none | left | right | initial | inherit
 
 position:
 static | absolute | fixed | relative | initial | inherit
+
+visibility:
+    hidden
+
+float
+
+clear
+
+• Centering: Frontend1.pptx, p. 43
+
+margin: top, rigth, bottom, left
+margin: top, rigth-left, bottom
+margin: top-bottom, rigth-left
+margin: all
+>> the same for padding
 
 
 1920x1080 1280x1024
@@ -92,7 +108,7 @@ git remote update + git status -uno
 
 git rm --cached -r somedir
 
-git remote set-url origin https://github.com/USERNAME/OTHERREPOSITORY.git
+git remote set-url|add origin https://github.com/USERNAME/OTHERREPOSITORY.git
 + git remote -v
 
 >>>>
@@ -118,6 +134,9 @@ remote: Resolving deltas: 100% (1/1), completed with 1 local objects.
 To github.com:TRM79Temp/Learning.git
    00fcc46..c58dcdf  master -> master
 
+Інший спосіб:
+repo -> Settings -> Transfer
+після чого новий власник має підтвердити Transfer з e-mail.
 
 ==
 
@@ -194,3 +213,8 @@ Sub UnSelectCurrentArea()
     End If
 End Sub
 
+
+nodejs
+C:\Users\Roman\AppData\Roaming\npm-cache
+Інший варіант – запустити cmd з правами адміністратора з каталогу "C:\Program Files\nodejs",
+після цього модулі будуть копіюватись в "C:\Program Files\nodejs\node_modules"
