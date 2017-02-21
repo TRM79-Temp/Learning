@@ -111,6 +111,8 @@ git rm --cached -r somedir
 git remote set-url|add origin https://github.com/USERNAME/OTHERREPOSITORY.git
 + git remote -v
 
+git reset HEAD~ + git reset --hard + git push -f origin master
+
 >>>>
 Перекидання репозиторію на інший account:
 1. '+' -> Import repository

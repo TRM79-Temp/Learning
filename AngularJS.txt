@@ -57,3 +57,18 @@ app.controller("myCtrl", function($scope) {
 });
 
 ng-repeat="x in xxx"
+
+
+----
+
+angular.module()
+angular.forEach()
+angular.isFunction()
+angular.isString()
+angular.isArray()
+angular.isNumber()
+angular.uppercase()
+angular.lowercase()
+angular.toJson()
+angular.fromJson()
+angular.extend()
