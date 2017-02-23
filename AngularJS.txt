@@ -61,14 +61,16 @@ ng-repeat="x in xxx"
 
 ----
 
-angular.module()
-angular.forEach()
-angular.isFunction()
-angular.isString()
-angular.isArray()
-angular.isNumber()
-angular.uppercase()
-angular.lowercase()
-angular.toJson()
-angular.fromJson()
-angular.extend()
+angular.module(name, [requires], [configFn]);
+angular.forEach(obj, iterator, [context]);
+    > iterator(value, key, obj)
+angular.isFunction(value);
+angular.isString(value);
+angular.isArray(value);
+angular.isNumber(value);
+angular.isObject(value);
+angular.uppercase(string);
+angular.lowercase(string);
+angular.toJson(obj, [pretty]);
+angular.fromJson(json);
+angular.extend(dst, src);
