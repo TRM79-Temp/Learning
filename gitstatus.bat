@@ -18,7 +18,7 @@ echo %cd% >> %statusFile%
 git status >> %statusFile%
 echo. >> %statusFile%
 
-echo. >> %statusFile%
 echo Check complete. >> %statusFile%
 
+C:\Users\IUAD0YO0\Desktop\lf_to_crlf.exe %statusFile%
 notepad %statusFile%

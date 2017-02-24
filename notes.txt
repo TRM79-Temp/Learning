@@ -42,6 +42,10 @@ Alt-Codes:
   £ - 0163
   ✓
   ✔ (more at http://www.alt-codes.net/miscellaneous-symbols -> Check Mark Symbols)
+  " - &#34; &quot;
+  ' - &#39;
+  ← - &larr;
+  ↔ - &harr;
 
 &#x301; - Combining Acute Accent (place it after character)
 
@@ -157,6 +161,7 @@ debugger: Tools -> Web Developer -> WebIDE
 
 >>>>
 Ctrl+Shift+I (Also F12) - Firefox Tools
+Ctrl+Shift+I – Browser Console
 
 
 >>>>
@@ -220,3 +225,13 @@ nodejs
 C:\Users\Roman\AppData\Roaming\npm-cache
 Інший варіант – запустити cmd з правами адміністратора з каталогу "C:\Program Files\nodejs",
 після цього модулі будуть копіюватись в "C:\Program Files\nodejs\node_modules"
+
+npm config behind proxy: (.npmrc file)
+proxy=http://domain%5Cuser:password@proxy:port/ (use encoded password)
+[https-proxy=-//-]
+or using command:
+npm config set proxy http://...
+
+
+encodeURIComponent("YourP@ssword")
+decodeURIComponent("%styleString")
