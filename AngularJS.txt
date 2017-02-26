@@ -74,3 +74,11 @@ angular.lowercase(string);
 angular.toJson(obj, [pretty]);
 angular.fromJson(json);
 angular.extend(dst, src);
+angular.copy(source, [destination]);
+angular.isDefined(value);
+angular.isUndefined(value);
+
+
+Filters:
+currency
+orderBy
