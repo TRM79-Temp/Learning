@@ -235,3 +235,6 @@ npm config set proxy http://...
 
 encodeURIComponent("YourP@ssword")
 decodeURIComponent("%styleString")
+
+
+https://github.com/apress/pro-angularjs
