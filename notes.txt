@@ -238,3 +238,10 @@ decodeURIComponent("%styleString")
 
 
 https://github.com/apress/pro-angularjs
+
+
+Regular expression for logs:
+(?:^.*?)(blah-blah-blah)(.|\n)*?(?=.*?\1)
+(?:^.*?)(blah-blah-blah)(.|\r\n)*?(?=.*?\1)
+.*blah-blah-blah.*(.|\n)*?yadda-yadda-yadda.*
+.*blah-blah-blah.*(.|\r\n)*?yadda-yadda-yadda.*
