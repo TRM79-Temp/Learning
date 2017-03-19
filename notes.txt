@@ -40,6 +40,7 @@ Alt-Codes:
   € - 0128
   ¢ - 0162
   £ - 0163
+  ₴ - Shift + ~ (Ukrainian Enhanced)
   ✓
   ✔ (more at http://www.alt-codes.net/miscellaneous-symbols -> Check Mark Symbols)
   " - &#34; &quot;
