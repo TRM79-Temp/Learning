@@ -206,7 +206,7 @@ End Sub
 Sub UnSelectCurrentArea()
     Dim Area As Range
     Dim RR As Range
-    
+
     For Each Area In Selection.Areas
         If Application.Intersect(Area, ActiveCell) Is Nothing Then
             If RR Is Nothing Then
@@ -248,3 +248,17 @@ Regular expression for logs:
 .*blah-blah-blah.*(.|\n)*?yadda-yadda-yadda.*
 .*blah-blah-blah.*(.|\r\n)*?yadda-yadda-yadda.*
 .*blah-blah-blah.*(.|\r?\n)*?yadda-yadda-yadda.* – universal
+
+
+SQL
+
+select * from ALL_TAB_PRIVS
+    order by GRANTEE, TABLE_SCHEMA, TABLE_NAME
+
+
+
+.NET
+
+set path="C:\Windows\Microsoft.NET\Framework\v4.0.30319\";%path%
+
+msbuild Solution.sln /t:Build /p:Configuration=Release
