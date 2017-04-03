@@ -118,6 +118,26 @@ git remote set-url|add origin https://github.com/USERNAME/OTHERREPOSITORY.git
 
 git reset HEAD~ + git reset --hard + git push -f origin master
 
+[[ ** Work .gitconfig
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
+[user]
+	name = Roman Tarasiuk
+[user]
+	email = roman.tarasiuk.l@gmail.com
+[http]
+	proxy = http://login@proxy:port
+	sslVerify = false
+]]
+
+[[ ** Work .npmrc
+strict-ssl=false
+proxy=http://domain%5Clogin:password@proxy:port/
+https-proxy=-//-
+]]
+
 >>>>
 Перекидання репозиторію на інший account:
 1. '+' -> Import repository
