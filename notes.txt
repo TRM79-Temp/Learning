@@ -80,8 +80,8 @@ margin: all
 >> the same for padding
 
 
-1920x1080 1280x1024
-Adobe Reader: 0 40 1120 1040; Notepad++: 1120 40 800 1040
+Screen resolutions:
+1920x1080, 1280x1024
 
 
 https://gitlab.com/eleks-camp-lviv-2/yellow
