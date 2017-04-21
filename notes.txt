@@ -90,6 +90,10 @@ https://gitlab.com/eleks-camp-lviv-2/yellow/tree/develop
 https://gitlab.com/eleks-camp-lviv-2/yellow/tree/master
 
 
+git config [--global] user.email "you@example.com"
+git config [--global] user.name "Your Name"
+git config --list
+
 git log
 git log --format=oneline|--graph
 git log --graph --full-history --all --pretty=format:"%h%x09%d%x20%s"
