@@ -286,3 +286,35 @@ select * from ALL_TAB_PRIVS
 set path="C:\Windows\Microsoft.NET\Framework\v4.0.30319\";%path%
 
 msbuild Solution.sln /t:Build /p:Configuration=Release
+
+
+notepad++ F6 (NppExec)
+NPP_CONSOLE 0
+sci_sendmsg SCI_SETWORDCHARS 0 "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzАБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯЫЭЁЪабвгґдеєжзиіїйклмнопрстуфхцчшщьюяыэёъ0123456789_-$#:/.="
+
+
+Linux/UNIX:
+
+archiver: tar -zcvf filename.tar.gz file1 ... 
+
+version: uname -a   –   unix name
+	     + oslevel -s (http://serverfault.com/questions/100875/how-do-i-tell-which-aix-version-am-i-running)
+	cat /etc/*-release
+current path: pwd   –   print working directory
+directory size: du [-s] [-k|-m|-g] [directory_name]   –   disk usage
+sudo   –   superuser do; substitute user do; example: sudo -su tomcat
+su     –   ... – see 'sudo' example
+cat    –   concatenate
+
+Midnight commander
+Note: Shell commands will not work when you are on a non-local file system.
+
+connect another server:
+cd sh://user@server:1234/tmp/
+(http://ivotripunovic.blogspot.com/2013/07/connecting-to-ssh-server-using-midnight.html)
+
+put file name to command line: Alt + Enter
+    select it by mouse using Shift; copy to clipboard Ctrl + Insert
+change directory view: Alt+T
+go to: Alt+S+file/directory name
+
