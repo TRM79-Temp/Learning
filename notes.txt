@@ -187,6 +187,7 @@ debugger: Tools -> Web Developer -> WebIDE
 >>>>
 Ctrl+Shift+I (Also F12) - Firefox Tools
 Ctrl+Shift+I – Browser Console
+security.insecure_field_warning.contextual.enabled;true (This connection is not secure. Logins entered here could be compromised.)
 
 
 >>>>
