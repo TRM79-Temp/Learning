@@ -319,3 +319,15 @@ put file name to command line: Alt + Enter
 change directory view: Alt+T
 go to: Alt+S+file/directory name
 
+PuTTY – Settings -> Window -> Translation -> Remote character set: UTF-8 або KOI8-U (Ctrl + O or reload mc)
+
+
+Microsoft Word
+^l – manual line break; ^s – nonbreaking space (see 'msword01.png')
+Normal.dot – Run command "application.NormalTemplate.OpenAsDocument" in Immediate window of VBA editor
+Cut, Copy and Paste – see 'msword02.png'
+Default shortcut: Ctrl+F -> NavPaneSearch (Home), Reassigned to: EditFind
+Replacing (in Macros)
+    .Wrap = wdFindContinue
+    .Wrap = wdFindAsk
+    .Wrap = wdFindStop
