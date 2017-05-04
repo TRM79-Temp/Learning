@@ -1,0 +1,19 @@
+• Decorator
+• Proxy (2)
+• Bridge (2)
+• Composite
+• Flyweight
+• Adapter
+• Façade (2)
+
+
+• Add new functionality dynamically to existing objects, or remove it (Decorator).
+• Control access to an object (Proxy).
+• Create expensive objects on demand (Proxy).
+• Enable development of the interface and implementation of a component to proceed independently (Bridge).
+• Match otherwise incompatible interfaces (Adapter).
+• Reduce the cost of working with large numbers of very small objects (Flyweight).
+• Reorganize a system with many subsystems into identifiable layers with single entry points (Façade).
+• Select or switch implementations at runtime (Bridge).
+• Simplify the interface to a complex subsystem (Façade).
+• Treat single objects and composite objects in the same way (Composite).
