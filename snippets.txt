@@ -1,0 +1,52 @@
+Active Directory Management  admgmt.msc
+ADSI Edit  adsiedit.msc
+Application Server  appsrv.msc
+Authorization Manager  azman.msc
+Certificates  certmgr.msc
+Certificate Authority  certsrv.msc
+Certificate Templates  certtmpl.msc
+Indexing Service  ciadv.msc
+Component Services  comexp.msc
+Computer Management  compmgmt.msc
+Default Domain Controller Security Settings  dcpol.msc
+Device Manager  devmgmt.msc
+Disk defragmenter  dfrg.msc
+Distributed File System  dfsgui.msc
+DHCP  dhcpmgmt.msc
+Disk Management  diskmgmt.msc
+DNS  dnsmgmt.msc
+Active Directory Domains and Trusts  domain.msc
+Default Domain Security Settings  dompol.msc
+Active Directory Users and Computers  dsa.msc
+Active Directory Sites and Services  dssite.msc
+Event Viewer  eventvwr.msc
+Exchange System Manager  Exchange System Manager.msc
+File Server Management  filesvr.msc
+Shared Folders  fsmgmt.msc
+Microsoft Fax Service Manager  fxsadmin.msc
+Group Policy  gpedit.msc
+Group Policy Management  gpmc.msc
+Internet Authentication Service  ias.msc
+Internet Information Services  iis.msc
+IP Address Management  ipaddrmgmt.msc
+Local Users and Groups  lusrmgr.msc
+.NET Configuration 1.1  mscorcfg.msc
+Removable Storage  ntmsmgr.msc
+Removable Storage Operator Requests  ntmsoprq.msc
+Performance  perfmon.msc
+Enterprise PKI  pkiview.msc
+Public Key Management  pkmgmt.msc
+Routing and Remote Access   rrasmgmt.msc
+Remote Storage  rsadmin.msc
+Resultant Set of Policy  rsop.msc
+Active Directory Schema  schmmgmt.msc
+Local Security Settings  secpol.msc
+Services  services.msc
+Sidwalk  sidwalk.msc
+Telephony  tapimgmt.msc
+Terminal Services Configuration/Connections  tscc.msc
+Remote Desktops  tsmmc.msc
+UDDI Services Console  uddi.msc
+Active Directory Users and Computers (Exchange version)  users and computers.msc
+WINS  winsmgmt.msc
+Windows Management Infrastructure (WMI)  wmimgmt.msc

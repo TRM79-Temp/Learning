@@ -50,10 +50,16 @@ Alt-Codes:
 
 &#x301; - Combining Acute Accent (place it after character)
 
-notepad++ shortcuts (remove %APPDATA%\Notepad++\shortcuts.xml to restore defaults)
-  Single Line Comment / Uncomment - Ctrl+K / Ctrl+Shift+K
-  Block Comment / Uncomment - Ctrl+Q / Ctrl+Shift+Q              // Ctrl+Q default action - Toggle Single Line Comment
 
+HTML
+for pages with cyrillic text, saved in ANSI-encoding:
+<meta http-equiv="Content-Type" content="text/html;charset=Windows-1251"> (HTML4)
+<meta charset="UTF-8"> (HTML5)
+
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Helvetica+Neue">
+and very much fonts;
+usage:
+    selector { font-family: "Helvetica Neue" }
 
 display:
 inline | block | flex | inline-block | inline-flex | inline-table | list-item | run-in | table | table-caption | table-column-group | table-header-group | table-footer-group | table-row-group | table-cell | table-column | table-row | none | initial | inherit
@@ -78,6 +84,9 @@ margin: top, rigth-left, bottom
 margin: top-bottom, rigth-left
 margin: all
 >> the same for padding
+
+Remove tag attribute:
+removeAttribute()
 
 
 Screen resolutions:
@@ -176,15 +185,20 @@ doskey /HISTORY > history.txt
 
 
 >>>>
-Remove tag attribute:
-removeAttribute()
-
->>>>
 Debug Greasemonkey script:
 host: Tools -> Web Developer -> Developer Toolbar (Shift+F2) -> listen portNumber (6000 - default)
 debugger: Tools -> Web Developer -> WebIDE
 
 >>>>
+Firefox
+
+Localization: general.useragent.locale -> en-US (american), uk-UA (ukrainian)
+
+security.fileuri.strict_origin_policy - default true
+
+ui.textSelectBackgroundAttention;#ff3300
+firefox -chrome URL – запуск вікна Firefox без меню
+
 Ctrl+Shift+I (Also F12) - Firefox Tools
 Ctrl+Shift+I – Browser Console
 security.insecure_field_warning.contextual.enabled;true (This connection is not secure. Logins entered here could be compromised.)
@@ -205,46 +219,6 @@ All learners should:
 Submit their own original work
 Avoid sharing answers with others
 Report suspected violations
-
-
->>>>
-'
-' http://www.cpearson.com/excel/UnSelect.aspx (the next 2 scripts)
-'
-Sub UnSelectActiveCell()
-    Dim R As Range
-    Dim RR As Range
-    For Each R In Selection.Cells
-        If StrComp(R.Address, ActiveCell.Address, vbBinaryCompare) <> 0 Then
-            If RR Is Nothing Then
-                Set RR = R
-            Else
-                Set RR = Application.Union(RR, R)
-            End If
-        End If
-    Next R
-    If Not RR Is Nothing Then
-        RR.Select
-    End If
-End Sub
-
-Sub UnSelectCurrentArea()
-    Dim Area As Range
-    Dim RR As Range
-
-    For Each Area In Selection.Areas
-        If Application.Intersect(Area, ActiveCell) Is Nothing Then
-            If RR Is Nothing Then
-                Set RR = Area
-            Else
-                Set RR = Application.Union(RR, Area)
-            End If
-        End If
-    Next Area
-    If Not RR Is Nothing Then
-        RR.Select
-    End If
-End Sub
 
 
 nodejs
@@ -276,10 +250,92 @@ Regular expression for logs:
 
 
 SQL
-
 select * from ALL_TAB_PRIVS
     order by GRANTEE, TABLE_SCHEMA, TABLE_NAME
 
+Command delimiter - /
+Version – SELECT * FROM v$version;
+
+Getting all tables' column names, tables and descriptions:
+--
+-- ALL TABLE NAMES, COLUMN NAMES, NULLABLE, TYPES AND DESCRIPTIONS
+-- ? http://stackoverflow.com/questions/10912337/how-to-show-comments-of-a-column-with-desc-operation
+--
+SELECT cc.table_name,
+       tc.column_name,
+       tc.nullable,
+       tc.data_type || CASE WHEN tc.data_type = 'NUMBER' AND tc.data_precision IS NOT NULL
+                                THEN '(' || tc.data_precision || ',' || tc.data_scale || ')'
+                            WHEN tc.data_type LIKE '%CHAR%'
+                                THEN '(' || tc.data_length || ')'
+                            ELSE NULL
+                       END TYPE,
+       cc.comments
+FROM   user_col_comments cc
+JOIN   user_tab_columns  tc ON  cc.column_name = tc.column_name
+                            AND cc.table_name  = tc.table_name
+WHERE  cc.table_name IN (SELECT table_name FROM all_tables)
+
+-- Some value and its count in table:
+-- http://stackoverflow.com/questions/7053902/sql-how-to-get-the-count-of-each-distinct-value-in-a-column
+SELECT
+  category,
+  COUNT(*) AS num
+FROM
+  posts
+GROUP BY
+  category
+
+Another version (for 2 tables (did not verify)):
+-- http://stackoverflow.com/questions/12394201/combining-sql-select-and-count
+SELECT 
+    a.a_name, 
+    (
+        SELECT Count(b.b_pk) 
+        FROM b 
+        Where b.a_pk = a.a_pk
+    ) as b_count 
+FROM  a
+
+AUTO_INCREMENT/IDENTITY в Oracle 11g
+-- http://stackoverflow.com/questions/11296361/how-to-create-id-with-auto-increment-on-oracle
+-- Table definition:
+
+CREATE TABLE departments (
+  ID           NUMBER(10)    NOT NULL,
+  DESCRIPTION  VARCHAR2(50)  NOT NULL);
+
+ALTER TABLE departments ADD (
+  CONSTRAINT dept_pk PRIMARY KEY (ID));
+
+CREATE SEQUENCE dept_seq;
+
+-- Trigger definition:
+
+CREATE OR REPLACE TRIGGER dept_bir 
+BEFORE INSERT ON departments 
+FOR EACH ROW
+
+BEGIN
+  SELECT dept_seq.NEXTVAL
+  INTO   :new.id
+  FROM   dual;
+END;
+/
+
+Insert multiple records:
+-- http://stackoverflow.com/questions/39576/best-way-to-do-multi-row-insert-in-oracle
+insert into pager (PAG_ID,PAG_PARENT,PAG_NAME,PAG_ACTIVE)
+          select 8000,0,'Multi 8000',1 from dual
+union all select 8001,0,'Multi 8001',1 from dual
+union all ...
+
+AS "Col Name"
+
+Date formatting:
+TO_CHAR(column, 'DD.MM.YYYY HH24:MI:SS')
+Date in query:
+TO_DATE('2016-09-26', 'YYYY-MM-DD')
 
 
 .NET
@@ -289,14 +345,20 @@ set path="C:\Windows\Microsoft.NET\Framework\v4.0.30319\";%path%
 msbuild Solution.sln /t:Build /p:Configuration=Release
 
 
-notepad++ F6 (NppExec)
+notepad++
+F6 (NppExec)
 NPP_CONSOLE 0
 sci_sendmsg SCI_SETWORDCHARS 0 "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzАБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯЫЭЁЪабвгґдеєжзиіїйклмнопрстуфхцчшщьюяыэёъ0123456789_-$#:/.="
 
+shortcuts (remove %APPDATA%\Notepad++\shortcuts.xml to restore defaults)
+  Single Line Comment / Uncomment - Ctrl+K / Ctrl+Shift+K
+  Block Comment / Uncomment - Ctrl+Q / Ctrl+Shift+Q              // Ctrl+Q default action - Toggle Single Line Comment
+
+View -> Show Symbol -> Show Indent Guide
 
 Linux/UNIX:
 
-archiver: tar -zcvf filename.tar.gz file1 ... 
+archiver: tar -zcvf filename.tar.gz file1 ...
 
 version: uname -a   –   unix name
 	     + oslevel -s (http://serverfault.com/questions/100875/how-do-i-tell-which-aix-version-am-i-running)
@@ -319,6 +381,10 @@ put file name to command line: Alt + Enter
 change directory view: Alt+T
 go to: Alt+S+file/directory name
 
+Note: Shell commands will not work when you are on a non-local file system.
+Alt-Enter or Esc-Enter copies selected filename in command line
+Ctrl-x p Copies the current directory to the command line
+
 PuTTY – Settings -> Window -> Translation -> Remote character set: UTF-8 або KOI8-U (Ctrl + O or reload mc)
 
 
@@ -331,3 +397,37 @@ Replacing (in Macros)
     .Wrap = wdFindContinue
     .Wrap = wdFindAsk
     .Wrap = wdFindStop
+
+
+Far
+HKEY_CURRENT_USER\Software\Far2\SavedHistory -> Lines
+
+
+Windows Shell
+New item in "Create" menu (example)
+HKEY_CLASSES_ROOT\.contact\ShellNew
+command - "%programFiles%\Windows Mail\Wab.exe" /CreateContact "%1"
+iconpath - %ProgramFiles%\Windows Mail\wab.exe,1
+MenuText - @%CommonProgramFiles%\system\wab32res.dll,-10203
+
+sc stop svhost
+
+PROMPT=$P$G
+
+chcp 1251
+
+mstsc /w:1900 /h:1000
+
+# PC Serial
+#  https://support.microsoft.com/en-us/kb/558124
+wmic bios get serialnumber
+
+# Display SN (Windows PowerShell)*
+# https://msdn.microsoft.com/en-us/library/aa394542%28v=vs.85%29.aspx
+gwmi WmiMonitorID -Namespace root\wmi | ForEach-Object {($_.UserFriendlyName -notmatch 0 | foreach {[char]$_}) -join ""; ($_.SerialNumberID -notmatch 0 | foreach {[char]$_}) -join ""}
+# * – can skip symbols, use DisplaySN.vb instead of
+
+# https://technet.microsoft.com/en-us/library/ee156587.aspx
+wscript //B //h:cscript
+
+Windows Shell Snippets – see 'snippets.txt'
