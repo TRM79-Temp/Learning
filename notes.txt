@@ -288,13 +288,13 @@ GROUP BY
 
 Another version (for 2 tables (did not verify)):
 -- http://stackoverflow.com/questions/12394201/combining-sql-select-and-count
-SELECT 
-    a.a_name, 
+SELECT
+    a.a_name,
     (
-        SELECT Count(b.b_pk) 
-        FROM b 
+        SELECT Count(b.b_pk)
+        FROM b
         Where b.a_pk = a.a_pk
-    ) as b_count 
+    ) as b_count
 FROM  a
 
 AUTO_INCREMENT/IDENTITY в Oracle 11g
@@ -312,8 +312,8 @@ CREATE SEQUENCE dept_seq;
 
 -- Trigger definition:
 
-CREATE OR REPLACE TRIGGER dept_bir 
-BEFORE INSERT ON departments 
+CREATE OR REPLACE TRIGGER dept_bir
+BEFORE INSERT ON departments
 FOR EACH ROW
 
 BEGIN
@@ -431,3 +431,12 @@ gwmi WmiMonitorID -Namespace root\wmi | ForEach-Object {($_.UserFriendlyName -no
 wscript //B //h:cscript
 
 Windows Shell Snippets – see 'snippets.txt'
+
+
+Visual Studio
+Customize Text Editor Context Menu:
+Tools -> Customize... -> Commands -> Context Menu -> Editor Context Menu | Code Window
+    and go down and add items or submenu (submenu will be displayed in "Context Menu" list).
+
+Tools -> Customize... -> Commands -> Toolbar -> Standard
+    and add "Debug -> Start Without Debugging" after "Debug Target"
