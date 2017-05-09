@@ -286,3 +286,21 @@ select * from ALL_TAB_PRIVS
 set path="C:\Windows\Microsoft.NET\Framework\v4.0.30319\";%path%
 
 msbuild Solution.sln /t:Build /p:Configuration=Release
+
+
+Visual Studio Code
+https://code.visualstudio.com/docs?start=true
+files.hotExit
+
+
+# See Installations.txt for details.
+npm install semantic-ui --save
+cd semantic/
+npm install # Stackoverflow
+gulp build
+
+# Must be installed earlier.
+npm install -g gulp
+
+# When only one package is needed.
+npm link gulp
