@@ -345,7 +345,6 @@ set path="C:\Windows\Microsoft.NET\Framework\v4.0.30319\";%path%
 msbuild Solution.sln /t:Build /p:Configuration=Release
 
 
-<<<<<<< HEAD
 Visual Studio Code
 https://code.visualstudio.com/docs?start=true
 files.hotExit
@@ -362,7 +361,8 @@ npm install -g gulp
 
 # When only one package is needed.
 npm link gulp
-=======
+
+
 notepad++
 F6 (NppExec)
 NPP_CONSOLE 0
@@ -458,4 +458,7 @@ Tools -> Customize... -> Commands -> Context Menu -> Editor Context Menu | Code 
 
 Tools -> Customize... -> Commands -> Toolbar -> Standard
     and add "Debug -> Start Without Debugging" after "Debug Target"
->>>>>>> refs/remotes/origin/master
+
+
+MS Excel
+milliseconds time format: [h]:mm:ss.000 (or [h]:mm:ss,000) in Ukrainian locale
