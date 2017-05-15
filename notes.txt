@@ -47,6 +47,12 @@ Alt-Codes:
   ' - &#39;
   ← - &larr;
   ↔ - &harr;
+  а́
+  о́
+  у́
+  е́
+  и́
+  і́
 
 &#x301; - Combining Acute Accent (place it after character)
 
