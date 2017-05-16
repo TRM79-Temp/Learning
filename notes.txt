@@ -1,11 +1,5 @@
-min-width: 1200px - .col-lg-x
-min-width:  992px - .col-md-x
-min-width:  768px - .col-sm-x
 
-
-charmap
-
-Alt-Codes:
+** Alt-Codes:
   • -    7
   ◘ -    8
   ○ -    9
@@ -57,7 +51,7 @@ Alt-Codes:
 &#x301; - Combining Acute Accent (place it after character)
 
 
-HTML
+** HTML/CSS/JavaScript
 for pages with cyrillic text, saved in ANSI-encoding:
 <meta http-equiv="Content-Type" content="text/html;charset=Windows-1251"> (HTML4)
 <meta charset="UTF-8"> (HTML5)
@@ -94,16 +88,24 @@ margin: all
 Remove tag attribute:
 removeAttribute()
 
+encodeURIComponent("YourP@ssword")
+decodeURIComponent("%styleString")
 
-Screen resolutions:
+Bootstrap:
+min-width: 1200px - .col-lg-x
+min-width:  992px - .col-md-x
+min-width:  768px - .col-sm-x
+
+
+** Screen resolutions:
 1920x1080, 1280x1024
 
 
+** git
 https://gitlab.com/eleks-camp-lviv-2/yellow
 https://gitlab.com/eleks-camp-lviv-2/yellow/branches
 https://gitlab.com/eleks-camp-lviv-2/yellow/tree/develop
 https://gitlab.com/eleks-camp-lviv-2/yellow/tree/master
-
 
 git config [--global] user.email "you@example.com"
 git config [--global] user.name "Your Name"
@@ -157,7 +159,6 @@ proxy=http://domain%5Clogin:password@proxy:port/
 https-proxy=-//-
 ]]
 
->>>>
 Перекидання репозиторію на інший account:
 1. '+' -> Import repository
 // 2. - git config user.name newUser
@@ -184,19 +185,13 @@ To github.com:TRM79Temp/Learning.git
 repo -> Settings -> Transfer
 після чого новий власник має підтвердити Transfer з e-mail.
 
-==
 
-
-doskey /HISTORY > history.txt
-
-
->>>>
-Debug Greasemonkey script:
+** Debug Greasemonkey script:
 host: Tools -> Web Developer -> Developer Toolbar (Shift+F2) -> listen portNumber (6000 - default)
 debugger: Tools -> Web Developer -> WebIDE
 
->>>>
-Firefox
+
+** Firefox
 
 Localization: general.useragent.locale -> en-US (american), uk-UA (ukrainian)
 
@@ -210,9 +205,7 @@ Ctrl+Shift+I – Browser Console
 security.insecure_field_warning.contextual.enabled;true (This connection is not secure. Logins entered here could be compromised.)
 
 
->>>>
-
-// coursera.org
+** // coursera.org
 
 Coursera Honor Code
 
@@ -227,7 +220,7 @@ Avoid sharing answers with others
 Report suspected violations
 
 
-nodejs
+** nodejs
 C:\Users\Roman\AppData\Roaming\npm-cache
 Інший варіант – запустити cmd з правами адміністратора з каталогу "C:\Program Files\nodejs",
 після цього модулі будуть копіюватись в "C:\Program Files\nodejs\node_modules"
@@ -239,14 +232,7 @@ or using command:
 npm config set proxy http://...
 
 
-encodeURIComponent("YourP@ssword")
-decodeURIComponent("%styleString")
-
-
-https://github.com/apress/pro-angularjs
-
-
-Regular expression for logs:
+** Regular expression for logs:
 (?:^.*?)(blah-blah-blah)(.|\n)*?(?=.*?\1)
 (?:^.*?)(blah-blah-blah)(.|\r\n)*?(?=.*?\1)
 (?:^.*?)(blah-blah-blah)(.|\r?\n)*?(?=.*?\1) – universal
@@ -255,7 +241,7 @@ Regular expression for logs:
 .*blah-blah-blah.*(.|\r?\n)*?yadda-yadda-yadda.* – universal
 
 
-SQL
+** SQL
 select * from ALL_TAB_PRIVS
     order by GRANTEE, TABLE_SCHEMA, TABLE_NAME
 
@@ -344,18 +330,18 @@ Date in query:
 TO_DATE('2016-09-26', 'YYYY-MM-DD')
 
 
-.NET
-
+** .NET
 set path="C:\Windows\Microsoft.NET\Framework\v4.0.30319\";%path%
 
 msbuild Solution.sln /t:Build /p:Configuration=Release
 
 
-Visual Studio Code
+** Visual Studio Code
 https://code.visualstudio.com/docs?start=true
 files.hotExit
 
 
+** npm
 # See Installations.txt for details.
 npm install semantic-ui --save
 cd semantic/
@@ -369,7 +355,7 @@ npm install -g gulp
 npm link gulp
 
 
-notepad++
+** notepad++
 F6 (NppExec)
 NPP_CONSOLE 0
 sci_sendmsg SCI_SETWORDCHARS 0 "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzАБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯЫЭЁЪабвгґдеєжзиіїйклмнопрстуфхцчшщьюяыэёъ0123456789_-$#:/.="
@@ -380,8 +366,8 @@ shortcuts (remove %APPDATA%\Notepad++\shortcuts.xml to restore defaults)
 
 View -> Show Symbol -> Show Indent Guide
 
-Linux/UNIX:
 
+** Linux/UNIX:
 archiver: tar -zcvf filename.tar.gz file1 ...
 
 version: uname -a   –   unix name
@@ -412,7 +398,7 @@ Ctrl-x p Copies the current directory to the command line
 PuTTY – Settings -> Window -> Translation -> Remote character set: UTF-8 або KOI8-U (Ctrl + O or reload mc)
 
 
-Microsoft Word
+** Microsoft Word
 ^l – manual line break; ^s – nonbreaking space (see 'msword01.png')
 Normal.dot – Run command "application.NormalTemplate.OpenAsDocument" in Immediate window of VBA editor
 Cut, Copy and Paste – see 'msword02.png'
@@ -423,16 +409,18 @@ Replacing (in Macros)
     .Wrap = wdFindStop
 
 
-Far
+** Far
 HKEY_CURRENT_USER\Software\Far2\SavedHistory -> Lines
 
 
-Windows Shell
+** Windows Shell
 New item in "Create" menu (example)
 HKEY_CLASSES_ROOT\.contact\ShellNew
 command - "%programFiles%\Windows Mail\Wab.exe" /CreateContact "%1"
 iconpath - %ProgramFiles%\Windows Mail\wab.exe,1
 MenuText - @%CommonProgramFiles%\system\wab32res.dll,-10203
+
+Windows Shell Snippets – see 'snippets.txt'
 
 sc stop svhost
 
@@ -441,6 +429,11 @@ PROMPT=$P$G
 chcp 1251
 
 mstsc /w:1900 /h:1000
+
+charmap
+
+doskey /HISTORY > history.txt
+
 
 # PC Serial
 #  https://support.microsoft.com/en-us/kb/558124
@@ -454,10 +447,8 @@ gwmi WmiMonitorID -Namespace root\wmi | ForEach-Object {($_.UserFriendlyName -no
 # https://technet.microsoft.com/en-us/library/ee156587.aspx
 wscript //B //h:cscript
 
-Windows Shell Snippets – see 'snippets.txt'
 
-
-Visual Studio
+** Visual Studio
 Customize Text Editor Context Menu:
 Tools -> Customize... -> Commands -> Context Menu -> Editor Context Menu | Code Window
     and go down and add items or submenu (submenu will be displayed in "Context Menu" list).
@@ -465,6 +456,29 @@ Tools -> Customize... -> Commands -> Context Menu -> Editor Context Menu | Code 
 Tools -> Customize... -> Commands -> Toolbar -> Standard
     and add "Debug -> Start Without Debugging" after "Debug Target"
 
+exe.config location:
+    C:\Users\username\AppData\Local\WindowsManipulations\...
 
-MS Excel
+
+** MS Excel
 milliseconds time format: [h]:mm:ss.000 (or [h]:mm:ss,000) in Ukrainian locale
+
+
+** Links:
+http://grimalschi.github.io/calque/index.html
+https://github.com/apress/pro-angularjs
+
+
+** Windows Task Scheduler
+schtasks
+schtasks /Delete /TN "Run Screensaver"
+
+
+** C#
+http://www.pinvoke.net/default.aspx/user32.setwindowshookex
+    + https://www.howtogeek.com/146439/how-to-make-windows-start-the-screensaver-immediately-when-locked/
+        (Link to 'monitores')
+
+
+** nuget
+install-package package_name
