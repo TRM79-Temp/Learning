@@ -1,5 +1,5 @@
 
-** Alt-Codes:
+** Alt-Codes
   • -    7
   ◘ -    8
   ○ -    9
@@ -97,10 +97,6 @@ min-width:  992px - .col-md-x
 min-width:  768px - .col-sm-x
 
 
-** Screen resolutions:
-1920x1080, 1280x1024
-
-
 ** git
 https://gitlab.com/eleks-camp-lviv-2/yellow
 https://gitlab.com/eleks-camp-lviv-2/yellow/branches
@@ -139,7 +135,7 @@ git remote set-url|add origin https://github.com/USERNAME/OTHERREPOSITORY.git
 
 git reset HEAD~ + git reset --hard + git push -f origin master
 
-[[ ** Work .gitconfig
+[[ // Work .gitconfig
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -153,7 +149,7 @@ git reset HEAD~ + git reset --hard + git push -f origin master
 	sslVerify = false
 ]]
 
-[[ ** Work .npmrc
+[[ // Work .npmrc
 strict-ssl=false
 proxy=http://domain%5Clogin:password@proxy:port/
 https-proxy=-//-
@@ -186,13 +182,13 @@ repo -> Settings -> Transfer
 після чого новий власник має підтвердити Transfer з e-mail.
 
 
-** Debug Greasemonkey script:
+** Greasemonkey
+Debug script:
 host: Tools -> Web Developer -> Developer Toolbar (Shift+F2) -> listen portNumber (6000 - default)
 debugger: Tools -> Web Developer -> WebIDE
 
 
 ** Firefox
-
 Localization: general.useragent.locale -> en-US (american), uk-UA (ukrainian)
 
 security.fileuri.strict_origin_policy - default true
@@ -205,16 +201,11 @@ Ctrl+Shift+I – Browser Console
 security.insecure_field_warning.contextual.enabled;true (This connection is not secure. Logins entered here could be compromised.)
 
 
-** // coursera.org
-
+** coursera.org
 Coursera Honor Code
-
 We’re dedicated to protecting the integrity of your work on Coursera.
-
 As part of this effort, we’ve created an honor code that we ask everyone to follow. Learn more
-
 All learners should:
-
 Submit their own original work
 Avoid sharing answers with others
 Report suspected violations
@@ -232,7 +223,8 @@ or using command:
 npm config set proxy http://...
 
 
-** Regular expression for logs:
+** Regular Expression
+Logs processing:
 (?:^.*?)(blah-blah-blah)(.|\n)*?(?=.*?\1)
 (?:^.*?)(blah-blah-blah)(.|\r\n)*?(?=.*?\1)
 (?:^.*?)(blah-blah-blah)(.|\r?\n)*?(?=.*?\1) – universal
@@ -330,44 +322,7 @@ Date in query:
 TO_DATE('2016-09-26', 'YYYY-MM-DD')
 
 
-** .NET
-set path="C:\Windows\Microsoft.NET\Framework\v4.0.30319\";%path%
-
-msbuild Solution.sln /t:Build /p:Configuration=Release
-
-
-** Visual Studio Code
-https://code.visualstudio.com/docs?start=true
-files.hotExit
-
-
-** npm
-# See Installations.txt for details.
-npm install semantic-ui --save
-cd semantic/
-npm install # Stackoverflow
-gulp build
-
-# Must be installed earlier.
-npm install -g gulp
-
-# When only one package is needed.
-npm link gulp
-
-
-** notepad++
-F6 (NppExec)
-NPP_CONSOLE 0
-sci_sendmsg SCI_SETWORDCHARS 0 "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzАБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯЫЭЁЪабвгґдеєжзиіїйклмнопрстуфхцчшщьюяыэёъ0123456789_-$#:/.="
-
-shortcuts (remove %APPDATA%\Notepad++\shortcuts.xml to restore defaults)
-  Single Line Comment / Uncomment - Ctrl+K / Ctrl+Shift+K
-  Block Comment / Uncomment - Ctrl+Q / Ctrl+Shift+Q              // Ctrl+Q default action - Toggle Single Line Comment
-
-View -> Show Symbol -> Show Indent Guide
-
-
-** Linux/UNIX:
+** Linux/UNIX
 archiver: tar -zcvf filename.tar.gz file1 ...
 
 version: uname -a   –   unix name
@@ -409,6 +364,22 @@ Replacing (in Macros)
     .Wrap = wdFindStop
 
 
+** MS Excel
+milliseconds time format: [h]:mm:ss.000 (or [h]:mm:ss,000) in Ukrainian locale
+
+
+** notepad++
+F6 (NppExec)
+NPP_CONSOLE 0
+sci_sendmsg SCI_SETWORDCHARS 0 "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzАБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯЫЭЁЪабвгґдеєжзиіїйклмнопрстуфхцчшщьюяыэёъ0123456789_-$#:/.="
+
+shortcuts (remove %APPDATA%\Notepad++\shortcuts.xml to restore defaults)
+  Single Line Comment / Uncomment - Ctrl+K / Ctrl+Shift+K
+  Block Comment / Uncomment - Ctrl+Q / Ctrl+Shift+Q              // Ctrl+Q default action - Toggle Single Line Comment
+
+View -> Show Symbol -> Show Indent Guide
+
+
 ** Far
 HKEY_CURRENT_USER\Software\Far2\SavedHistory -> Lines
 
@@ -435,7 +406,12 @@ charmap
 doskey /HISTORY > history.txt
 
 
-# PC Serial
+** Windows Task Scheduler
+schtasks
+schtasks /Delete /TN "Run Screensaver"
+
+
+** PC Serial
 #  https://support.microsoft.com/en-us/kb/558124
 wmic bios get serialnumber
 
@@ -460,18 +436,15 @@ exe.config location:
     C:\Users\username\AppData\Local\WindowsManipulations\...
 
 
-** MS Excel
-milliseconds time format: [h]:mm:ss.000 (or [h]:mm:ss,000) in Ukrainian locale
+** Visual Studio Code
+https://code.visualstudio.com/docs?start=true
+files.hotExit
 
 
-** Links:
-http://grimalschi.github.io/calque/index.html
-https://github.com/apress/pro-angularjs
+** .NET
+set path="C:\Windows\Microsoft.NET\Framework\v4.0.30319\";%path%
 
-
-** Windows Task Scheduler
-schtasks
-schtasks /Delete /TN "Run Screensaver"
+msbuild Solution.sln /t:Build /p:Configuration=Release
 
 
 ** C#
@@ -482,3 +455,22 @@ http://www.pinvoke.net/default.aspx/user32.setwindowshookex
 
 ** nuget
 install-package package_name
+
+
+** npm
+# See Installations.txt for details.
+npm install semantic-ui --save
+cd semantic/
+npm install # Stackoverflow
+gulp build
+
+# Must be installed earlier.
+npm install -g gulp
+
+# When only one package is needed.
+npm link gulp
+
+
+** Links
+http://grimalschi.github.io/calque/index.html
+https://github.com/apress/pro-angularjs
