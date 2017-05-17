@@ -211,18 +211,6 @@ Avoid sharing answers with others
 Report suspected violations
 
 
-** nodejs
-C:\Users\Roman\AppData\Roaming\npm-cache
-Інший варіант – запустити cmd з правами адміністратора з каталогу "C:\Program Files\nodejs",
-після цього модулі будуть копіюватись в "C:\Program Files\nodejs\node_modules"
-
-npm config behind proxy: (.npmrc file)
-proxy=http://domain%5Cuser:password@proxy:port/ (use encoded password)
-[https-proxy=-//-]
-or using command:
-npm config set proxy http://...
-
-
 ** Regular Expression
 Logs processing:
 (?:^.*?)(blah-blah-blah)(.|\n)*?(?=.*?\1)
@@ -455,6 +443,18 @@ http://www.pinvoke.net/default.aspx/user32.setwindowshookex
 
 ** nuget
 install-package package_name
+
+
+** nodejs
+C:\Users\Roman\AppData\Roaming\npm-cache
+Інший варіант – запустити cmd з правами адміністратора з каталогу "C:\Program Files\nodejs",
+після цього модулі будуть копіюватись в "C:\Program Files\nodejs\node_modules"
+
+npm config behind proxy: (.npmrc file)
+proxy=http://domain%5Cuser:password@proxy:port/ (use encoded password)
+[https-proxy=-//-]
+or using command:
+npm config set proxy http://...
 
 
 ** npm
