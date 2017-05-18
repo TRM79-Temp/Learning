@@ -309,6 +309,8 @@ TO_CHAR(column, 'DD.MM.YYYY HH24:MI:SS')
 Date in query:
 TO_DATE('2016-09-26', 'YYYY-MM-DD')
 
+C:\oracle\ora10g\NETWORK\ADMIN\tnsnames.ora
+C:\app\username\product\11.2.0\client_1\network\admin\tnsnames.ora
 
 ** Linux/UNIX
 archiver: tar -zcvf filename.tar.gz file1 ...
