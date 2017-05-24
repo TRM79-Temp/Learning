@@ -346,6 +346,7 @@ PuTTY – Settings -> Window -> Translation -> Remote character set: UTF-8 аб�
 ** Microsoft Word
 ^l – manual line break; ^s – nonbreaking space (see 'msword01.png')
 Normal.dot – Run command "application.NormalTemplate.OpenAsDocument" in Immediate window of VBA editor
+(C:\Users\<username>\AppData\Roaming\Microsoft\Шаблоны)
 Cut, Copy and Paste – see 'msword02.png'
 Default shortcut: Ctrl+F -> NavPaneSearch (Home), Reassigned to: EditFind
 Replacing (in Macros)
@@ -356,6 +357,7 @@ Replacing (in Macros)
 
 ** MS Excel
 milliseconds time format: [h]:mm:ss.000 (or [h]:mm:ss,000) in Ukrainian locale
+PERSONAL.XLSB: C:\Users\<username>\AppData\Roaming\Microsoft\Excel\XLSTART
 
 
 ** notepad++
@@ -476,3 +478,5 @@ npm link gulp
 ** Links
 http://grimalschi.github.io/calque/index.html
 https://github.com/apress/pro-angularjs
+https://iconscout.com/icon/list-text-menu-numbers-string-burger
+https://appuals.com/ms-paint-turn-white-background-transparent
