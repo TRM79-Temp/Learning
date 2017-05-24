@@ -220,6 +220,17 @@ Logs processing:
 .*blah-blah-blah.*(.|\r\n)*?yadda-yadda-yadda.*
 .*blah-blah-blah.*(.|\r?\n)*?yadda-yadda-yadda.* – universal
 
+Google drive music list:
+F12
+<div class="l-u-Ab-T" aria-label="(.*?) Audio">
+    match[1]+'\n'
+    (Except Songs.doc)
+On results – create playlist
+(.*?)(\.mp3)
+    '#EXTINF:0,' + match[1] + '\n' + match[1] + match[2] + '\n'
+    or
+    '#EXTINF:,' + match[1] + '\n' + match[1] + match[2] + '\n'
+
 
 ** SQL
 select * from ALL_TAB_PRIVS
