@@ -231,6 +231,10 @@ On results – create playlist
     or
     '#EXTINF:,' + match[1] + '\n' + match[1] + match[2] + '\n'
 
+HTML:
+<body(?:.|\r\n)*?</body>
+href="(.*?)"
+
 
 ** SQL
 select * from ALL_TAB_PRIVS
@@ -323,6 +327,13 @@ TO_DATE('2016-09-26', 'YYYY-MM-DD')
 C:\oracle\ora10g\NETWORK\ADMIN\tnsnames.ora
 C:\app\username\product\11.2.0\client_1\network\admin\tnsnames.ora
 
+INSERT INTO table-name (column-names)
+SELECT column-names 
+ FROM table-name
+WHERE condition
+
+delete from table-name
+
 ** Linux/UNIX
 archiver: tar -zcvf filename.tar.gz file1 ...
 
@@ -381,6 +392,8 @@ shortcuts (remove %APPDATA%\Notepad++\shortcuts.xml to restore defaults)
   Block Comment / Uncomment - Ctrl+Q / Ctrl+Shift+Q              // Ctrl+Q default action - Toggle Single Line Comment
 
 View -> Show Symbol -> Show Indent Guide
+
+Go to closing tag: Ctrl+t
 
 
 ** Far
@@ -486,8 +499,14 @@ npm install -g gulp
 npm link gulp
 
 
+** Jira
+<div id="attachmentmodule" class="module toggle-wrap">
+<div id="descriptionmodule" class="module toggle-wrap">
+
+
 ** Links
 http://grimalschi.github.io/calque/index.html
 https://github.com/apress/pro-angularjs
 https://iconscout.com/icon/list-text-menu-numbers-string-burger
 https://appuals.com/ms-paint-turn-white-background-transparent
+https://stackoverflow.com/users/104891/crazycoder
