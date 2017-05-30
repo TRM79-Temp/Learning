@@ -334,6 +334,11 @@ WHERE condition
 
 delete from table-name
 
+no ocijdbc12 in java.library.path (Oracle SQL Developer)
+    Tools | Preferences | Database | Advanced | tnsnames directory
+    (https://stackoverflow.com/questions/27445610/no-ocijdbc12-in-java-library-path)
+
+
 ** Linux/UNIX
 archiver: tar -zcvf filename.tar.gz file1 ...
 
@@ -510,3 +515,7 @@ https://github.com/apress/pro-angularjs
 https://iconscout.com/icon/list-text-menu-numbers-string-burger
 https://appuals.com/ms-paint-turn-white-background-transparent
 https://stackoverflow.com/users/104891/crazycoder
+http://www.rulit.me/books/oko-proroka-abo-ganus-bistrij-ta-jogo-prigodi-download-free-460338.html
+    https://coollib.com/b/366263/read
+Анатолий Мошковский. "Заблудившийся звездолет". "Семь дней чудес".
+news.ugcc.ua/calendar/
