@@ -1,3 +1,5 @@
+** Temp
+https://habrahabr.ru/post/329436/
 
 ** Alt-Codes
   • -    7
@@ -180,6 +182,8 @@ To github.com:TRM79Temp/Learning.git
 Інший спосіб:
 repo -> Settings -> Transfer
 після чого новий власник має підтвердити Transfer з e-mail.
+
+git pull --allow-unrelated-histories
 
 
 ** Greasemonkey
