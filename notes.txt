@@ -235,6 +235,10 @@ On results – create playlist
     or
     '#EXTINF:,' + match[1] + '\n' + match[1] + match[2] + '\n'
 
+HTML:
+<body(?:.|\r\n)*?</body>
+href="(.*?)"
+
 
 ** SQL
 select * from ALL_TAB_PRIVS
@@ -327,6 +331,18 @@ TO_DATE('2016-09-26', 'YYYY-MM-DD')
 C:\oracle\ora10g\NETWORK\ADMIN\tnsnames.ora
 C:\app\username\product\11.2.0\client_1\network\admin\tnsnames.ora
 
+INSERT INTO table-name (column-names)
+SELECT column-names 
+ FROM table-name
+WHERE condition
+
+delete from table-name
+
+no ocijdbc12 in java.library.path (Oracle SQL Developer)
+    Tools | Preferences | Database | Advanced | tnsnames directory
+    (https://stackoverflow.com/questions/27445610/no-ocijdbc12-in-java-library-path)
+
+
 ** Linux/UNIX
 archiver: tar -zcvf filename.tar.gz file1 ...
 
@@ -361,6 +377,7 @@ PuTTY – Settings -> Window -> Translation -> Remote character set: UTF-8 аб�
 ** Microsoft Word
 ^l – manual line break; ^s – nonbreaking space (see 'msword01.png')
 Normal.dot – Run command "application.NormalTemplate.OpenAsDocument" in Immediate window of VBA editor
+(C:\Users\<username>\AppData\Roaming\Microsoft\Шаблоны)
 Cut, Copy and Paste – see 'msword02.png'
 Default shortcut: Ctrl+F -> NavPaneSearch (Home), Reassigned to: EditFind
 Replacing (in Macros)
@@ -371,6 +388,7 @@ Replacing (in Macros)
 
 ** MS Excel
 milliseconds time format: [h]:mm:ss.000 (or [h]:mm:ss,000) in Ukrainian locale
+PERSONAL.XLSB: C:\Users\<username>\AppData\Roaming\Microsoft\Excel\XLSTART
 
 
 ** notepad++
@@ -383,6 +401,8 @@ shortcuts (remove %APPDATA%\Notepad++\shortcuts.xml to restore defaults)
   Block Comment / Uncomment - Ctrl+Q / Ctrl+Shift+Q              // Ctrl+Q default action - Toggle Single Line Comment
 
 View -> Show Symbol -> Show Indent Guide
+
+Go to closing tag: Ctrl+t
 
 
 ** Far
@@ -488,6 +508,18 @@ npm install -g gulp
 npm link gulp
 
 
+** Jira
+<div id="attachmentmodule" class="module toggle-wrap">
+<div id="descriptionmodule" class="module toggle-wrap">
+
+
 ** Links
 http://grimalschi.github.io/calque/index.html
 https://github.com/apress/pro-angularjs
+https://iconscout.com/icon/list-text-menu-numbers-string-burger
+https://appuals.com/ms-paint-turn-white-background-transparent
+https://stackoverflow.com/users/104891/crazycoder
+http://www.rulit.me/books/oko-proroka-abo-ganus-bistrij-ta-jogo-prigodi-download-free-460338.html
+    https://coollib.com/b/366263/read
+Анатолий Мошковский. "Заблудившийся звездолет". "Семь дней чудес".
+news.ugcc.ua/calendar/
