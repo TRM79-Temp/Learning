@@ -405,6 +405,11 @@ View -> Show Symbol -> Show Indent Guide
 Go to closing tag: Ctrl+t
 
 
+** Sublime Text
+"show_encoding": true
+    (Need restart; Shows encoding in status bar.)
+
+
 ** Far
 HKEY_CURRENT_USER\Software\Far2\SavedHistory -> Lines
 
@@ -424,7 +429,8 @@ PROMPT=$P$G
 
 chcp 1251
 
-mstsc /w:1900 /h:1000
+mstsc /w:1900 /h:1000   : 2; 41; 1916; 1038 (1920x1080; 8px left/bottom/right window border, 30px window caption, 40px Windows taskbar)
+mstsc /w:1264 /h:986    : 1920; 56; 1280; 1024 (1280x1024)
 
 charmap
 
@@ -464,6 +470,8 @@ exe.config location:
 ** Visual Studio Code
 https://code.visualstudio.com/docs?start=true
 files.hotExit
+
+"editor.renderIndentGuides": false
 
 
 ** .NET
