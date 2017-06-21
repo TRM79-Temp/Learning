@@ -253,19 +253,23 @@ Getting all tables' column names, tables and descriptions:
 -- ? http://stackoverflow.com/questions/10912337/how-to-show-comments-of-a-column-with-desc-operation
 --
 SELECT cc.table_name,
-       tc.column_name,
-       tc.nullable,
-       tc.data_type || CASE WHEN tc.data_type = 'NUMBER' AND tc.data_precision IS NOT NULL
-                                THEN '(' || tc.data_precision || ',' || tc.data_scale || ')'
-                            WHEN tc.data_type LIKE '%CHAR%'
-                                THEN '(' || tc.data_length || ')'
-                            ELSE NULL
-                       END TYPE,
-       cc.comments
-FROM   user_col_comments cc
-JOIN   user_tab_columns  tc ON  cc.column_name = tc.column_name
-                            AND cc.table_name  = tc.table_name
-WHERE  cc.table_name IN (SELECT table_name FROM all_tables)
+        tc.column_name,
+        tc.nullable,
+        tc.data_type 
+            || CASE
+                    WHEN tc.data_type = 'NUMBER' AND tc.data_precision IS NOT NULL
+                        THEN '(' || tc.data_precision || ',' || tc.data_scale || ')'
+                    WHEN tc.data_type LIKE '%CHAR%'
+                        THEN '(' || tc.data_length || ')'
+                    ELSE NULL
+            END TYPE,
+        cc.comments
+    FROM   user_col_comments cc
+    JOIN   user_tab_columns  tc
+        ON  cc.column_name = tc.column_name
+            AND cc.table_name  = tc.table_name
+    WHERE  cc.table_name
+        IN (SELECT table_name FROM all_tables)
 
 -- Some value and its count in table:
 -- http://stackoverflow.com/questions/7053902/sql-how-to-get-the-count-of-each-distinct-value-in-a-column
@@ -473,6 +477,11 @@ files.hotExit
 
 "editor.renderIndentGuides": false
 
+"workbench.colorTheme": "Default Dark+",
+"workbench.colorCustomizations": {
+    "editor.selectionHighlightBackground": "#008800"
+}
+
 
 ** .NET
 set path="C:\Windows\Microsoft.NET\Framework\v4.0.30319\";%path%
@@ -531,3 +540,8 @@ http://www.rulit.me/books/oko-proroka-abo-ganus-bistrij-ta-jogo-prigodi-download
     https://coollib.com/b/366263/read
 Анатолий Мошковский. "Заблудившийся звездолет". "Семь дней чудес".
 news.ugcc.ua/calendar/
+
+
+** File signatures
+XLSX: 50 4B 03 04 14 00
+ RAR: 52 61 72 21 1A 07 00
