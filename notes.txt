@@ -255,7 +255,7 @@ Getting all tables' column names, tables and descriptions:
 SELECT cc.table_name,
         tc.column_name,
         tc.nullable,
-        tc.data_type 
+        tc.data_type
             || CASE
                     WHEN tc.data_type = 'NUMBER' AND tc.data_precision IS NOT NULL
                         THEN '(' || tc.data_precision || ',' || tc.data_scale || ')'
@@ -336,7 +336,7 @@ C:\oracle\ora10g\NETWORK\ADMIN\tnsnames.ora
 C:\app\username\product\11.2.0\client_1\network\admin\tnsnames.ora
 
 INSERT INTO table-name (column-names)
-SELECT column-names 
+SELECT column-names
  FROM table-name
 WHERE condition
 
@@ -439,6 +439,10 @@ mstsc /w:1264 /h:986    : 1920; 56; 1280; 1024 (1280x1024)
 charmap
 
 doskey /HISTORY > history.txt
+
+@REM http://www.aboutfortunate.com/Technology-Blog.aspx?entid=12
+C:\Windows\System32\ssText3d.scr -s
+C:\Windows\System32\rundll32.exe user32.dll, LockWorkStation
 
 
 ** Windows Task Scheduler
@@ -545,3 +549,117 @@ news.ugcc.ua/calendar/
 ** File signatures
 XLSX: 50 4B 03 04 14 00
  RAR: 52 61 72 21 1A 07 00
+
+
+** Bookmarks
+
+http://stackoverflow.com/questions/11614436/any-online-website-to-execute-pl-sql-programs
+http://knigi.tor2.net/index.php?id=4645003
+http://docs.oracle.com/database/121/CNCPT/intro.htm
+http://www.cleancss.com/
+http://www.dirtymarkup.com/
+http://stackoverflow.com/questions/5725430/http-test-server-that-accepts-get-post-calls
+http://httpbin.org/
+https://shadeyouvpn.com/anonymizer-free-web-proxy
+http://nl.smarthide.com/
+http://www.eyecon.ro/colorpicker/
+https://msdn.microsoft.com/en-us/library
+https://msdn.microsoft.com/en-us/library/w0x726c2(v=vs.110).aspx
+https://msdn.microsoft.com/en-us/library/618ayhy6.aspx
+https://msdn.microsoft.com/en-us/library/hs600312(v=vs.110).aspx
+https://msdn.microsoft.com/en-us/library/az24scfc(v=vs.110).aspx
+https://dotnetfiddle.net/
+https://docs.webplatform.org/wiki/Main_Page
+https://css-tricks.com/snippets/javascript/javascript-keycodes/
+http://voidcanvas.com/
+https://msdn.microsoft.com/en-us/library/aa902517.aspx
+https://msdn.microsoft.com/en-us/library/ms535873(v=vs.85).aspx
+https://sivers.org/learn-js
+https://www.safaribooksonline.com/library/view/javascript-the-definitive/0596101996/
+https://msdn.microsoft.com/library/windows/apps/br212882.aspx
+http://www.orafaq.com/faq/how_does_one_add_a_day_hour_minute_second_to_a_date_value
+https://convertio.co/ru/html-pdf/
+http://www.url-encode-decode.com/
+https://en.wikipedia.org/wiki/Percent-encoding
+https://en.wikipedia.org/wiki/At_sign
+https://ru.wikipedia.org/wiki/Alt-%D0%BA%D0%BE%D0%B4
+https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references
+http://bohemianalps.com/tools/characters/
+http://www.degraeve.com/reference/urlencoding.php
+http://www.umsiko.co.za/links/specchar.html
+http://unicode.org/charts/
+http://www.yellowpipe.com/yis/tools/ASCII-HTML-Characters/
+http://www.htmlhelp.com/reference/html40/entities/special.html
+https://support.microsoft.com/en-us/kb/197855
+http://superuser.com/questions/237515/notepad-regexp-to-find-all-lines-which-contain-a-specific-string
+https://books.google.com.ua/books?id=lNtVjrmbzckC
+https://en.wikipedia.org/wiki/List_of_Unix_commands
+http://gregmaxey.mvps.org/word_tips.html
+https://msdn.microsoft.com/en-us/library/windows/desktop/cc144171(v=vs.85).aspx
+https://dev.windows.com/en-us
+http://stackoverflow.com/questions/2998836/always-cant-separate-these-words-ascending-and-descending-are-there-good-exam
+http://www.businessdictionary.com/definition/ascending-order.html
+https://ajnasz.hu/blog/20080101/midnight-commander-coloring
+http://it-solutions.su/category/bash/
+http://emilights.com/entertainment/jokes/it
+http://www.makeuseof.com/tag/55-geeky-line-jokes/
+https://www.quora.com/What-are-the-most-popular-computer-programming-jokes
+https://msdn.microsoft.com/en-us/library/windows/desktop/aa383500(v=vs.85).aspx
+http://windows.microsoft.com/en-us/windows-vista/what-shortcut-keys-can-i-use-in-remote-desktop-connection
+https://www.shortcutworld.com/en/win/Windows-Remote-Desktop.html
+https://iconverticons.com/online/
+https://www.site24x7.com/find-website-location.html
+https://www.iplocation.net/
+http://www.oxforddictionaries.com/definition/a
+http://www.merriam-webster.com/dictionary/hello
+http://www.yourdictionary.com/
+https://translate.google.com/
+http://www.classes.ru/dictionary-english-russian-Mueller.htm?letter=0
+https://www.bing.com/translator/
+http://translate.reference.com/
+https://translate.google.com/
+https://www.blogger.com/home
+http://www.accuweather.com/uk/ua/lviv/324561/weather-forecast/324561
+http://www.meteoprog.ua/ru/weather/Lviv/
+https://ua.sinoptik.ua/%D0%BF%D0%BE%D0%B3%D0%BE%D0%B4%D0%B0-%D0%BB%D1%8C%D0%B2%D1%96%D0%B2
+https://www.gismeteo.ua/ua/weather-lviv-4949/
+http://www.wunderground.com/global/stations/33393.html
+http://www.theweathernetwork.com/forecasts/airport-forecast/ukraine/lvivska-lviv/lviv-international-airport
+https://weather.yahoo.com/ukraine/lviv-oblast/lviv-924943/
+https://weather.com/weather/today/l/UPXX0017:1:UP
+http://freemeteo.co.uk/weather/lviv/current-weather/location/?gid=702550&station=7662&language=english&country=ukraine
+http://zaxid.net/news/showNews.do?z_putinim_treba_buti_oberezhnim_yak_iz_protuhlim_yaytsem&objectId=1373972
+http://zaxid.net/news/showNews.do?v_pidvalah_bti&objectId=1382195
+http://zaxid.net/news/showNews.do?koli_movchannya_ne_zavzhdi_zoloto&objectId=1384339
+http://zaxid.net/news/showNews.do?ruskiy_mir_i_stanislav_lem&objectId=1396004
+http://www.britannica.com/
+http://blog.oxforddictionaries.com/2015
+http://libruk.in.ua/
+http://www.nbuv.gov.ua/webnavigator/fiction
+http://dateandtime.info/citysunrisesunset.php?id=702550
+http://bibliya.in.ua/
+http://time.in.ua/ua/
+http://kotra.in.ua/
+https://habrahabr.ru/post/305340/
+https://www.google.com.ua/webhp?hl=en
+https://www.google.com.ua/?gws_rd=ssl
+https://www.google.com/imghp
+https://support.mozilla.org/en-US/kb/search-suggestions-firefox?as=u&utm_source=inproduct
+http://stackoverflow.com/questions/2909645/open-new-popup-window-without-address-bars-in-firefox-ie
+http://access-templates.com/access+2013/microsoft+access+templates+northwind+sales+database-587.html
+http://www.iconshock.com/icons/reflect-icon.html
+https://codeblog.jonskeet.uk/2009/01/09/horrible-grotty-hack-returning-an-anonymous-type-instance/
+http://www.oracle.com/webfolder/technetwork/tutorials/obe/db/dotnet/GettingStartedNETVersion/GettingStartedNETVersion.htm
+https://habrahabr.ru/hub/csharp/
+http://www.tutorialspoint.com/csharp/csharp_questions_answers.htm
+http://scanlibs.com/
+http://www.joelonsoftware.com/articles/Unicode.html
+https://learn.javascript.ru/xhr-forms
+http://stackoverflow.com/questions/24341199/how-to-debug-greasemonkey-script-on-firefox-30
+http://php.net/manual/en/install.windows.legacy.index.php#install.windows.legacy.iis7
+https://help.github.com/articles/removing-files-from-a-repository-s-history/
+http://stackoverflow.com/questions/11183788/in-a-git-repository-how-to-properly-rename-a-directory
+https://habrahabr.ru/company/zfort/
+https://habrahabr.ru/company/pvs-studio/blog/330762/
+https://translate.google.com/
+http://www.merriam-webster.com/dictionary/hello
