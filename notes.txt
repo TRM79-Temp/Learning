@@ -281,8 +281,9 @@ FROM
 GROUP BY
   category
 
-Another version (for 2 tables (did not verify)):
+Another (better) version:
 -- http://stackoverflow.com/questions/12394201/combining-sql-select-and-count
+-- Для встановлення умови по кількості (b_count) огорнути у ще один select і вже в ньому брати where
 SELECT
     a.a_name,
     (
