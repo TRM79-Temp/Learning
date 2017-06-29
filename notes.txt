@@ -481,11 +481,13 @@ https://code.visualstudio.com/docs?start=true
 files.hotExit
 
 "editor.renderIndentGuides": false
-
 "workbench.colorTheme": "Default Dark+",
 "workbench.colorCustomizations": {
     "editor.selectionHighlightBackground": "#008800"
 }
+"files.trimTrailingWhitespace": true,
+"editor.wordWrap": "on",
+"editor.minimap.enabled": false
 
 
 ** .NET
@@ -545,6 +547,24 @@ http://www.rulit.me/books/oko-proroka-abo-ganus-bistrij-ta-jogo-prigodi-download
     https://coollib.com/b/366263/read
 Анатолий Мошковский. "Заблудившийся звездолет". "Семь дней чудес".
 news.ugcc.ua/calendar/
+
+https://github.com/voytyshyn
+https://github.com/aromakh
+https://github.com/DanielYurystovskyi
+https://github.com/doskochroma
+https://github.com/IhorMykhaliak
+https://github.com/MarkRizun
+https://github.com/MerchanskyAlexandr
+https://github.com/OstapPankevych
+https://github.com/RomanivPetro
+https://github.com/SoloninkaOleg
+https://github.com/Sosnovskyi
+https://github.com/TkachukOrest
+https://github.com/TsapAndriy
+https://github.com/vladukua
+https://github.com/VladyslavaK
+https://github.com/xmassonic
+https://github.com/ZadorozhnaOlga
 
 
 ** File signatures
