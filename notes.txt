@@ -187,6 +187,7 @@ git pull --allow-unrelated-histories
 
 
 ** Greasemonkey
+C:\Users\UserName\AppData\Roaming\Mozilla\Firefox\Profiles\ProfileName\gm_scripts\OALD\OALD.user.js
 Debug script:
 host: Tools -> Web Developer -> Developer Toolbar (Shift+F2) -> listen portNumber (6000 - default)
 debugger: Tools -> Web Developer -> WebIDE
@@ -500,6 +501,8 @@ msbuild Solution.sln /t:Build /p:Configuration=Release
 http://www.pinvoke.net/default.aspx/user32.setwindowshookex
     + https://www.howtogeek.com/146439/how-to-make-windows-start-the-screensaver-immediately-when-locked/
         (Link to 'monitores')
+
+https://github.com/micros-uz/csharp/tree/master/Level%201/Books
 
 
 ** nuget
