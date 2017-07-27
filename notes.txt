@@ -711,3 +711,48 @@ https://habrahabr.ru/company/zfort/
 https://habrahabr.ru/company/pvs-studio/blog/330762/
 https://translate.google.com/
 http://www.merriam-webster.com/dictionary/hello
+
+
+** Software Development
+static class Log
+{
+    public static int error_level = 3;
+
+    //  Error levels:
+    //   4 Error
+    //   3 Info
+    //   2 Debug
+    //   1 Trace
+
+    public static void Error(string message)
+    {
+        if (error_level <= 4)
+        {
+            Console.WriteLine("Error: {0} (Error level: {1})", message, error_level);
+        }
+    }
+
+    public static void Info(string message)
+    {
+        if (error_level <= 3)
+        {
+            Console.WriteLine("Info: {0} (Error level: {1})", message, error_level);
+        }
+    }
+
+    public static void Debug(string message)
+    {
+        if (error_level <= 2)
+        {
+            Console.WriteLine("Debug: {0} (Error level: {1})", message, error_level);
+        }
+    }
+
+    public static void Trace(string message)
+    {
+        if (error_level == 1)
+        {
+            Console.WriteLine("Trace: {0} (Error level: {1})", message, error_level);
+        }
+    }
+}
