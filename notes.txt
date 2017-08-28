@@ -352,6 +352,8 @@ no ocijdbc12 in java.library.path (Oracle SQL Developer)
     Tools | Preferences | Database | Advanced | tnsnames directory
     (https://stackoverflow.com/questions/27445610/no-ocijdbc12-in-java-library-path)
 
+select * from OWNER.TABLE_NAME@LINK_TO_ANOTHER_DB
+
 
 ** Linux/UNIX
 archiver: tar -zcvf filename.tar.gz file1 ...
@@ -488,14 +490,24 @@ exe.config location:
 https://code.visualstudio.com/docs?start=true
 files.hotExit
 
-"editor.renderIndentGuides": false
-"workbench.colorTheme": "Default Dark+",
-"workbench.colorCustomizations": {
-    "editor.selectionHighlightBackground": "#008800"
+{
+    "editor.renderIndentGuides": false,
+    "workbench.colorTheme": "Default Dark+",
+    "workbench.colorCustomizations": {
+        "editor.selectionHighlightBackground": "#006622" // "#008800"
+    },
+    "files.trimTrailingWhitespace": true,
+    "editor.wordWrap": "on",
+    "editor.minimap.enabled": false,
+    "editor.matchBrackets": false,
+    "subtleBrackets.styles": {
+        "global": {
+            "borderWidth": "1px",
+            "borderStyle": "none none none none",
+            "backgroundColor":"rgb(38, 79, 120)"
+        }
+    }
 }
-"files.trimTrailingWhitespace": true,
-"editor.wordWrap": "on",
-"editor.minimap.enabled": false
 
 
 ** .NET
@@ -510,6 +522,15 @@ http://www.pinvoke.net/default.aspx/user32.setwindowshookex
         (Link to 'monitores')
 
 https://github.com/micros-uz/csharp/tree/master/Level%201/Books
+
+KeyDown:
+if (e.KeyCode == Keys.Enter)
+{
+    this.doSomething();
+
+    e.Handled = true;
+    e.SuppressKeyPress = true;
+}
 
 
 ** nuget
