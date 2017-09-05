@@ -50,6 +50,7 @@ https://habrahabr.ru/post/329436/
   и́
   і́
   c2 a0 – some type of space separating number digits
+  Ω
 
 &#x301; - Combining Acute Accent (place it after character)
 
@@ -354,6 +355,9 @@ no ocijdbc12 in java.library.path (Oracle SQL Developer)
 
 select * from OWNER.TABLE_NAME@LINK_TO_ANOTHER_DB
 
+-- Uncommitted data in Oracle SQL
+select DBMS_TRANSACTION.LOCAL_TRANSACTION_ID from DUAL;
+
 
 ** Linux/UNIX
 archiver: tar -zcvf filename.tar.gz file1 ...
@@ -397,6 +401,10 @@ Replacing (in Macros)
     .Wrap = wdFindAsk
     .Wrap = wdFindStop
 
+Embedded files:
+I. Go To -> Object
+II. Ctrl + A, Shift + F9
+
 
 ** MS Excel
 milliseconds time format: [h]:mm:ss.000 (or [h]:mm:ss,000) in Ukrainian locale
@@ -415,6 +423,8 @@ shortcuts (remove %APPDATA%\Notepad++\shortcuts.xml to restore defaults)
 View -> Show Symbol -> Show Indent Guide
 
 Go to closing tag: Ctrl+t
+
+Alt+F6 – runs new instance
 
 
 ** Sublime Text
@@ -530,6 +540,20 @@ if (e.KeyCode == Keys.Enter)
 
     e.Handled = true;
     e.SuppressKeyPress = true;
+}
+
+Hide Tool Window from Alt+Tab:
+// http://www.csharp411.com/hide-form-from-alttab/
+this.ShowInTaskbar = false;
+protected override CreateParams CreateParams
+{
+    get
+    {
+        CreateParams cp = base.CreateParams;
+        // turn on WS_EX_TOOLWINDOW style bit
+        cp.ExStyle |= 0x80;
+        return cp;
+    }
 }
 
 
