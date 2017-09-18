@@ -5,6 +5,7 @@ https://habrahabr.ru/post/329436/
   • -    7
   ◘ -    8
   ○ -    9
+  	-   09 (tab)
   – - 0150
   — - 0151
     - 0160 (MS Word nonbreaking space)
@@ -25,7 +26,6 @@ https://habrahabr.ru/post/329436/
   Ґ - 0165 (UK)
   ґ - 0180 (UK)
   ↔ -   29
-    -   09 (tab)
   ‘ - 0145
   ’ - 0146
   ø - 0248
@@ -55,7 +55,9 @@ https://habrahabr.ru/post/329436/
 &#x301; - Combining Acute Accent (place it after character)
 
 
-** HTML/CSS/JavaScript
+** HTML
+** CSS
+** JavaScript
 for pages with cyrillic text, saved in ANSI-encoding:
 <meta http-equiv="Content-Type" content="text/html;charset=Windows-1251"> (HTML4)
 <meta charset="UTF-8"> (HTML5)
@@ -81,6 +83,9 @@ float
 
 clear
 
+// No wrap textarea:
+white-space: pre
+
 • Centering: Frontend1.pptx, p. 43
 
 margin: top, rigth, bottom, left
@@ -99,6 +104,22 @@ Bootstrap:
 min-width: 1200px - .col-lg-x
 min-width:  992px - .col-md-x
 min-width:  768px - .col-sm-x
+
+// https://stackoverflow.com/questions/1144783/how-to-replace-all-occurrences-of-a-string-in-javascript
+String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.replace(new RegExp(search, 'g'), replacement);
+};
+
+String.prototype.replaceAllComplete = function(search, replacement) {
+    var target = this;
+    do {
+        var tmp = target;
+        target = target.replaceAll(search, replacement);
+    } while (tmp.length != target.length);
+    
+    return target;
+}
 
 
 ** git
@@ -359,7 +380,8 @@ select * from OWNER.TABLE_NAME@LINK_TO_ANOTHER_DB
 select DBMS_TRANSACTION.LOCAL_TRANSACTION_ID from DUAL;
 
 
-** Linux/UNIX
+** Linux
+** UNIX
 archiver: tar -zcvf filename.tar.gz file1 ...
 
 version: uname -a   –   unix name
@@ -378,8 +400,8 @@ connect another server:
 cd sh://user@server:1234/tmp/
 (http://ivotripunovic.blogspot.com/2013/07/connecting-to-ssh-server-using-midnight.html)
 
-put file name to command line: Alt + Enter
-    select it by mouse using Shift; copy to clipboard Ctrl + Insert
+put file name to command line: Alt+Enter
+    select it by mouse using Shift; copy to clipboard Ctrl+Insert
 change directory view: Alt+T
 go to: Alt+S+file/directory name
 
@@ -387,7 +409,7 @@ Note: Shell commands will not work when you are on a non-local file system.
 Alt-Enter or Esc-Enter copies selected filename in command line
 Ctrl-x p Copies the current directory to the command line
 
-PuTTY – Settings -> Window -> Translation -> Remote character set: UTF-8 або KOI8-U (Ctrl + O or reload mc)
+PuTTY – Settings -> Window -> Translation -> Remote character set: UTF-8 або KOI8-U (Ctrl+O or reload mc)
 
 
 ** Microsoft Word
@@ -403,7 +425,11 @@ Replacing (in Macros)
 
 Embedded files:
 I. Go To -> Object
-II. Ctrl + A, Shift + F9
+II. Ctrl+A | Shift+F9
+
+Compare documents:
+I. Review -> Compare
+II. View -> Window -> View Side by Side
 
 
 ** MS Excel
@@ -629,7 +655,7 @@ XLSX: 50 4B 03 04 14 00
  
 ** draw.io
 Add connection points to a shape:
-Ctrl + E
+Ctrl+E
 Default:
 points=[[0.25,0],[0.5,0],[0.75,0], [0,0.25],[0,0.5],[0,0.75], [0.25,1],[0.5,1],[0.75,1], [1,0.25],[1,0.5],[1,0.75]]
 4 points on bottom line:
