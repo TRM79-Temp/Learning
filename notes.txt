@@ -491,6 +491,11 @@ C:\Windows\System32\rundll32.exe user32.dll, LockWorkStation
 HKEY_CURRENT_USER\Control Panel\Desktop\WindowMetrics
     MinWidth (REG_SZ) 54
 
+certutil
+    -hashfile file_name MD2 | MD4 | MD5 | SHA1 | SHA256 | SHA384 | SHA512
+
+echo[ | echo( | echo. – Prints empty line
+
 
 ** Windows Task Scheduler
 schtasks
@@ -581,6 +586,24 @@ protected override CreateParams CreateParams
         return cp;
     }
 }
+
+Get Calling Method Name
+// https://stackoverflow.com/questions/615940/retrieving-the-calling-method-name-from-within-a-method
+// Some Logger:
+public static void error(string err)
+{
+    StackTrace stackTrace = new StackTrace();
+    MethodBase methodBase = stackTrace.GetFrame(1).GetMethod();
+    Console.WriteLine(DateTime.Now.ToString()
+        + " > error " + methodBase.ReflectedType.ToString() + "." + methodBase.Name
+        + " : " + err);
+}
+
+CRC32
+https://stackoverflow.com/questions/8128/how-do-i-calculate-crc32-of-a-string
+https://github.com/damieng/DamienGKit/blob/master/CSharp/DamienG.Library/Security/Cryptography/Crc32.cs
+
+Convert.ToString(v, 2).PadLeft(32, '0')
 
 
 ** nuget
