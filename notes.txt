@@ -298,6 +298,27 @@ SELECT cc.table_name,
     WHERE  cc.table_name
         IN (SELECT table_name FROM all_tables)
 
+Version 2:
+SELECT cc.table_name,
+        tc.column_name,
+        tc.nullable,
+        tc.data_type 
+            || CASE
+                    WHEN tc.data_type = 'NUMBER' AND tc.data_precision IS NOT NULL
+                        THEN '(' || tc.data_precision || ',' || tc.data_scale || ')'
+                    WHEN tc.data_type LIKE '%CHAR%'
+                        THEN '(' || tc.data_length || ')'
+                    ELSE NULL
+            END TYPE,
+        cc.comments
+    FROM   (select * from all_col_comments where owner='xxx') cc
+    JOIN   (select * from all_tab_columns where owner='xxx')  tc
+        ON  cc.column_name = tc.column_name
+            AND cc.table_name  = tc.table_name
+    WHERE  cc.table_name
+        IN (SELECT table_name FROM all_tables where owner='xxx')
+
+
 -- Some value and its count in table:
 -- http://stackoverflow.com/questions/7053902/sql-how-to-get-the-count-of-each-distinct-value-in-a-column
 SELECT
@@ -473,7 +494,13 @@ Windows Shell Snippets – see 'snippets.txt'
 
 sc stop svhost
 
-PROMPT=$P$G
+for %* in (.) do echo %~nx* > tmp.tmp & set /P var1=<tmp.tmp
+title %var1% & del tmp.tmp & set "var1="
+
+doskey pwd=echo ^%cd^%
+prompt -$G$S
+
+PROMPT=$P$G – Default (or PROMPT without parameters)
 
 chcp 1251
 
@@ -495,6 +522,24 @@ certutil
     -hashfile file_name MD2 | MD4 | MD5 | SHA1 | SHA256 | SHA384 | SHA512
 
 echo[ | echo( | echo. – Prints empty line
+
+dir /s /b – Prints full file names in current directory with sub-directories
+
+Show Desktop.scf
+[Shell]
+Command=2
+IconFile=explorer.exe,3
+[Taskbar]
+Command=ToggleDesktop
+
+'Run' window:
+c:\windows\system32\rundll32.exe shell32.dll,#61
+
+Start bat without console window (vbs file):
+Set oShell = CreateObject ("Wscript.Shell") 
+Dim strArgs
+strArgs = "cmd /c run.bat"
+oShell.Run strArgs, 0, false
 
 
 ** Windows Task Scheduler
@@ -547,7 +592,12 @@ files.hotExit
             "borderStyle": "none none none none",
             "backgroundColor":"rgb(38, 79, 120)"
         }
-    }
+    },
+    "editor.selectionHighlight": true /* Default value. */
+        /*
+            Switch 'Match Whole Word' in Find dialog
+            for changing selection behavior.
+        */
 }
 
 
