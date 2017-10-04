@@ -482,6 +482,8 @@ Alt+F6 – runs new instance
 ** Far
 HKEY_CURRENT_USER\Software\Far2\SavedHistory -> Lines
 
+Alt+<Letter> and then Ctrl+Enter for cycling through found files
+
 
 ** Windows Shell
 New item in "Create" menu (example)
@@ -742,6 +744,12 @@ Ext   30
 Size  80 -> [=tc.size]
 Date  90 -> [=tc.writedate]
 Attr  30 -> [=tc.attributestr]
+
+Shift-Left/Right to go to the Command Line
+Tab – return back
+
+Ctrl+Enter – copy file name to clipboard
+Ctrl+Shift+Enter – copy full file path to clipboard
 
 
 ** Bookmarks
