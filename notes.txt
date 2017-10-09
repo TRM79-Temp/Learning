@@ -400,6 +400,30 @@ select * from OWNER.TABLE_NAME@LINK_TO_ANOTHER_DB
 -- Uncommitted data in Oracle SQL
 select DBMS_TRANSACTION.LOCAL_TRANSACTION_ID from DUAL;
 
+union all
+select
+    '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', -- 20
+    -- As many emty values as columns count in table.
+    '', '', '', '', '', '', ''
+from dual
+
+or
+
+union all
+select
+        null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, --  20
+        -- As many null values as columns count in table.
+        null, null, null, null, null, null, null
+from dual
+
+
+** Toad for Oracle
+
+rgb(121, 188, 255) – comment background
+rgb(68, 68, 68) – comment foreground
+rgb(51, 153, 255) – selection (default?)
+
+
 
 ** Linux
 ** UNIX
@@ -434,6 +458,8 @@ PuTTY – Settings -> Window -> Translation -> Remote character set: UTF-8 аб�
 
 
 ** Microsoft Word
+** MS Word
+** Word
 ^l – manual line break; ^s – nonbreaking space (see 'msword01.png')
 Normal.dot – Run command "application.NormalTemplate.OpenAsDocument" in Immediate window of VBA editor
 (C:\Users\<username>\AppData\Roaming\Microsoft\Шаблоны)
@@ -452,8 +478,13 @@ Compare documents:
 I. Review -> Compare
 II. View -> Window -> View Side by Side
 
+Bookmarks:
+Insert | Links | Bookmarks (Add / Delete / Go to)
 
+
+** Microsoft Excel
 ** MS Excel
+** Excel
 milliseconds time format: [h]:mm:ss.000 (or [h]:mm:ss,000) in Ukrainian locale
 PERSONAL.XLSB: C:\Users\<username>\AppData\Roaming\Microsoft\Excel\XLSTART
 
