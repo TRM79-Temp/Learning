@@ -6,8 +6,9 @@ https://habrahabr.ru/post/329436/
   ◘ -    8
   ○ -    9
   	-   09 (tab)
-  – - 0150
-  — - 0151
+  - -      hyphen
+  – - 0150 en dash
+  — - 0151 em dash
     - 0160 (MS Word nonbreaking space)
   © - 0169
   ° - 0176
@@ -217,6 +218,7 @@ debugger: Tools -> Web Developer -> WebIDE
 
 
 ** Firefox
+** Mozilla Firefox
 Localization: general.useragent.locale -> en-US (american), uk-UA (ukrainian)
 
 security.fileuri.strict_origin_policy - default true
@@ -227,6 +229,26 @@ firefox -chrome URL – запуск вікна Firefox без меню
 Ctrl+Shift+I (Also F12) - Firefox Tools
 Ctrl+Shift+I – Browser Console
 security.insecure_field_warning.contextual.enabled;true (This connection is not secure. Logins entered here could be compromised.)
+
+https://www.mozilla.org/en-US/firefox/channel/desktop/#aurora
+https://www.mozilla.org/en-US/firefox/developer/all/
+https://www.mozilla.org/en-US/firefox/all/
+
+
+** Chrome
+** Google Chrome
+md-files:
+Markdown Preview Plus + (?) "Allow access to file URLs"
+or
+StackEdit Chrome applicattion
+or
+https://stackedit.io/editor
+or
+https://dillinger.io/
+or
+http://markdownlivepreview.com/
+or
+...
 
 
 ** coursera.org
@@ -268,6 +290,9 @@ abc.*(?=\s)|def.*(?=\s)
 
 
 ** SQL
+sqlplus, sqlplusw tools
+    (At work they does not work / start.)
+
 select * from ALL_TAB_PRIVS
     order by GRANTEE, TABLE_SCHEMA, TABLE_NAME
 
@@ -383,6 +408,7 @@ TO_DATE('2016-09-26', 'YYYY-MM-DD')
 
 C:\oracle\ora10g\NETWORK\ADMIN\tnsnames.ora
 C:\app\username\product\11.2.0\client_1\network\admin\tnsnames.ora
+C:\app\username\product\11.2.0\client_1\network\admin\sqlnet.ora (is used by 'tnsping')
 
 INSERT INTO table-name (column-names)
 SELECT column-names
@@ -416,9 +442,10 @@ select
         null, null, null, null, null, null, null
 from dual
 
+tnsping database_name
+
 
 ** Toad for Oracle
-
 rgb(121, 188, 255) – comment background
 rgb(68, 68, 68) – comment foreground
 rgb(51, 153, 255) – selection (default?)
@@ -500,7 +527,8 @@ shortcuts (remove %APPDATA%\Notepad++\shortcuts.xml to restore defaults)
 
 View -> Show Symbol -> Show Indent Guide
 
-Go to closing tag: Ctrl+t
+Go to closing tag: Ctrl+T
+Go to closing brace: Ctrl+B
 
 Alt+F6 – runs new instance
 
@@ -573,6 +601,10 @@ Set oShell = CreateObject ("Wscript.Shell")
 Dim strArgs
 strArgs = "cmd /c run.bat"
 oShell.Run strArgs, 0, false
+
+depends.exe (External tool from http://www.dependencywalker.com/)
+
+tasklist /V /FO CSV
 
 
 ** Windows Task Scheduler
