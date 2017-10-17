@@ -161,6 +161,12 @@ git remote set-url|add origin https://github.com/USERNAME/OTHERREPOSITORY.git
 
 git reset HEAD~ + git reset --hard + git push -f origin master
 
+[remote "origin"]
+	url = https://github.com/Roman-Tarasiuk/DirectoryTreePaths
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+
 [[ // Work .gitconfig
 [filter "lfs"]
 	clean = git-lfs clean -- %f
@@ -464,6 +470,13 @@ directory size: du [-s] [-k|-m|-g] [directory_name]   –   disk usage
 sudo   –   superuser do; substitute user do; example: sudo -su tomcat
 su     –   ... – see 'sudo' example
 cat    –   concatenate
+
+cksum
+
+mkdir
+cp
+
+sh script.sh
 
 Midnight commander
 Note: Shell commands will not work when you are on a non-local file system.
