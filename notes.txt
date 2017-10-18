@@ -294,6 +294,13 @@ href="(.*?)"
 abc.*?(?=\s)|def.*?(?=\s)
 abc.*(?=\s)|def.*(?=\s)
 
+// Hyperlinks
+<a.*?href="(.*?)"
+    match[1] + '\n'
+
+Escape:
+", \
+
 
 ** SQL
 sqlplus, sqlplusw tools
