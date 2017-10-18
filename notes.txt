@@ -647,8 +647,9 @@ wscript //B //h:cscript
 
 ** Visual Studio
 Customize Text Editor Context Menu:
-Tools -> Customize... -> Commands -> Context Menu -> Editor Context Menu | Code Window
-    and go down and add items or submenu (submenu will be displayed in "Context Menu" list).
+Tools -> Customize... -> Commands -> Context Menu -> "Editor Context Menu | Code Window | Refactor"
+    and go down and add items or submenu (new submenu will be displayed in "Context Menu" list after adding).
+    E.g. Edit -> Rename, Edit -> Extract Method; move the "Refactor" into appropriate position (before "Run to cursor").
 
 Tools -> Customize... -> Commands -> Toolbar -> Standard
     and add "Debug -> Start Without Debugging" after "Debug Target"
