@@ -299,7 +299,9 @@ abc.*(?=\s)|def.*(?=\s)
     match[1] + '\n'
 
 Escape:
-", \
+", \, (, ), [, ]
+Do not escape:
+<, >
 
 
 ** SQL
@@ -528,6 +530,9 @@ II. View -> Window -> View Side by Side
 Bookmarks:
 Insert | Links | Bookmarks (Add / Delete / Go to)
 
+Hyperlink color:            5,  99, 193
+Followed Hyperlink color: 149,  79, 114
+
 
 ** Microsoft Excel
 ** MS Excel
@@ -583,6 +588,8 @@ prompt -$G$S
 
 PROMPT=$P$G – Default (or PROMPT without parameters)
 
+echo %cd% – prints current directory
+
 chcp 1251
 
 mstsc /w:1900 /h:1000   : 2; 41; 1916; 1038 (1920x1080; 8px left/bottom/right window border, 30px window caption, 40px Windows taskbar)
@@ -598,6 +605,9 @@ C:\Windows\System32\rundll32.exe user32.dll, LockWorkStation
 
 HKEY_CURRENT_USER\Control Panel\Desktop\WindowMetrics
     MinWidth (REG_SZ) 54
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment
+    Path
 
 certutil
     -hashfile file_name MD2 | MD4 | MD5 | SHA1 | SHA256 | SHA384 | SHA512
@@ -625,6 +635,16 @@ oShell.Run strArgs, 0, false
 depends.exe (External tool from http://www.dependencywalker.com/)
 
 tasklist /V /FO CSV
+
+RDP, Remote desktop's share of local PC disk (if enabled):
+\\tsclient\C
+
+HKEY_CURRENT_USER\Control Panel\Desktop
+TileWallpaper 1
+WallpaperStyle
+Image size
+    width : w1 + w2
+    height: max(h1, h2)
 
 
 ** Windows Task Scheduler
@@ -679,11 +699,17 @@ files.hotExit
             "backgroundColor":"rgb(38, 79, 120)"
         }
     },
-    "editor.selectionHighlight": true /* Default value. */
+    "editor.selectionHighlight": true, /* The default value. */
         /*
-            Switch 'Match Whole Word' in Find dialog
-            for changing selection behavior.
-        */
+         *  Works for up to 200 symbols.
+         *  Switch 'Match Whole Word' in Find dialog
+         *  for changing selection behavior.
+         *
+         */
+    "workbench.activityBar.visible": true,
+    "window.menuBarVisibility": "default",
+    "files.encoding": "windows1251",
+    "editor.renderWhitespace": "none"
 }
 
 
