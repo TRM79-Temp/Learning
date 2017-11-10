@@ -453,6 +453,7 @@ or
 union all
 select
         null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, --  20
+        null, null, null, null, null, null, null, null, null, null, --  10
         -- As many null values as columns count in table.
         null, null, null, null, null, null, null
 from dual
@@ -632,6 +633,12 @@ Dim strArgs
 strArgs = "cmd /c run.bat"
 oShell.Run strArgs, 0, false
 
+@rem Choice code page with the chcp or save file in OEM 866 encoding for using cyrillic characters.
+chcp 1251
+fc "C:\Users\username\AppData\Local\Temp\BGInfo.bmp" "C:\Users\username\AppData\Local\Temp\BGInfo - копия.bmp"
+set /P q=Press Enter to exit...
+exit
+
 depends.exe (External tool from http://www.dependencywalker.com/)
 
 tasklist /V /FO CSV
@@ -640,8 +647,9 @@ RDP, Remote desktop's share of local PC disk (if enabled):
 \\tsclient\C
 
 HKEY_CURRENT_USER\Control Panel\Desktop
-TileWallpaper 1
-WallpaperStyle
+TileWallpaper 1 ?
+WallpaperStyle 2 ? 0 is also good...
+C:\Users\username\AppData\Local\Temp\BGInfo.bmp
 Image size
     width : w1 + w2
     height: max(h1, h2)
