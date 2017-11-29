@@ -44,6 +44,11 @@ https://habrahabr.ru/post/329436/
   ' - &#39;
   ← - &larr;
   ↔ - &harr;
+  ► - 16
+  ◄ - 17
+  ▲ - 30
+  ▼ - 31
+  … - 0133
   а́
   о́
   у́
@@ -534,6 +539,8 @@ Insert | Links | Bookmarks (Add / Delete / Go to)
 Hyperlink color:            5,  99, 193
 Followed Hyperlink color: 149,  79, 114
 
+Shift+F4 – Find Next
+
 
 ** Microsoft Excel
 ** MS Excel
@@ -633,11 +640,28 @@ Dim strArgs
 strArgs = "cmd /c run.bat"
 oShell.Run strArgs, 0, false
 
-@rem Choice code page with the chcp or save file in OEM 866 encoding for using cyrillic characters.
+<check.bat>
+@rem Change code page or save file in OEM 866 encoding for using cyrillic characters.
+@echo off
+set q=
+
 chcp 1251
-fc "C:\Users\username\AppData\Local\Temp\BGInfo.bmp" "C:\Users\username\AppData\Local\Temp\BGInfo - копия.bmp"
-set /P q=Press Enter to exit...
+
+fc "C:\Users\user-name\AppData\Local\Temp\BGInfo.bmp" "C:\Users\user-name\AppData\Local\Temp\BGInfo - копия.bmp"
+
+echo Press Enter to exit or any other text for replacing the annoying picture.
+set /P q=
+
+if "%q%"=="" goto end
+
+:copy
+copy "C:\Users\user-name\Desktop\Temp\! Old Stuff\BGInfo.bmp" "C:\Users\user-name\AppData\Local\Temp\"
+@echo File replaced.
+set /P q=
+
+:end
 exit
+</check.bat>
 
 depends.exe (External tool from http://www.dependencywalker.com/)
 
@@ -654,6 +678,8 @@ Image size
     width : w1 + w2
     height: max(h1, h2)
 
+File info:
+wmic datafile where name='C:\\path\\file-name' [get Caption,FileSize,CreationDate,InstallDate,LastAccessed,LastModified] >tmp.txt
 
 ** Windows Task Scheduler
 schtasks
