@@ -154,6 +154,7 @@ git checkout commithash8digits|branchname
 git checkout -b branchname origin/branchname
 
 git reset --hard|--merge|HEAD~
+git reset --soft secondToLastCommit – remove last commit saving changes
 
 git diff --cached
 
@@ -280,6 +281,7 @@ Logs processing:
 .*blah-blah-blah.*(.|\n)*?yadda-yadda-yadda.*
 .*blah-blah-blah.*(.|\r\n)*?yadda-yadda-yadda.*
 .*blah-blah-blah.*(.|\r?\n)*?yadda-yadda-yadda.* – universal
+.*blah-blah-blah.*(.|\r?\n)*?(yadda-yadda-yadda.*\n*)+ – 'yadda-yadda-yadda' repeats in multiple lines
 
 Google drive music list:
 F12
@@ -486,7 +488,7 @@ sudo   –   superuser do; substitute user do; example: sudo -su tomcat
 su     –   ... – see 'sudo' example
 cat    –   concatenate
 
-cksum
+cksum (C:\Program Files\Git\usr\bin\cksum.exe)
 
 mkdir
 cp
@@ -680,6 +682,9 @@ Image size
 
 File info:
 wmic datafile where name='C:\\path\\file-name' [get Caption,FileSize,CreationDate,InstallDate,LastAccessed,LastModified] >tmp.txt
+
+where.exe
+
 
 ** Windows Task Scheduler
 schtasks
