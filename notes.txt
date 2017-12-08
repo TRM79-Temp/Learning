@@ -550,6 +550,12 @@ Shift+F4 – Find Next
 milliseconds time format: [h]:mm:ss.000 (or [h]:mm:ss,000) in Ukrainian locale
 PERSONAL.XLSB: C:\Users\<username>\AppData\Roaming\Microsoft\Excel\XLSTART
 
+Data | (Connections) Edit Links
+
+Review | (Comments) Show all comments
+
+Formulas | (Formula Auditing) Show Formulas
+
 
 ** notepad++
 F6 (NppExec)
@@ -751,6 +757,8 @@ files.hotExit
     "editor.renderWhitespace": "none"
 }
 
+Ctrl+Shift+P -> Configure Language -> en
+
 
 ** .NET
 set path="C:\Windows\Microsoft.NET\Framework\v4.0.30319\";%path%
@@ -840,6 +848,9 @@ npm link gulp
 ** Jira
 <div id="attachmentmodule" class="module toggle-wrap">
 <div id="descriptionmodule" class="module toggle-wrap">
+
+Change project of task:
+In dashboard in task's menu select 'Move'
 
 
 ** Links
