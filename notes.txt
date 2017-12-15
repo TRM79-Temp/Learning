@@ -306,9 +306,9 @@ abc.*(?=\s)|def.*(?=\s)
     match[1] + '\n'
 
 Escape:
-", \, (, ), [, ]
+", \, (, ), [, ], |
 Do not escape:
-<, >
+<, >, /
 
 
 ** SQL
@@ -466,6 +466,10 @@ select
 from dual
 
 tnsping database_name
+
+update TABLE_NAME
+    set COLUMN = value
+    where CONDITION
 
 
 ** Toad for Oracle
@@ -1023,6 +1027,8 @@ https://habrahabr.ru/company/zfort/
 https://habrahabr.ru/company/pvs-studio/blog/330762/
 https://translate.google.com/
 http://www.merriam-webster.com/dictionary/hello
+
+https://en.oxforddictionaries.com/
 
 
 ** Software Development
