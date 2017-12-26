@@ -848,6 +848,9 @@ npm install -g gulp
 # When only one package is needed.
 npm link gulp
 
+Simple http server:
+https://www.npmjs.com/package/http-server
+
 
 ** Jira
 <div id="attachmentmodule" class="module toggle-wrap">
@@ -855,6 +858,16 @@ npm link gulp
 
 Change project of task:
 In dashboard in task's menu select 'Move'
+
+
+** Image
+** Picture
+Make an image background transparent (using PowerPoint)
+1. Menu Format -> Adjust -> Color -> Set Transparent Color
+2. Image context menu -> Save As Picture...
+
+Invert an image colors (using MS Paint)
+Image context menu -> Invert colors
 
 
 ** Links
