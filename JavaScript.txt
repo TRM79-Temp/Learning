@@ -1,0 +1,255 @@
+element.className
+element.classList.add(), remove()
+
+
+typeof NaN == number
+isNaN(number)
+
+Infinity and -Infinity:
+1.79769313486231570e+308
+(1.797693134862315E+308)
+-1.797693134862316E+308
+
+Math object
+Math.floor(4.9) == 4
+Math.round(4.9) == 5
+
+
+"A" === "\u0041"
+toUpperCase()
+
+
+Built-in values:
+* true
+* false
+* null
+* undefined
+* NaN
+* Infinity
+
+Falsy values:
+* false
+* null
+* undefined
+* The empty string ''
+* The number 0
+* The number NaN
+All other values are truthy, including true, the string 'false', and all objects.
+
+The simple types of JavaScript are
+numbers,
+strings,
+booleans (true and false),
+null,
+and undefined.
+Numbers, strings, and booleans are object-like in that they have methods, but they are immutable.
+Objects in JavaScript are mutable keyed collections.
+In JavaScript, arrays are objects, functions are objects, regular expressions are objects, and, of course, objects are objects.
+
+
+object.hasOwnProperty(variable)  <-- string or string variable.
+
+
+throw true / 1 / 'some text';
+
+// Best practices:
+throw {
+    name: 'ErrorNameError',
+    message: 'Additional info.'
+}
+
+
+If a return expression is not specified, then the (function's) return value will be undefined.
+! JavaScript does not allow a line end between the return and the expression.
+
+
+typeof operator returns string.
+The values produced by typeof are 'number', 'string', 'boolean', 'undefined', 'function', and 'object'.
+typeof null === 'object' <-- D.Crockford considers it's wrong.
+
+Table 2-1. Operator precedence
+-------------------------------------------------------------
+. [] ()                 ∙ Refinement and invocation
+delete new typeof + - ! ∙ Unary operators
+* / %                   ∙ Multiplication, division, modulo
++ -                     ∙ Addition/concatenation, subtraction
+>= <= > <               ∙ Inequality
+=== !==                 ∙ Equality
+&&                      ∙ Logical and
+||                      ∙ Logical or
+?:                      ∙ Ternary
+-------------------------------------------------------------
+The operators at the bottom have the lowest precedence.
+
+
+The || operator can be used to fill in default values.
+
+Attempting to retrieve values from undefined will throw a TypeError exception. This can be guarded against with the && operator.
+
+
+Object.create(anotherObject)
+(See a version of create function in 'Prototypes' section of code.)
+
+function A() {
+};
+
+var b = {
+    c: 0
+};
+
+** console.log(Object)
+function Object()
+    create: function create()
+        __proto__: function ()
+    defineProperties: function defineProperties()
+    defineProperty: function defineProperty()
+    entries: function entries()
+    freeze: function freeze()
+    getOwnPropertyDescriptor: function getOwnPropertyDescriptor()
+    getOwnPropertyDescriptors: function getOwnPropertyDescriptors()
+    getOwnPropertyNames: function getOwnPropertyNames()
+    getOwnPropertySymbols: function getOwnPropertySymbols()
+    getPrototypeOf: function getPrototypeOf()
+    is: function is()
+    isExtensible: function isExtensible()
+    isFrozen: function isFrozen()
+    isSealed: function isSealed()
+    keys: function keys()
+    length: 1
+    name: "Object"
+    preventExtensions: function preventExtensions()
+    prototype: Object { … }
+        __defineGetter__: function __defineGetter__()
+        __defineSetter__: function __defineSetter__()
+        __lookupGetter__: function __lookupGetter__()
+        __lookupSetter__: function __lookupSetter__()
+        constructor: function Object()
+        hasOwnProperty: function hasOwnProperty()
+        isPrototypeOf: function isPrototypeOf()
+        propertyIsEnumerable: function propertyIsEnumerable()
+        toLocaleString: function toLocaleString()
+        toSource: function toSource()
+        toString: function toString()
+        unwatch: function unwatch()
+        valueOf: function valueOf()
+        watch: function watch()
+    seal: function seal()
+    setPrototypeOf: function setPrototypeOf()
+    values: function values()
+    __proto__: function ()
+        apply: function apply()
+        arguments: null
+        bind: function bind()
+        call: function call()
+        caller: null
+        constructor: function Function()
+        isGenerator: function isGenerator()
+        length: 0
+        name: ""
+        toSource: function toSource()
+        toString: function toString()
+        Symbol(Symbol.hasInstance): undefined
+        __proto__: Object { … }
+
+** console.log(Function)
+function Function()
+    length: 1
+    name: "Function"
+    __proto__: function ()
+
+** console.log(A)
+function A()
+    arguments: null
+    caller: null
+    length: 0
+    name: "A"
+    prototype: Object { … }
+        constructor: function A()
+        __proto__: Object { … }
+            __defineGetter__: function __defineGetter__()
+            __defineSetter__: function __defineSetter__()
+            __lookupGetter__: function __lookupGetter__()
+            __lookupSetter__: function __lookupSetter__()
+            constructor: function Object()
+            hasOwnProperty: function hasOwnProperty()
+            isPrototypeOf: function isPrototypeOf()
+            propertyIsEnumerable: function propertyIsEnumerable()
+            toLocaleString: function toLocaleString()
+            toSource: function toSource()
+            toString: function toString()
+            unwatch: function unwatch()
+            valueOf: function valueOf()
+            watch: function watch()
+    __proto__: function ()
+
+** console.log(b)
+Object { c: 0 }
+    c: 0
+    __proto__: Object { … }
+
+** console.log(String)
+function String()
+    charAt: function charAt()
+    charCodeAt: function charCodeAt()
+    concat: function concat()
+    endsWith: function endsWith()
+    fromCharCode: function fromCharCode()
+    fromCodePoint: function fromCodePoint()
+    includes: function includes()
+    indexOf: function indexOf()
+    lastIndexOf: function lastIndexOf()
+    length: 1
+    localeCompare: function localeCompare()
+    match: function match()
+    name: "String"
+    normalize: function normalize()
+    raw: function raw()
+    replace: function replace()
+    search: function search()
+    slice: function slice()
+    split: function split()
+    startsWith: function startsWith()
+    substr: function substr()
+    substring: function substring()
+    toLocaleLowerCase: function toLocaleLowerCase()
+    toLocaleUpperCase: function toLocaleUpperCase()
+    toLowerCase: function toLowerCase()
+    toUpperCase: function toUpperCase()
+    trim: function trim()
+    trimLeft: function trimLeft()
+    trimRight: function trimRight()
+    __proto__: function ()
+
+** console.log(Number)
+function Number()
+    EPSILON: 2.220446049250313e-16
+    MAX_SAFE_INTEGER: 9007199254740991
+    MAX_VALUE: 1.7976931348623157e+308
+    MIN_SAFE_INTEGER: -9007199254740991
+    MIN_VALUE: 5e-324
+    NEGATIVE_INFINITY: -Infinity
+    NaN: NaN
+    POSITIVE_INFINITY: Infinity
+    isFinite: function isFinite()
+    isInteger: function isInteger()
+    isNaN: function isNaN()
+    isSafeInteger: function isSafeInteger()
+    length: 1
+    name: "Number"
+    parseFloat: function parseFloat()
+    parseInt: function parseInt()
+    __proto__: function ()
+
+** console.log(Boolean)
+function Boolean()
+    length: 1
+    name: "Boolean"
+    __proto__: function ()
+
+
+Invocation pattern:
+    * the method invocation pattern,      <-- *this* is bound to the object
+    * the function invocation pattern,    <-- *this* is bound to the global object;
+    * the constructor invocation pattern, 
+    * the apply invocation pattern
+
