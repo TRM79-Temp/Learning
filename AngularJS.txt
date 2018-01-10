@@ -82,3 +82,11 @@ angular.isUndefined(value);
 Filters:
 currency
 orderBy
+
+
+09.12.2017
+
+https://angular.io
+https://angular.io/docs
+    Techniques | Setup & Deployment | Setup for local development <== quickstart
+    ()

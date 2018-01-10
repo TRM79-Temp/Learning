@@ -1,0 +1,27 @@
+f:\Desktop2\GitHub\Learning>npm install http-server -g
+C:\Users\Roman\AppData\Roaming\npm\hs -> C:\Users\Roman\AppData\Roaming\npm\node_modules\http-server\bin\http-server
+C:\Users\Roman\AppData\Roaming\npm\http-server -> C:\Users\Roman\AppData\Roaming\npm\node_modules\http-server\bin\http-server
+C:\Users\Roman\AppData\Roaming\npm
+`-- http-server@0.10.0
+  +-- colors@1.0.3
+  +-- corser@2.0.1
+  +-- ecstatic@2.2.1
+  | +-- he@1.1.1
+  | +-- mime@1.6.0
+  | +-- minimist@1.2.0
+  | `-- url-join@2.0.2
+  +-- http-proxy@1.16.2
+  | +-- eventemitter3@1.2.0
+  | `-- requires-port@1.0.0
+  +-- opener@1.4.3
+  +-- optimist@0.6.1
+  | +-- minimist@0.0.10
+  | `-- wordwrap@0.0.3
+  +-- portfinder@1.0.13
+  | +-- async@1.5.2
+  | +-- debug@2.6.9
+  | | `-- ms@2.0.0
+  | `-- mkdirp@0.5.1
+  |   `-- minimist@0.0.8
+  `-- union@0.4.6
+    `-- qs@2.3.3

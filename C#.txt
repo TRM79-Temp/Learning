@@ -1,0 +1,38 @@
+Updating VS 2017
+https://www.visualstudio.com/vs/getting-started/
+https://marketplace.visualstudio.com/vs?utm_source=vsinstaller&utm_campaign=mainright
+https://developercommunity.visualstudio.com/spaces/8/index.html
+https://www.visualstudio.com/vs/support/
+
+https://www.asp.net/mvc
+    -> Getting Started with ASP.NET MVC 5 (11 Tutorials) [https://www.asp.net/mvc/overview/getting-started/introduction/getting-started]
+    -> An updated version of this tutorial is available <a href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/start-mvc?tabs=aspnetcore2x">here</a> using the latest version of Visual Studio.
+    -> <a href="https://www.microsoft.com/net/core">.NET Core 2.0.0 SDK</a> or later. [redirect to https://www.microsoft.com/net/learn/get-started/windows]
+1. dotnet new console -o myApp
+2. cd myApp
+3. dotnet run
+
+
+/// .NET Core Version
+/// https://github.com/dotnet/BenchmarkDotNet/issues/448
+/// 
+public static string GetNetCoreVersion()
+{
+    var assembly = typeof(System.Runtime.GCSettings).GetTypeInfo().Assembly;
+    var assemblyPath = assembly.CodeBase.Split(
+        new[] { '/', '\\' },
+        StringSplitOptions.RemoveEmptyEntries
+    );
+    int netCoreAppIndex = Array.IndexOf(assemblyPath, "Microsoft.NETCore.App");
+
+    if (netCoreAppIndex > 0 && netCoreAppIndex < assemblyPath.Length - 2)
+    {
+        return assemblyPath[netCoreAppIndex + 1];
+    }
+
+    return null;
+}
+
+Or use Start -> Settings -> Apps -> Apps & Features -> Search this list -> 'Core'
+    to display installed .NET Core SDK(s).
+(Use the same way with 'Studio' in the search string to customize Visual Studio components.)
