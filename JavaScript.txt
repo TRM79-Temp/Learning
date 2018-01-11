@@ -84,7 +84,7 @@ The operators at the bottom have the lowest precedence.
 
 The || operator can be used to fill in default values.
 
-Attempting to retrieve values from undefined will throw a TypeError exception. This can be guarded against with the && operator.
+Attempting to retrieve values from undefined will throw a *TypeError* exception. This can be guarded against with the && operator.
 
 
 Object.create(anotherObject)
@@ -253,3 +253,5 @@ Invocation pattern:
     * the constructor invocation pattern, 
     * the apply invocation pattern
 
+
+arguments array of function
