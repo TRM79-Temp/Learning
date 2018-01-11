@@ -64,34 +64,36 @@
 //  (function() {
 //      console.log('Object');
 //      console.log(Object);
-//
+//      
 //      console.log('Object.create');
 //      console.log(Object.create);
-//
+//      
 //      console.log('Object.prototype');
 //      console.log(Object.prototype);
-//
+//      
 //      console.log('Function');
 //      console.log(Function);
-//
+//      
 //      console.log('A');
 //      console.log(A);
 //      console.log(A.prototype);
-//
+//      
 //      console.log('b');
 //      console.log(b);
 //      console.log(b.prototype);
 //      console.log(b.__proto__);
-//
+//      
 //      console.log('String');
 //      console.log(String);
-//
+//      
 //      console.log('Number');
 //      console.log(Number);
-//
+//      
 //      console.log('Boolean');
 //      console.log(Boolean);
-//
+//      
+//      console.log('Array');
+//      console.log(Array);
 //  })();
 
 
@@ -221,30 +223,161 @@
 //  o.A();
 
 
-function Q(s) {
-    this.v = s;
-    this.f = function() {
-        console.log(this);
-        console.log(this.v);
-    }
-    return 7;
+//  function Q(s) {
+//      this.v = s;
+//      this.f = function() {
+//          console.log(this);
+//          console.log(this.v);
+//      }
+//      return 7;
+//  }
+//  
+//  (function testWithNew() {
+//      console.log('With new:');
+//  
+//      var o = new Q('qwe');
+//      o.f();
+//      
+//      console.log('-------');
+//  })();
+//  
+//  (function testWithoutNew() {
+//      console.log('Without new:');
+//  
+//      var o = Q('qwe');
+//      o.f();
+//      f();
+//      
+//      console.log('-------');
+//  })();
+
+
+//  var walk_the_DOM = function walk(node, func) {
+//      func(node);
+//      node = node.firstChild;
+//      while (node) {
+//          walk(node, func);
+//          node = node.nextSibling;
+//      }
+//  };
+//  
+//  var getElementsByAttribute = function (att, value) {
+//      var results = [];
+//  
+//      walk_the_DOM(document.body, function (node) {
+//          var actual = node.nodeType === 1 && node.getAttribute(att);
+//          if (typeof actual === 'string' &&
+//                  (actual === value || typeof value !== 'string')) {
+//              results.push(node);
+//          }
+//      });
+//  
+//      return results;
+//  };
+//  
+//  var list = getElementsByAttribute('width', '150px');
+
+
+//  var o = {};
+//  var proto = Object.getPrototypeOf(o);
+//  
+//  console.log('Object');
+//  console.log(Object);
+//  
+//  console.log('proto');
+//  console.log(proto);
+//  
+//  console.log('proto.constructor');
+//  console.log(proto.constructor);
+
+
+//  var a = {
+//      propA: null
+//  };
+//  
+//  var b = Object.create(a);
+//  b.propB = null;
+//  
+//  console.log('b');
+//  console.log(b);
+//  
+//  var protoB = Object.getPrototypeOf(b);
+//  
+//  console.log('protoB');
+//  console.log(protoB);
+//  
+//  showPrototype(b, '  b:');
+//  showPrototype(Object, '  Object:');
+//  
+//  
+//  function showPrototype(o, message) {
+//      console.log('---------------------');
+//      console.log('  Prorotype  chain.  ');
+//      console.log(message)
+//  
+//      getPrototypeChain(o);
+//  
+//      function getPrototypeChain(obj) {
+//          showOne(obj);
+//          do {
+//              console.log('[prototype] ▼ ');
+//              obj = Object.getPrototypeOf(obj);
+//              showOne(obj);
+//          } while (obj !== Object.prototype);
+//          
+//          function showOne(o) {
+//              console.log(o);
+//          }
+//      }
+//  }
+
+
+//  function f(message1, message2) {
+//      console.log((this.name ? this.name : '(no name)') + ': ' + message1 + ', ' + message2 + '.');
+//  }
+//  
+//  var o = {
+//      name: 'Roman'
+//  }
+//  
+//  f.apply(o, ['Q', 'q']);
+//  f.call(o, 'W', 'w');
+//  f.call(null, 'E', 'e');
+
+
+//  function Person(first, last, age, gender, interests) {
+//    this.name = {
+//      first,
+//      last
+//    };
+//    this.age = age;
+//    this.gender = gender;
+//    this.interests = interests;
+//  };
+//  
+//  Person.prototype.greeting = function() {
+//    alert('Hi! I\'m ' + this.name.first + '.');
+//  };
+//  
+//  function Teacher(first, last, age, gender, interests, subject) {
+//    Person.call(this, first, last, age, gender, interests);
+//  
+//    this.subject = subject;
+//  }
+//  
+//  Teacher.prototype = Object.create(Person.prototype);
+//  
+//  Teacher.prototype.constructor = Teacher;
+
+
+function A() {
 }
 
-(function testWithNew() {
-    console.log('With new:');
+console.log(A);
+console.log('A');
 
-    var o = new Q('qwe');
-    o.f();
-    
-    console.log('-------');
-})();
+console.log('A.prototype');
+console.log(A.prototype);
 
-(function testWithoutNew() {
-    console.log('Without new:');
-
-    var o = Q('qwe');
-    o.f();
-    f();
-    
-    console.log('-------');
-})();
+console.log('A.prototype.constructor');
+console.log(A.prototype.constructor);

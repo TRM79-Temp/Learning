@@ -1,5 +1,17 @@
-element.className
-element.classList.add(), remove()
+node.className
+node.classList.add(), remove()
+node.firstChild
+node.nextSibling
+node.nodeType  <-- ? See the walk_the_DOM and the getElementsByAttribute in the code.
+node.getAttribute(att)
+document.body
+value.toString(16)  <-- 2 to 36.
+setTimeout(function, timeout)
+Object.getPrototypeOf(obj)
+object.__proto__  <-- deprecated.
+instanceName.constructor
+instanceName.constructor.name
+Object.getOwnPropertyNames(prototypeObject or object)  <-- e.g. Object.prototype.
 
 
 typeof NaN == number
@@ -244,6 +256,35 @@ function Number()
 function Boolean()
     length: 1
     name: "Boolean"
+    __proto__: function ()
+
+** console.log(Array)
+function Array()
+    concat: function concat()
+    every: function every()
+    filter: function filter()
+    forEach: function forEach()
+    from: function from()
+    indexOf: function indexOf()
+    join: function join()
+    lastIndexOf: function lastIndexOf()
+    length: 1
+    map: function map()
+    name: "Array"
+    of: function of()
+    pop: function pop()
+    prototype: Array []
+    push: function push()
+    reduce: function reduce()
+    reduceRight: function reduceRight()
+    reverse: function reverse()
+    shift: function shift()
+    slice: function slice()
+    some: function some()
+    sort: function sort()
+    splice: function splice()
+    unshift: function unshift()
+    Symbol(Symbol.species): undefined
     __proto__: function ()
 
 
