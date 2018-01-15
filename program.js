@@ -4,6 +4,10 @@
 //
 //  document.writeln('Hello, world!');
 
+function displayObject(obj) {
+    console.log(JSON.stringify(obj));
+}
+
 
 //  // ********************
 //  // The *method* Method.
@@ -370,14 +374,36 @@
 //  Teacher.prototype.constructor = Teacher;
 
 
-function A() {
-}
+//  function A() {
+//  }
+//  
+//  console.log(A);
+//  console.log('A');
+//  
+//  console.log('A.prototype');
+//  console.log(A.prototype);
+//  
+//  console.log('A.prototype.constructor');
+//  console.log(A.prototype.constructor);
 
-console.log(A);
-console.log('A');
 
-console.log('A.prototype');
-console.log(A.prototype);
+//  //
+//  // Arrays.
+//  //
+//  (function(){
+//      var a = [{
+//          q: 'w',
+//          f: function () {
+//              console.log('Hello World!');
+//          }}];
+//      var b = a.slice(0, 2);
+//      displayObject(b);
+//      console.log(b[0].f);
+//      console.log(b[0].f.toString());
+//      
+//      b[0].q = 'www';
+//      displayObject(a);
+//  })();
 
-console.log('A.prototype.constructor');
-console.log(A.prototype.constructor);
+console.log(console.log);
+console.log(console.log.toString());

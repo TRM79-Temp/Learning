@@ -12,6 +12,7 @@ object.__proto__  <-- deprecated.
 instanceName.constructor
 instanceName.constructor.name
 Object.getOwnPropertyNames(prototypeObject or object)  <-- e.g. Object.prototype.
+navigator object – holds various system parameters
 
 
 typeof NaN == number
