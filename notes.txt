@@ -127,6 +127,14 @@ String.prototype.replaceAllComplete = function(search, replacement) {
     return target;
 }
 
+Tag        Tag omission
+----------------------------------------------------------------
+<img>      Must have a start tag and must not have an end tag.
+<textarea> None, both the starting and ending tag are mandatory.
+<input>    Must have a start tag and must not have an end tag.
+<button>   None, both the starting and ending tag are mandatory.
+<table>    None, both the starting and ending tag are mandatory.
+
 
 ** git
 https://gitlab.com/eleks-camp-lviv-2/yellow
@@ -471,6 +479,12 @@ update TABLE_NAME
     set COLUMN = value
     where CONDITION
 
+select count (*) from (
+    select distinct C1, C2
+        from T
+)
+
+
 
 ** Toad for Oracle
 rgb(121, 188, 255) – comment background
@@ -536,7 +550,7 @@ I. Go To -> Object
 II. Ctrl+A | Shift+F9
 
 Compare documents:
-I. Review -> Compare
+I. Review -> Compare (use >>>>>>>>> instead of name) + Switch on Reviewing Pane
 II. View -> Window -> View Side by Side
 
 Bookmarks:
@@ -763,6 +777,8 @@ files.hotExit
 
 Ctrl+Shift+P -> Configure Language -> en
 
+Toggle Render Whitespace
+
 
 ** .NET
 set path="C:\Windows\Microsoft.NET\Framework\v4.0.30319\";%path%
@@ -909,8 +925,10 @@ XLSX: 50 4B 03 04 14 00
 Add connection points to a shape:
 Ctrl+E
 Default:
+           X ,Y
 points=[[0.25,0],[0.5,0],[0.75,0], [0,0.25],[0,0.5],[0,0.75], [0.25,1],[0.5,1],[0.75,1], [1,0.25],[1,0.5],[1,0.75]]
 4 points on bottom line:
+        Top                        Left                       Bottom                           Right
 points=[[0.25,0],[0.5,0],[0.75,0], [0,0.25],[0,0.5],[0,0.75], [0.2,1],[0.4,1],[0.6,1],[0.8,1], [1,0.25],[1,0.5],[1,0.75]]
 
 
@@ -927,6 +945,11 @@ Tab – return back
 
 Ctrl+Enter – copy file name to clipboard
 Ctrl+Shift+Enter – copy full file path to clipboard
+
+
+** Notes
+** Lotus Notes
+C:\Users\user_name\AppData\Local\Temp\notes81C9D1
 
 
 ** Bookmarks
