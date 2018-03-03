@@ -521,6 +521,11 @@ end;
 -- Toad for Oracle: Text editor's context menu | Desktop Panels | DBMS Output
 -- – the window among other output windows. Turn Output On in the window.
 
+-- Packages & ...
+select * from all_source
+
+select * from DBA_USERS
+
 
 ** Toad for Oracle
 rgb(121, 188, 255) – comment background
@@ -1024,7 +1029,10 @@ Ctrl+Shift+Enter – copy full file path to clipboard
 
 ** Notes
 ** Lotus Notes
-C:\Users\user_name\AppData\Local\Temp\notes81C9D1
+Archive:
+C:\Users\USERNAME\AppData\Local\Lotus\Notes\Data
+Temp:
+C:\Users\USERNAME\AppData\Local\Temp\notes81C9D1
 
 
 ** Bookmarks
