@@ -1,0 +1,16 @@
+     ** Power saver
+                           On battery   Plugged in
+     Turn off the display:     2 min        5 min
+Put the computer to sleep:    10 min       15 min
+
+
+     ** Balanced
+                           On battery   Plugged in
+     Turn off the display:     5 min       10 min
+Put the computer to sleep:    15 min       30 min
+
+
+     ** High performance
+                           On battery   Plugged in
+     Turn off the display:    10 min       15 min
+Put the computer to sleep:     Never        Never
