@@ -29,6 +29,10 @@ https://habrahabr.ru/post/329436/
   ↔ -   29
   ‘ - 0145
   ’ - 0146
+  “ - 0147
+  ” - 0148
+  « - 0171
+  » - 0187
   ø - 0248
   < -   60
   > -   62
@@ -500,6 +504,28 @@ and trim(COLUMN_NAME) not in (
     select trim(COLUMN_NAME) from SCHEMA.TABLE
 )
 
+select *
+from
+       ALL_OBJECTS
+order by
+       OBJECT_TYPE, OBJECT_NAME
+
+declare
+    -- variable1 type1;
+    -- ...;
+begin
+    -- Processing step1;
+    -- ...;
+    dbms_output.Put_line(some_info);
+end;
+-- Toad for Oracle: Text editor's context menu | Desktop Panels | DBMS Output
+-- – the window among other output windows. Turn Output On in the window.
+
+-- Packages & ...
+select * from all_source
+
+select * from DBA_USERS
+
 
 ** Toad for Oracle
 rgb(121, 188, 255) – comment background
@@ -569,12 +595,20 @@ I. Review -> Compare (use >>>>>>>>> instead of name) + Switch on Reviewing Pane
 II. View -> Window -> View Side by Side
 
 Bookmarks:
-Insert | Links | Bookmarks (Add / Delete / Go to)
+Insert | Links | Bookmarks (Add / Delete / Go to; Hidden bookmarks)
+
+Alt+F9 – Show/Hide Field Codes
 
 Hyperlink color:            5,  99, 193
 Followed Hyperlink color: 149,  79, 114
 
 Shift+F4 – Find Next
+
+Wild Card, WildCard
+https://support.office.com/en-us/Search/results?query=wild+cards+word
+10-th result
+
+Alt+Left – Navigate back (after passing through link)
 
 
 ** Microsoft Excel
@@ -588,6 +622,8 @@ Data | (Connections) Edit Links
 Review | (Comments) Show all comments
 
 Formulas | (Formula Auditing) Show Formulas
+
+Windows Menu | Office 2013 Tools | Spreadsheet Compare
 
 
 ** notepad++
@@ -619,6 +655,7 @@ Alt+<Letter> and then Ctrl+Enter for cycling through found files
 
 
 ** Windows Shell
+** Shell
 New item in "Create" menu (example)
 HKEY_CLASSES_ROOT\.contact\ShellNew
 command - "%programFiles%\Windows Mail\Wab.exe" /CreateContact "%1"
@@ -723,6 +760,29 @@ File info:
 wmic datafile where name='C:\\path\\file-name' [get Caption,FileSize,CreationDate,InstallDate,LastAccessed,LastModified] >tmp.txt
 
 where.exe
+
+
+<Copy as path explorer context menu>
+
+Windows Registry Editor Version 5.00
+
+;Created by Vishal Gupta for AskVG.com
+
+[HKEY_CLASSES_ROOT\*\shell\Copy as Path]
+"Icon"="%windir%\\System32\\xpsrchvw.exe"
+
+[HKEY_CLASSES_ROOT\*\shell\Copy as Path\command]
+@="cmd.exe /c echo %1|clip"
+
+[HKEY_CLASSES_ROOT\Directory\shell\Copy as Path]
+"Icon"="%windir%\\System32\\xpsrchvw.exe"
+
+[HKEY_CLASSES_ROOT\Directory\shell\Copy as Path\command]
+@="cmd.exe /c echo %1|clip"
+
+</Copy as path explorer context menu>
+
+regsvr32 thelibrary.dll
 
 
 ** Windows Task Scheduler
@@ -884,6 +944,9 @@ npm link gulp
 Simple http server:
 https://www.npmjs.com/package/http-server
 
+npm install jquery-autosize (?old version)
+npm install autosize (https://github.com/jackmoore/autosize)
+
 
 ** Jira
 <div id="attachmentmodule" class="module toggle-wrap">
@@ -966,7 +1029,10 @@ Ctrl+Shift+Enter – copy full file path to clipboard
 
 ** Notes
 ** Lotus Notes
-C:\Users\user_name\AppData\Local\Temp\notes81C9D1
+Archive:
+C:\Users\USERNAME\AppData\Local\Lotus\Notes\Data
+Temp:
+C:\Users\USERNAME\AppData\Local\Temp\notes81C9D1
 
 
 ** Bookmarks
