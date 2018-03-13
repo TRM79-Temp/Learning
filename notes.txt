@@ -322,6 +322,24 @@ Escape:
 Do not escape:
 <, >, /
 
+[\wа-яА-ЯіїєґІЇЄҐёЁ]+
+
+? JS lookbehind?
+
+Trim code to 80 characters line length
+(works in VS Code and notepad++ (in notepad++ set 2/2 replacement as $1)):
+
+1/2 (there are 80 spaces in the replace):
+(^.*)
+$1                                                                                
+
+2/2:
+(^.{80})([ \t]*(?!\w)(\n|$))
+$1\n
+
+Check whether there are lines with length > 80:
+(^.{80}).+
+
 
 ** SQL
 sqlplus, sqlplusw tools
@@ -610,6 +628,8 @@ https://support.office.com/en-us/Search/results?query=wild+cards+word
 
 Alt+Left – Navigate back (after passing through link)
 
+File | Info | Edit Links to Files
+
 
 ** Microsoft Excel
 ** MS Excel
@@ -817,6 +837,7 @@ exe.config location:
 
 
 ** Visual Studio Code
+** Code
 https://code.visualstudio.com/docs?start=true
 files.hotExit
 
@@ -853,6 +874,8 @@ files.hotExit
 Ctrl+Shift+P -> Configure Language -> en
 
 Toggle Render Whitespace
+
+See the 'Regular Expression' section ('Trim code to 80 characters...') for info about replacing.
 
 
 ** .NET
@@ -1193,3 +1216,9 @@ static class Log
         }
     }
 }
+
+
+** Stuff
+Roman numerals
+Symbol    I     V     X     L     C     D     M
+Value     1     5     10    50    100   500   1000
