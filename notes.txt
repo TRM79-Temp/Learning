@@ -139,6 +139,9 @@ Tag        Tag omission
 <button>   None, both the starting and ending tag are mandatory.
 <table>    None, both the starting and ending tag are mandatory.
 
+Test selection color:
+#b3d9ff
+
 
 ** git
 https://gitlab.com/eleks-camp-lviv-2/yellow
@@ -522,11 +525,11 @@ and trim(COLUMN_NAME) not in (
     select trim(COLUMN_NAME) from SCHEMA.TABLE
 )
 
-select *
-from
-       ALL_OBJECTS
-order by
-       OBJECT_TYPE, OBJECT_NAME
+select   *
+from     ALL_OBJECTS
+where    OBJECT_TYPE = 'TABLE' and
+         OWNER = 'SCHEMA-NAME'
+order by OBJECT_TYPE, OBJECT_NAME
 
 declare
     -- variable1 type1;
@@ -644,6 +647,8 @@ Review | (Comments) Show all comments
 Formulas | (Formula Auditing) Show Formulas
 
 Windows Menu | Office 2013 Tools | Spreadsheet Compare
+
+=SUBTOTAL(9; Range) – Displays the SUM of filtered data.
 
 
 ** notepad++
@@ -869,6 +874,12 @@ files.hotExit
     "window.menuBarVisibility": "default",
     "files.encoding": "windows1251",
     "editor.renderWhitespace": "none"
+    "editor.renderControlCharacters": false,
+    "whitespace.color.light": "rgba(255, 0, 0, 0.5)",
+    "whitespace.color.dark": "rgba(0, 255, 0, 0.5)",
+    "editor.wrappingIndent": "indent",
+    "editor.tabSize": 4,
+    "http.proxy": "http://username:passwordForHttpAndHttps@proxy.name:port/proxy.pac"
 }
 
 Ctrl+Shift+P -> Configure Language -> en
@@ -876,6 +887,8 @@ Ctrl+Shift+P -> Configure Language -> en
 Toggle Render Whitespace
 
 See the 'Regular Expression' section ('Trim code to 80 characters...') for info about replacing.
+
+Ctrl+Shift+\ – Go to closing bracket
 
 
 ** .NET
@@ -1172,6 +1185,8 @@ http://www.merriam-webster.com/dictionary/hello
 
 https://en.oxforddictionaries.com/
 
+https://www.iconsdb.com/
+
 
 ** Software Development
 static class Log
@@ -1222,3 +1237,72 @@ static class Log
 Roman numerals
 Symbol    I     V     X     L     C     D     M
 Value     1     5     10    50    100   500   1000
+
+1 tick = 0.0000001 seconds (100 nanoseconds or one ten-millionth of a second)
+
+Copy color's RGB from color dialog to a text window (2 top windows in Windows Z-Order)
+^A
+^C
+%{TAB}
+^V
+;
+%{TAB}
+{TAB}
+^C
+%{TAB}
+^V
+;
+%{TAB}
+{TAB}
+^C
+%{TAB}
+^V
+
+Once you know what it is you want to be true, instinct is a very useful device for enabling you to know that it is
+
+3389 – Remote Desktop Protocol
+
+Greek alphabet:
+Α α	alpha, άλφα
+Β β	beta, βήτα
+Γ γ	gamma, γάμμα
+Δ δ	delta, δέλτα
+Ε ε	epsilon, έψιλον
+Ζ ζ	zeta, ζήτα
+Η η	eta, ήτα
+Θ θ	theta, θήτα
+Ι ι	iota, ιώτα
+Κ κ	kappa, κάππα
+Λ λ	lambda, λάμδα
+Μ μ	mu, μυ
+Ν ν	nu, νυ
+Ξ ξ	xi, ξι
+Ο ο	omicron, όμικρον
+Π π	pi, πι
+Ρ ρ	rho, ρώ
+Σ σ/ς	sigma, σίγμα
+Τ τ	tau, ταυ
+Υ υ	upsilon, ύψιλον
+Φ φ	phi, φι
+Χ χ	chi, χι
+Ψ ψ	psi, ψι
+Ω ω	omega, ωμέγα
+
+Regedit
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run
+    HKLM\Software\Microsoft\Windows\CurrentVersion\RunOnce
+    HKLM\Software\Microsoft\Windows\CurrentVersion\RunOnceEx
+    HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnce
+    HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnceEx
+
+мільйон           million           10^6     n=2
+більйон (мільярд) billion           10^9     n=3
+трильйон          trillion          10^12    n=4
+квадрильйон       quadrillion       10^15    n=5
+квінтильйон       quintillion       10^18    n=6
+секстильйон       sextillion        10^21    n=7
+септильйон        septillion        10^24    n=8
+октильйон         octillion         10^27    n=9
+нонильйон         nonillion         10^30   n=10
+децильйон         decillion         10^33   n=11
