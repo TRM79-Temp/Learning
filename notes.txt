@@ -809,6 +809,9 @@ Windows Registry Editor Version 5.00
 
 regsvr32 thelibrary.dll
 
+Restart Computer
+shutdown /r /t 0
+
 
 ** Windows Task Scheduler
 schtasks
@@ -1186,7 +1189,7 @@ http://www.merriam-webster.com/dictionary/hello
 https://en.oxforddictionaries.com/
 
 https://www.iconsdb.com/
-
+http://www.myiconfinder.com/
 
 ** Software Development
 static class Log
