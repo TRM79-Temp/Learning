@@ -1191,6 +1191,13 @@ https://en.oxforddictionaries.com/
 https://www.iconsdb.com/
 http://www.myiconfinder.com/
 
+https://www.dotnetperls.com/
+https://www.c-sharpcorner.com/
+https://jsfiddle.net/
+
+https://www.telerik.com/fiddler
+
+
 ** Software Development
 static class Log
 {
@@ -1263,7 +1270,12 @@ Copy color's RGB from color dialog to a text window (2 top windows in Windows Z-
 
 Once you know what it is you want to be true, instinct is a very useful device for enabling you to know that it is
 
+https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers
+20, 21 – FTP
+  80 – HTTP
+ 443 – HTTPS
 3389 – Remote Desktop Protocol
+1521 – Oracle Database
 
 Greek alphabet:
 Α α	alpha, άλφα
