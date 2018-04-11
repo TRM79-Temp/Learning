@@ -547,6 +547,16 @@ select * from all_source
 
 select * from DBA_USERS
 
+Using variable-like run in Toad for Oracle:
+Input values into prompt dialog and then run
+-- acc 1234567;
+-- dealdate 20180201;
+
+select * from TABLE1
+where (FIELD1 = '&acc'       -- text field
+       or FIELD2 = '&acc')
+   and FIELD3 = &dealdate; -- number field
+
 
 ** Toad for Oracle
 rgb(121, 188, 255) – comment background
@@ -649,6 +659,11 @@ Formulas | (Formula Auditing) Show Formulas
 Windows Menu | Office 2013 Tools | Spreadsheet Compare
 
 =SUBTOTAL(9; Range) – Displays the SUM of filtered data.
+
+=R[-3]C[-4] is equal to =D5
+=R5C[-4]    is equal to =D$5
+=R[-3]C4    is equal to =$D5
+=R5C4       is equal to =$D$5
 
 
 ** notepad++
