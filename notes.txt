@@ -660,10 +660,16 @@ Windows Menu | Office 2013 Tools | Spreadsheet Compare
 
 =SUBTOTAL(9; Range) – Displays the SUM of filtered data.
 
+' A target cell is R5C4, a referencing cell is R8C8:
 =R[-3]C[-4] is equal to =D5
 =R5C[-4]    is equal to =D$5
 =R[-3]C4    is equal to =$D5
 =R5C4       is equal to =$D$5
+
+' A referencing cell is R5C2:
+=RC[2]      is equal to =D5
+=RC4        is equal to =$D5
+=R5C[2]     is equal to =D$5
 
 
 ** notepad++
@@ -826,6 +832,9 @@ regsvr32 thelibrary.dll
 
 Restart Computer
 shutdown /r /t 0
+
+Prevent closing batch file after run notepad++:
+add 'cmd /k' or 'pause' at the end of the batch file.
 
 
 ** Windows Task Scheduler
