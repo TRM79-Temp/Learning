@@ -1,0 +1,56 @@
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+
+font-family:
+    Serif
+    Sans-serif
+    Monospace
+
+<img> tag is selfclosing (has no closing tag).
+<input> is selfclosing.
+
+Applying width style to image makes it smaller or bigger.
+
+    border-color: green;
+    border-width: 10px;
+    border-style: solid;
+    border-radius: 10px; or 50%
+
+<button type="submit">Blah-blah</button>
+
+<label><input type="radio" name="indoor-outdoor"> Indoor</label>
+<label><input type="checkbox" name="personality"> Loving</label>
+checked
+required
+!important
+
+Bootstrap:
+
+.container-fluid
+.img-responsive
+.text-center
+
+.btn
+.btn-block
+.btn-primary
+.btn-info
+.btn-danger
+
+.col-md-*
+.col-xs-*
+
+.text-primary for h2
+.text-danger
+
+.form-control
+
+.well
+
+Font Awesome:
+use it as <i> classes
+
+.fa
+.fa-thumbs-up
+.fa-info-circle
+.fa-trash
+.fa-paper-plane
