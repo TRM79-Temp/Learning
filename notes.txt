@@ -557,12 +557,19 @@ where (FIELD1 = '&acc'       -- text field
        or FIELD2 = '&acc')
    and FIELD3 = &dealdate; -- number field
 
+SUBSTR( string, start_position [, length ] )
+    The first position in the string is always 1.
+
+LIKE <-- starts with
+
 
 ** Toad for Oracle
 rgb(121, 188, 255) – comment background
 rgb(68, 68, 68) – comment foreground
 rgb(51, 153, 255) – selection (default?)
 
+Ctrl+C   <-- Copy cell value
+Ctrl+Ins <-- Copy entire row
 
 
 ** Linux
@@ -672,6 +679,10 @@ Windows Menu | Office 2013 Tools | Spreadsheet Compare
 =R5C[2]     is equal to =D$5
 
 
+** VBA
+CStr(n) ' Converts to string.
+
+
 ** notepad++
 F6 (NppExec)
 NPP_CONSOLE 0
@@ -687,6 +698,8 @@ Go to closing tag: Ctrl+T
 Go to closing brace: Ctrl+B
 
 Alt+F6 – runs new instance
+
+NppAutoindent plugin
 
 
 ** Sublime Text
@@ -906,7 +919,10 @@ files.hotExit
     "whitespace.color.dark": "rgba(0, 255, 0, 0.5)",
     "editor.wrappingIndent": "indent",
     "editor.tabSize": 4,
-    "http.proxy": "http://username:passwordForHttpAndHttps@proxy.name:port/proxy.pac"
+    "http.proxy": "http://username:passwordForHttpAndHttps@proxy.name:port/proxy.pac",
+    "extensions.autoUpdate": false,
+    "update.channel": "none",
+    "editor.showFoldingControls": "mouseover",
 }
 
 Ctrl+Shift+P -> Configure Language -> en
@@ -1096,6 +1112,8 @@ Archive:
 C:\Users\USERNAME\AppData\Local\Lotus\Notes\Data
 Temp:
 C:\Users\USERNAME\AppData\Local\Temp\notes81C9D1
+
+File | Preferences | Basic Notes Client Configuration | Mark documents read when opened in preview pane
 
 
 ** Bookmarks
