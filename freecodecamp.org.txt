@@ -54,3 +54,30 @@ use it as <i> classes
 .fa-info-circle
 .fa-trash
 .fa-paper-plane
+
+jQuery:
+
+$(document).ready(function() {
+});
+
+addClass()
+removeClass()
+css(propertyName, value)
+prop(propertyName, value)
+    "disabled", true
+html()
+text()
+remove()
+appendTo(id) – moves element
+clone()
+parent()
+children()
+.target:nth-child(2)  <- the target is nth child
+.target:odd, .target:even <- even is 0, 2, ...
+
+Animate.css styles:
+
+animated bounce
+animated shake
+animated fadeOut
+animated hinge

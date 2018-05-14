@@ -1,3 +1,20 @@
+Basic Types:
+    boolean
+    number
+    string
+    array
+    tuple
+        let x: [string, number]; x = ['hello', 100500];
+        var s = x[0];
+    enum
+    any, any[]
+    Object
+    void
+    null
+    undefined
+    never
+
+
 Optional parameters
 Default parameters
 Rest parameters

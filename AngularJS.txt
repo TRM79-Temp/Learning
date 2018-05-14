@@ -89,7 +89,8 @@ orderBy
 https://angular.io
 https://angular.io/docs
     Techniques | Setup & Deployment | Setup for local development <== quickstart
-    ()
+    (https://github.com/angular/quickstart
+    https://angular.io/docs/ts/latest/quickstart.html =301=> https://angular.io/guide/quickstart)
 
 03.03.2018
 
@@ -180,7 +181,9 @@ The project's initial files (without node_modules):
 
 npm install
 npm start
+ng new project-name
 ng serve (this is, generally, what is run when you type npm start)
+ng generate component component-name
 
 Decorator
 
@@ -189,3 +192,28 @@ project-name\README.md
 project-name\package.json
 project-name\.angular-cli.json
 project-name\src\index.html
+
+using enums in html-template:
+    public LinkToEnum = SomeEnum;
+    and then use LinkToEnum in a template.
+
+Add the Bootstrap to a project:
+npm install bootstrap jquery --save
+(For some reasons, it does not work with Bootstrap version 4, when cli is version 1.2.6,
+so install bootstrap@3 in this case;
+for using Bootstrap 4 update @angular/cli to 1.7.2,
+see https://www.npmjs.com/package/@angular/cli for details of uninstall/install.)
+And then add next settings into ./.angular-cli.json file:
+"styles": [
+    ...
+    "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+],
+"scripts": [
+    "../node_modules/jquery/dist/jquery.min.js",
+    "../node_modules/bootstrap/dist/js/bootstrap.min.js"
+]
+
+ng serve
+You seem to not be depending on "@angular/core". This is an error.
+Solution:
+npm install
