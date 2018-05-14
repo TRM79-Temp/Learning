@@ -5,3 +5,11 @@ Rest parameters
 if (typeof callback === "function") {
     ...
 }
+
+function doSomethingWithACallback(
+        initialText: string,
+        callback : (initialText: string) => void
+    ) {
+    ...
+    callback(initialText);
+}
