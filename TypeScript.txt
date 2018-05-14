@@ -1,0 +1,7 @@
+Optional parameters
+Default parameters
+Rest parameters
+
+if (typeof callback === "function") {
+    ...
+}

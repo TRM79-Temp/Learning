@@ -170,6 +170,8 @@ git checkout -b branchname origin/branchname
 
 git reset --hard|--merge|HEAD~
 git reset --soft secondToLastCommit – remove last commit saving changes
+    If commit was pushed to the github, use 'git push origin +branchName' to force push
+    and replace the commit on the github.
 
 git diff --cached
 
@@ -286,6 +288,9 @@ All learners should:
 Submit their own original work
 Avoid sharing answers with others
 Report suspected violations
+
+https://www.udacity.com/
+https://www.udemy.com/
 
 
 ** Regular Expression
@@ -562,6 +567,9 @@ SUBSTR( string, start_position [, length ] )
 
 LIKE <-- starts with
 
+Single-quotes are used to enclose string literals (and, in recent versions, DATE literals).
+Double-quotes are used to enclose identifiers (like table and column names).
+
 
 ** Toad for Oracle
 rgb(121, 188, 255) – comment background
@@ -570,6 +578,8 @@ rgb(51, 153, 255) – selection (default?)
 
 Ctrl+C   <-- Copy cell value
 Ctrl+Ins <-- Copy entire row
+
+F6       <-- Switch between editor and Data Grid
 
 
 ** Linux
@@ -629,7 +639,7 @@ I. Go To -> Object
 II. Ctrl+A | Shift+F9
 
 Compare documents:
-I. Review -> Compare (use >>>>>>>>> instead of name) + Switch on Reviewing Pane
+I. Review -> Compare (use >>>>>>>>> instead of name) + Switch on Reviewing Pane + Select Simple Markup
 II. View -> Window -> View Side by Side
 
 Bookmarks:
@@ -677,6 +687,9 @@ Windows Menu | Office 2013 Tools | Spreadsheet Compare
 =RC[2]      is equal to =D5
 =RC4        is equal to =$D5
 =R5C[2]     is equal to =D$5
+
+Save filter:
+Custom Views command
 
 
 ** VBA
@@ -782,8 +795,6 @@ oShell.Run strArgs, 0, false
 @echo off
 set q=
 
-chcp 1251
-
 fc "C:\Users\user-name\AppData\Local\Temp\BGInfo.bmp" "C:\Users\user-name\AppData\Local\Temp\BGInfo - копия.bmp"
 
 echo Press Enter to exit or any other text for replacing the annoying picture.
@@ -849,6 +860,8 @@ shutdown /r /t 0
 Prevent closing batch file after run notepad++:
 add 'cmd /k' or 'pause' at the end of the batch file.
 
+A file name can't contain any of the following characters: \ / : * ? " < > |
+
 
 ** Windows Task Scheduler
 schtasks
@@ -879,6 +892,9 @@ Tools -> Customize... -> Commands -> Toolbar -> Standard
 
 exe.config location:
     C:\Users\username\AppData\Local\WindowsManipulations\...
+
+%LocalAppData%\Microsoft\VSCommon\OnlineLicensing
+https://stackoverflow.com/questions/43390466/visual-studio-community-2017-is-a-30-day-trial
 
 
 ** Visual Studio Code
@@ -993,6 +1009,8 @@ https://docs.microsoft.com/en-us/dotnet/framework/winforms/controls/how-to-make-
 
 ** nuget
 install-package package_name
+
+NuGet Package Explorer
 
 
 ** nodejs
@@ -1232,6 +1250,7 @@ https://en.oxforddictionaries.com/
 
 https://www.iconsdb.com/
 http://www.myiconfinder.com/
+https://www.iconfinder.com/
 
 https://www.dotnetperls.com/
 https://www.c-sharpcorner.com/
