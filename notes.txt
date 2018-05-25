@@ -142,6 +142,8 @@ Tag        Tag omission
 Test selection color:
 #b3d9ff
 
+document.querySelectorAll('div[_afrfoc="y1527240199808"]');
+
 
 ** git
 https://gitlab.com/eleks-camp-lviv-2/yellow
@@ -691,9 +693,16 @@ Windows Menu | Office 2013 Tools | Spreadsheet Compare
 Save filter:
 Custom Views command
 
+https://www.extendoffice.com/
+
 
 ** VBA
 CStr(n) ' Converts to string.
+CInt(s) ' Converts to Integer
+Cells(Row, Column) – Gets a cell value <--> Cells(Row, Column).Value gets the same result;
+                     Can be used in Range(Cells(r1, c1), Cells(r2, c2))
+Cells(7, 11).FormulaR1C1
+SendKeys ("^{HOME}")
 
 
 ** notepad++
