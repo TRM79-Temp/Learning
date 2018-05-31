@@ -662,6 +662,25 @@ Alt+Left – Navigate back (after passing through link)
 
 File | Info | Edit Links to Files
 
+Macros | Macros in: Word commands | ListCommands | Run
+
+Reassign the next command to the macros:
+
+Browse Next
+Browse Prev
+
+Sub PageDown()
+    Selection.GoToNext wdGoToPage
+End Sub
+
+Sub PageUp()
+    Selection.GoToPrevious wdGoToPage
+End Sub
+
+Go to next/previous document:
+Ctrl+F6, Alt+F6
+Ctrl+Shift+F6, Alt+Shift+F6
+
 
 ** Microsoft Excel
 ** MS Excel
