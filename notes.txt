@@ -714,6 +714,12 @@ Custom Views command
 
 https://www.extendoffice.com/
 
+Ctrl+Q – Quick Analysis
+
+Recover a deleted worksheet sheet tab in Excel:
+1. Save your workbook with a different filename (File, Save As…)
+2. Re-open your original workbook.
+
 
 ** VBA
 CStr(n) ' Converts to string.
@@ -722,6 +728,40 @@ Cells(Row, Column) – Gets a cell value <--> Cells(Row, Column).Value gets the 
                      Can be used in Range(Cells(r1, c1), Cells(r2, c2))
 Cells(7, 11).FormulaR1C1
 SendKeys ("^{HOME}")
+
+' https://www.extendoffice.com/documents/excel/3828-change-border-color-of-active-cell-in-excel.html
+Private Sub Worksheet_SelectionChange(ByVal Target As Range)
+'UpdatebyExtendOffice20160726
+    Cells.Borders.ColorIndex = xlNone
+    Target.Borders.Color = vbRed
+End Sub
+
+Or:
+
+' https://www.extendoffice.com/documents/excel/3635-excel-change-cell-color-when-clicked-selected.html
+Private Sub Worksheet_SelectionChange(ByVal Target As Range)
+    With Target
+        .Worksheet.Cells.FormatConditions.Delete
+        .FormatConditions.Add xlExpression, , "TRUE"
+        .FormatConditions(1).Interior.Color = vbYellow
+    End With
+End Sub
+
+Better version:
+
+Public p As Range
+Sub Worksheet_SelectionChange(ByVal Target As Range)
+    If Not p Is Nothing Then
+        p.FormatConditions.Delete
+    End If
+    
+    With Target
+        .FormatConditions.Add xlExpression, , "TRUE"
+        .FormatConditions(1).Interior.Color = RGB(91, 173, 255)
+    End With
+    
+    Set p = Selection
+End Sub
 
 
 ** notepad++
@@ -890,6 +930,10 @@ add 'cmd /k' or 'pause' at the end of the batch file.
 
 A file name can't contain any of the following characters: \ / : * ? " < > |
 
+net user /domain username
+
+quser
+
 
 ** Windows Task Scheduler
 schtasks
@@ -919,7 +963,7 @@ Tools -> Customize... -> Commands -> Toolbar -> Standard
     and add "Debug -> Start Without Debugging" after "Debug Target"
 
 exe.config location:
-    C:\Users\username\AppData\Local\WindowsManipulations\...
+    C:\Users\username\AppData\Local\WindowsTools\...
 
 %LocalAppData%\Microsoft\VSCommon\OnlineLicensing
 https://stackoverflow.com/questions/43390466/visual-studio-community-2017-is-a-30-day-trial
@@ -1412,3 +1456,6 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run
 децильйон         decillion         10^33   n=11
 
 https://codepen.io
+
+inkscape
+gimp
