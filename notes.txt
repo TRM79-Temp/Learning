@@ -144,6 +144,9 @@ Test selection color:
 
 document.querySelectorAll('div[_afrfoc="y1527240199808"]');
 
+event, this ? objects:
+https://github.com/Roman-Tarasiuk/RegExp/commit/8e5b355e48b211b5a2097bdbb088a11546cf93e1
+
 
 ** git
 https://gitlab.com/eleks-camp-lviv-2/yellow
@@ -572,6 +575,9 @@ LIKE <-- starts with
 Single-quotes are used to enclose string literals (and, in recent versions, DATE literals).
 Double-quotes are used to enclose identifiers (like table and column names).
 
+All DataBase Schemas
+select USERNAME from SYS.ALL_USERS
+
 
 ** Toad for Oracle
 rgb(121, 188, 255) – comment background
@@ -918,6 +924,15 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\Directory\shell\Copy as Path\command]
 @="cmd.exe /c echo %1|clip"
 
+Version with quotes:
+cmd.exe /c echo "%1"|clip
+
+Version without Carriage Return or Line Feed (CR/LF) at the end:
+cmd.exe /c (echo.|set /p=""%1"") | clip
+
+Version without quotes:
+cmd.exe /c (echo.|set /p="%1") | clip
+
 </Copy as path explorer context menu>
 
 regsvr32 thelibrary.dll
@@ -1007,7 +1022,7 @@ files.hotExit
     "whitespace.color.dark": "rgba(0, 255, 0, 0.5)",
     "editor.wrappingIndent": "indent",
     "editor.tabSize": 4,
-    "http.proxy": "http://username:passwordForHttpAndHttps@proxy.name:port/proxy.pac",
+    "http.proxy": "http://domain\\username:passwordForHttpAndHttps@proxy.name:port/proxy.pac",
     "extensions.autoUpdate": false,
     "update.channel": "none",
     "editor.showFoldingControls": "mouseover",
@@ -1436,13 +1451,15 @@ Greek alphabet:
 Ψ ψ	psi, ψι
 Ω ω	omega, ωμέγα
 
-Regedit
+
+** Regedit
 HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU
 HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run
     HKLM\Software\Microsoft\Windows\CurrentVersion\RunOnce
     HKLM\Software\Microsoft\Windows\CurrentVersion\RunOnceEx
     HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnce
     HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnceEx
+
 
 мільйон           million           10^6     n=2
 більйон (мільярд) billion           10^9     n=3
