@@ -50,3 +50,33 @@ UDDI Services Console  uddi.msc
 Active Directory Users and Computers (Exchange version)  users and computers.msc
 WINS  winsmgmt.msc
 Windows Management Infrastructure (WMI)  wmimgmt.msc
+
+tpm.msc
+WF.msc
+NAPCLCFG.MSC
+printmanagement.msc
+taskschd.msc
+
+appwiz.cpl
+bthprops.cpl
+collab.cpl
+desk.cpl
+Firewall.cpl
+FlashPlayerCPLApp.cpl
+hdwwiz.cpl
+igfxcpl.cpl
+inetcpl.cpl
+infocardcpl.cpl
+intl.cpl
+irprops.cpl
+joy.cpl
+main.cpl
+mmsys.cpl
+ncpa.cpl
+powercfg.cpl
+sdclient.cpl
+sysdm.cpl
+TabletPC.cpl
+telephon.cpl
+timedate.cpl
+wscui.cpl

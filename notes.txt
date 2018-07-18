@@ -61,6 +61,8 @@ https://habrahabr.ru/post/329436/
   і́
   c2 a0 – some type of space separating number digits
   Ω
+  А́ а́ Е́ е́ И́ и́ О́ о́ У́ у́ Ы́ ы́ Э́ э́ Ю́ ю́ Я́ я́ І́ і́  Є́ є́
+  (https://adobe-type-tools.github.io/adobe-cyrillic-charsets/adobe-cyrillic-3.html)
 
 &#x301; - Combining Acute Accent (place it after character)
 
@@ -146,6 +148,9 @@ document.querySelectorAll('div[_afrfoc="y1527240199808"]');
 
 event, this ? objects:
 https://github.com/Roman-Tarasiuk/RegExp/commit/8e5b355e48b211b5a2097bdbb088a11546cf93e1
+
+Modify the URL without reloading the page
+https://stackoverflow.com/questions/824349/modify-the-url-without-reloading-the-page
 
 
 ** git
@@ -687,6 +692,8 @@ Go to next/previous document:
 Ctrl+F6, Alt+F6
 Ctrl+Shift+F6, Alt+Shift+F6
 
+Click, Ctrl+Click – Selects entire sentence.
+
 
 ** Microsoft Excel
 ** MS Excel
@@ -1022,7 +1029,8 @@ files.hotExit
     "whitespace.color.dark": "rgba(0, 255, 0, 0.5)",
     "editor.wrappingIndent": "indent",
     "editor.tabSize": 4,
-    "http.proxy": "http://domain\\username:passwordForHttpAndHttps@proxy.name:port/proxy.pac",
+    /* "http.proxy": "http://domain\\username:passwordForHttpAndHttps@proxy.name:port/proxy.pac", */
+    "http.proxy": "http://username:passwordForHttpAndHttps@proxy.name:port"
     "extensions.autoUpdate": false,
     "update.channel": "none",
     "editor.showFoldingControls": "mouseover",
@@ -1219,6 +1227,9 @@ Temp:
 C:\Users\USERNAME\AppData\Local\Temp\notes81C9D1
 
 File | Preferences | Basic Notes Client Configuration | Mark documents read when opened in preview pane
+
+Ctrl+Ins / Ctrl+C – WTF?
+Use Edit | Copy As | Table to copy letters Sender and Subject to clipboard.
 
 
 ** Bookmarks
