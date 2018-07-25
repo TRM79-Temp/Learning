@@ -961,6 +961,9 @@ quser
 schtasks
 schtasks /Delete /TN "Run Screensaver"
 
+CMD
+/C TITLE Read How-To Geek Reminder&ECHO.&ECHO.&ECHO It is currently %TIME%&ECHO.&ECHO.&ECHO Time to go read How-To Geek.&ECHO https://www.howtogeek.com&ECHO.&ECHO.&TIMEOUT 120
+
 
 ** PC Serial
 #  https://support.microsoft.com/en-us/kb/558124
