@@ -308,6 +308,7 @@ Logs processing:
 (?:^.*?)(blah-blah-blah)(.|\n)*?(?=.*?\1)
 (?:^.*?)(blah-blah-blah)(.|\r\n)*?(?=.*?\1)
 (?:^.*?)(blah-blah-blah)(.|\r?\n)*?(?=.*?\1) – universal
+(?:^.*?)(blah-blah-blah)(.|\r?\n)*?(?=.*?\1|\r?\n$) – another (it seems – better) version, includes last entry
 .*blah-blah-blah.*(.|\n)*?yadda-yadda-yadda.*
 .*blah-blah-blah.*(.|\r\n)*?yadda-yadda-yadda.*
 .*blah-blah-blah.*(.|\r?\n)*?yadda-yadda-yadda.* – universal
