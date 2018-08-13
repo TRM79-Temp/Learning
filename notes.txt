@@ -801,6 +801,12 @@ NppAutoindent plugin
     (Need restart; Shows encoding in status bar.)
 
 
+** Adobe Reader
+F9 – Toggle menu
+Ctrl+K – Edit | Preferences
+Ctrl+H – View | Reading mode
+
+
 ** Far
 HKEY_CURRENT_USER\Software\Far2\SavedHistory -> Lines
 
@@ -1177,6 +1183,7 @@ news.ugcc.ua/calendar/
 https://github.com/voytyshyn
 https://github.com/aromakh
 https://github.com/DanielYurystovskyi
+https://github.com/Das-Tier
 https://github.com/doskochroma
 https://github.com/IhorMykhaliak
 https://github.com/MarkRizun
@@ -1238,6 +1245,7 @@ Use Edit | Copy As | Table to copy letters Sender and Subject to clipboard.
 
 
 ** Bookmarks
+https://www.geeksforgeeks.org/
 http://stackoverflow.com/questions/11614436/any-online-website-to-execute-pl-sql-programs
 http://knigi.tor2.net/index.php?id=4645003
 http://docs.oracle.com/database/121/CNCPT/intro.htm
@@ -1253,6 +1261,7 @@ https://msdn.microsoft.com/en-us/library/w0x726c2(v=vs.110).aspx
 https://msdn.microsoft.com/en-us/library/618ayhy6.aspx
 https://msdn.microsoft.com/en-us/library/hs600312(v=vs.110).aspx
 https://msdn.microsoft.com/en-us/library/az24scfc(v=vs.110).aspx
+https://referencesource.microsoft.com
 https://dotnetfiddle.net/
 https://docs.webplatform.org/wiki/Main_Page
 https://css-tricks.com/snippets/javascript/javascript-keycodes/
@@ -1361,6 +1370,8 @@ https://jsfiddle.net/
 
 https://www.telerik.com/fiddler
 
+https://www.pluralsight.com/paths/java?irgwc=1&mpid=321564&utm_source=impactradius&utm_medium=digital_affiliate&utm_campaign=321564&aid=7010a000001xAKZAA2
+
 
 ** Software Development
 static class Log
@@ -1440,6 +1451,7 @@ https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers
  443 – HTTPS
 3389 – Remote Desktop Protocol
 1521 – Oracle Database
+ 445 – SMB
 
 Greek alphabet:
 Α α	alpha, άλφα
@@ -1478,7 +1490,7 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run
 
 
 мільйон           million           10^6     n=2
-більйон (мільярд) billion           10^9     n=3
+мільярд (більйон) billion           10^9     n=3
 трильйон          trillion          10^12    n=4
 квадрильйон       quadrillion       10^15    n=5
 квінтильйон       quintillion       10^18    n=6
