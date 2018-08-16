@@ -964,6 +964,11 @@ net user /domain username
 quser
 
 
+** Windows Media Player
+Windows Media Player Plus! ? Plugin
+http://bmproductions.fixnum.org/index.htm?http://bmproductions.fixnum.org/wmpplus/
+
+
 ** Windows Task Scheduler
 schtasks
 schtasks /Delete /TN "Run Screensaver"
