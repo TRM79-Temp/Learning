@@ -249,6 +249,11 @@ repo -> Settings -> Transfer
 
 git pull --allow-unrelated-histories
 
+File path in the web interface:
+https://github.com/TRM79-Temp/Temp/blob/master/file-name
+Real path:
+https://github.com/TRM79-Temp/Temp/raw/master/file-name
+
 
 ** Greasemonkey
 C:\Users\UserName\AppData\Roaming\Mozilla\Firefox\Profiles\ProfileName\gm_scripts\OALD\OALD.user.js
