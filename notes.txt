@@ -1,4 +1,4 @@
-** Temp
+﻿** Temp
 https://habrahabr.ru/post/329436/
 
 ** Alt-Codes
@@ -153,6 +153,10 @@ https://github.com/Roman-Tarasiuk/RegExp/commit/8e5b355e48b211b5a2097bdbb088a115
 Modify the URL without reloading the page
 https://stackoverflow.com/questions/824349/modify-the-url-without-reloading-the-page
 
+$('.webtop-g').eq(0).dblclick(function(event) {
+  event.stopPropagation();
+});
+
 
 ** git
 https://gitlab.com/eleks-camp-lviv-2/yellow
@@ -253,6 +257,11 @@ File path in the web interface:
 https://github.com/TRM79-Temp/Temp/blob/master/file-name
 Real path:
 https://github.com/TRM79-Temp/Temp/raw/master/file-name
+
+https://api.github.com/users/user-name
+    > repos_url
+        > issues_url
+            (issues?page=N)
 
 
 ** Greasemonkey
@@ -655,7 +664,7 @@ PuTTY – Settings -> Window -> Translation -> Remote character set: UTF-8 аб�
 Normal.dot – Run command "application.NormalTemplate.OpenAsDocument" in Immediate window of VBA editor
 (C:\Users\<username>\AppData\Roaming\Microsoft\Шаблоны)
 Cut, Copy and Paste – see 'msword02.png'
-Default shortcut: Ctrl+F -> NavPaneSearch (Home), Reassigned to: EditFind
+Default shortcut: Ctrl+F -> NavPaneSearch (Home Tab), Reassigned to: EditFind
 Replacing (in Macros)
     .Wrap = wdFindContinue
     .Wrap = wdFindAsk
@@ -839,13 +848,17 @@ Windows Shell Snippets – see 'snippets.txt'
 
 sc stop svhost
 
+
 for %* in (.) do echo %~nx* > C:\Windows\Temp\tmp.tmp & set /P var1=<C:\Windows\Temp\tmp.tmp
 title %var1% & del C:\Windows\Temp\tmp.tmp & set "var1="
 
 doskey pwd=echo ^%cd^%
 prompt -$G$S
 
+prompt $S$G$S
+
 PROMPT=$P$G – Default (or PROMPT without parameters)
+
 
 echo %cd% – prints current directory
 
@@ -976,6 +989,10 @@ net user /domain username
 
 quser
 
+Msinfo32.exe
+
+net use Drive: /delete
+
 
 ** Windows Media Player
 Windows Media Player Plus! ? Plugin
@@ -1077,6 +1094,10 @@ Ctrl+Shift+\ – Go to closing bracket
 set path="C:\Windows\Microsoft.NET\Framework\v4.0.30319\";%path%
 
 msbuild Solution.sln /t:Build /p:Configuration=Release
+<DefineConstants>DEBUG;TRACE</DefineConstants> <- In the csproj file.
+
+MSBuild.Extension.Pack.4.0.15.0.zip
+(https://github.com/mikefourie/MSBuildExtensionPack/releases)
 
 
 ** C#
@@ -1252,6 +1273,8 @@ Ctrl+Shift+Enter – copy full file path to clipboard
 
 ** Notes
 ** Lotus Notes
+Ctrl+O | UARBAMAIL/HO/RBA-AVAL/UA | RBA-AVAL's Directory
+
 Archive:
 C:\Users\USERNAME\AppData\Local\Lotus\Notes\Data
 Temp:
@@ -1261,6 +1284,11 @@ File | Preferences | Basic Notes Client Configuration | Mark documents read when
 
 Ctrl+Ins / Ctrl+C – WTF?
 Use Edit | Copy As | Table to copy letters Sender and Subject to clipboard.
+
+
+** Sametime
+Список контактов | При свертывании перемещать окно списка контактов в системный лоток
+Уведомления | (Личный разговор | Многосторонний разговор) | Переместить на передний план...
 
 
 ** Bookmarks
@@ -1523,3 +1551,9 @@ https://codepen.io
 
 inkscape
 gimp
+DB Browser for SQLite
+DBF Manager
+ProcessExplorer
+NuGet Package Explorer
+jd-gui
+HxD
