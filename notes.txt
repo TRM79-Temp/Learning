@@ -262,6 +262,12 @@ https://api.github.com/users/user-name
     > repos_url
         > issues_url
             (issues?page=N)
+https://api.github.com/repos/user-name/repository-name/releases
+            (?page=N)
+Example:
+https://api.github.com/repos/dotnet/core/releases?page=1
+
+git mv <- More or rename file.
 
 
 ** Greasemonkey
@@ -1079,6 +1085,7 @@ files.hotExit
     "extensions.autoUpdate": false,
     "update.channel": "none",
     "editor.showFoldingControls": "mouseover",
+    "http.proxyStrictSSL":false
 }
 
 Ctrl+Shift+P -> Configure Language -> en
@@ -1189,6 +1196,13 @@ https://www.npmjs.com/package/http-server
 
 npm install jquery-autosize (?old version)
 npm install autosize (https://github.com/jackmoore/autosize)
+
+
+npm config set proxy http://username:percentage%20password@proxy.server:port
+npm config set https-proxy http://username:percentage%20password@proxy.server:port
+
+.nmprc file:
+strict-ssl=false
 
 
 ** Jira
