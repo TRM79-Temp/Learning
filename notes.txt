@@ -435,6 +435,12 @@ SELECT cc.table_name,
             AND cc.table_name  = tc.table_name
     WHERE  cc.table_name
         IN (SELECT table_name FROM all_tables where owner='xxx')
+        
+Version 3:
+  select   *
+    from   ALL_TABLES
+   where   OWNER = 'xxx'
+order by   TABLE_NAME
 
 
 -- Some value and its count in table:
@@ -1085,7 +1091,13 @@ files.hotExit
     "extensions.autoUpdate": false,
     "update.channel": "none",
     "editor.showFoldingControls": "mouseover",
-    "http.proxyStrictSSL":false
+    "http.proxyStrictSSL":false,
+    "workbench.activityBar.visible": false,
+    "csharp.referencesCodeLens.enabled": false, // <- References count of a method.
+    "workbench.colorCustomizations": {
+        "editor.selectionBackground": "#135564",
+        "editor.selectionHighlightBackground": "#135564"
+    },
 }
 
 Ctrl+Shift+P -> Configure Language -> en
@@ -1303,6 +1315,20 @@ Use Edit | Copy As | Table to copy letters Sender and Subject to clipboard.
 ** Sametime
 Список контактов | При свертывании перемещать окно списка контактов в системный лоток
 Уведомления | (Личный разговор | Многосторонний разговор) | Переместить на передний план...
+
+
+** KVIrc
+Ctrl+Shift+S <- Brings up script tester.
+  Execute next scripts:
+event(OnJoin,supressJoinMsgs)
+{
+	halt;
+}
+event(OnQuit,supressQuitMsgs)
+{
+	halt;
+}
+(https://github.com/kvirc/KVIrc/wiki/FAQ)
 
 
 ** Bookmarks
