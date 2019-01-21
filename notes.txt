@@ -295,6 +295,13 @@ https://www.mozilla.org/en-US/firefox/developer/all/
 https://www.mozilla.org/en-US/firefox/all/
 https://ftp.mozilla.org/pub/firefox/releases/
 
+REDIRECTOR Add-On:
+>> MSDN Google Search Results
+Example URL:        https://docs.microsoft.com/ru-ru/dotnet/api/system.windows.forms.richtextbox.selectionchanged?view=netframework-4.7.2
+Include pattern:    http([s]?):\/\/(docs|msdn)\.microsoft\.com\/ru-ru\/(.*)
+Redirect to:        http$1://$2.microsoft.com/en-us/$3
+Pattern type:       Regular Expression
+
 
 ** Chrome
 ** Google Chrome
@@ -628,6 +635,8 @@ Ctrl+C   <-- Copy cell value
 Ctrl+Ins <-- Copy entire row
 
 F6       <-- Switch between editor and Data Grid
+
+View | Formatting options
 
 
 ** Linux
@@ -1095,8 +1104,8 @@ files.hotExit
     "workbench.activityBar.visible": false,
     "csharp.referencesCodeLens.enabled": false, // <- References count of a method.
     "workbench.colorCustomizations": {
-        "editor.selectionBackground": "#135564",
-        "editor.selectionHighlightBackground": "#135564"
+        "editor.selectionBackground": "#9cf",
+        "editor.selectionHighlightBackground": "#9cf"
     },
 }
 
