@@ -270,6 +270,17 @@ https://api.github.com/repos/dotnet/core/releases?page=1
 git mv <- More or rename file.
 
 
+Adding existing code to github:
+1. git init
+2. in .git\config file add:
+[remote "origin"]
+	url = https://github.com/User/Repository <- Existing repository (with optional .gitignore).
+3. git pull
+4. git add .
+5. git commit -a -m "Initial commit."
+6. git push --set-upstream origin master
+
+
 ** Greasemonkey
 C:\Users\UserName\AppData\Roaming\Mozilla\Firefox\Profiles\ProfileName\gm_scripts\OALD\OALD.user.js
 Debug script:
