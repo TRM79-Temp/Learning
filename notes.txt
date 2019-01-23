@@ -388,6 +388,20 @@ $1\n
 Check whether there are lines with length > 80:
 (^.{80}).+
 
+[...........][.............][.............]
+(\d{10,16})\n(\d{10,16})*\n*(\d{10,16})*\n*
+Results (v.1):
+[------]          [-------------------------------]   [-------------------------------]
+match[1] + '\n' + (match[2] ? match[2] + '\n' : '') + (match[3] ? match[3] + '\n' : '')
+Results (v.2):
+[----------------------]   [----------------------------------------]   [----------------------------------------]
+('\'' + match[1] + '\'') + (match[2] ? ', \'' + match[2] + '\'' : '') + (match[3] ? ', \'' + match[3] + '\'' : '') + ',\n'
+
+Meta for previous results:
+Input:1 2 3 4 5 6 7 8 9 10
+Regular expression:(\d+)
+Replace to:+ (match[$1] ? ', \'' + match[$1] + '\'' : '')
+[Replace]
 
 ** SQL
 sqlplus, sqlplusw tools
@@ -820,6 +834,24 @@ Sub Worksheet_SelectionChange(ByVal Target As Range)
     Set p = Selection
 End Sub
 
+' User defined functions.
+' Define it in a Module.
+Function FindR(c As String, m As String)
+    FindR = InStrRev(c, m)
+End Function
+
+Function BackColor(c As Range)
+    BackColor = c.Interior.Color
+End Function
+
+Function ForeColor(c As Range)
+    ForeColor = c.Font.Color
+End Function
+
+Sub HomeSheet()
+    Sheets("Sheets").Select
+End Sub
+
 
 ** notepad++
 F6 (NppExec)
@@ -1112,6 +1144,7 @@ files.hotExit
 Ctrl+Shift+P -> Configure Language -> en
 
 Toggle Render Whitespace
+View: Toggle Activity Bar Visibility
 
 See the 'Regular Expression' section ('Trim code to 80 characters...') for info about replacing.
 
