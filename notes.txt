@@ -1057,6 +1057,9 @@ Msinfo32.exe
 
 net use Drive: /delete
 
+%AppData%\Microsoft\Windows\Recent\
+%userprofile%\AppData\Roaming\Microsoft\Windows\Recent\
+
 
 ** Windows Media Player
 Windows Media Player Plus! ? Plugin
@@ -1230,6 +1233,11 @@ install-package package_name
 
 NuGet Package Explorer
 
+C:\Users\username\AppData\Roaming\NuGet\NuGet.Config
+nuget.exe config -set http_proxy=http://proxy:port
+nuget.exe config -set http_proxy.user=username <- without domain
+nuget.exe config -set http_proxy.password=userPassword
+
 
 ** nodejs
 C:\Users\Roman\AppData\Roaming\npm-cache
@@ -1239,6 +1247,9 @@ C:\Users\Roman\AppData\Roaming\npm-cache
 npm config behind proxy: (.npmrc file)
 proxy=http://domain%5Cuser:password@proxy:port/ (use encoded password)
 [https-proxy=-//-]
+strict-ssl=false
+or
+proxy=http://user:password@proxy:port/ (%-encoded password)
 or using command:
 npm config set proxy http://...
 
