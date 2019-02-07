@@ -1150,9 +1150,10 @@ files.hotExit
     "workbench.activityBar.visible": false,
     "csharp.referencesCodeLens.enabled": false, // <- References count of a method.
     "workbench.colorCustomizations": {
+        "activityBar.background": "#ccc",
         "editor.selectionBackground": "#9cf",
         "editor.selectionHighlightBackground": "#9cf"
-    },
+    }
 }
 
 Ctrl+Shift+P -> Configure Language -> en
