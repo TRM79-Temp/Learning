@@ -1164,6 +1164,9 @@ See the 'Regular Expression' section ('Trim code to 80 characters...') for info 
 
 Ctrl+Shift+\ – Go to closing bracket
 
+C# FixFormat
+"csharpfixformat.style.braces.onSameLine": false
+
 
 ** .NET
 set path="C:\Windows\Microsoft.NET\Framework\v4.0.30319\";%path%
@@ -1173,6 +1176,9 @@ msbuild Solution.sln /t:Build /p:Configuration=Release
 
 MSBuild.Extension.Pack.4.0.15.0.zip
 (https://github.com/mikefourie/MSBuildExtensionPack/releases)
+
+dotnet new sln
+dotnet sln add ConsoleApplication1.csproj
 
 
 ** C#
