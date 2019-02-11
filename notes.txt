@@ -64,6 +64,7 @@ https://habrahabr.ru/post/329436/
   А́ а́ Е́ е́ И́ и́ О́ о́ У́ у́ Ы́ ы́ Э́ э́ Ю́ ю́ Я́ я́ І́ і́  Є́ є́
   (https://adobe-type-tools.github.io/adobe-cyrillic-charsets/adobe-cyrillic-3.html)
   | - 124
+  ➤
 
 &#x301; - Combining Acute Accent (place it after character)
 
