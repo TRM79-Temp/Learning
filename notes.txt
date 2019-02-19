@@ -65,8 +65,17 @@ https://habrahabr.ru/post/329436/
   (https://adobe-type-tools.github.io/adobe-cyrillic-charsets/adobe-cyrillic-3.html)
   | - 124
   ➤
-
-&#x301; - Combining Acute Accent (place it after character)
+  ⮞
+  ⮜
+  ⮝
+  ⮟
+  ˂
+  ˃
+  ˄
+  ˅
+  https://www.compart.com/en/unicode/search?q=Arrowhead#characters
+  ∞ – &#8734; &infin;
+  &#x301; - Combining Acute Accent (place it after character)
 
 
 ** HTML
@@ -314,6 +323,8 @@ Include pattern:    http([s]?):\/\/(docs|msdn)\.microsoft\.com\/ru-ru\/(.*)
 Redirect to:        http$1://$2.microsoft.com/en-us/$3
 Pattern type:       Regular Expression
 
+browser.tabs.warnOnCloseOtherTabs
+
 
 ** Chrome
 ** Google Chrome
@@ -354,6 +365,8 @@ Logs processing:
 .*blah-blah-blah.*(.|\r\n)*?yadda-yadda-yadda.*
 .*blah-blah-blah.*(.|\r?\n)*?yadda-yadda-yadda.* – universal
 .*blah-blah-blah.*(.|\r?\n)*?(yadda-yadda-yadda.*\n*)+ – 'yadda-yadda-yadda' repeats in multiple lines
+
+(\n/.*?) ((?:.*|\n(?!/))*) <- Table 3-1. Summary of MVC Project Items
 
 Google drive music list:
 F12
@@ -890,7 +903,9 @@ NppAutoindent plugin
 
 
 ** Adobe Reader
+** Reader
 F9 – Toggle menu
+F8 – Toggle toolbar
 Ctrl+K – Edit | Preferences
 Ctrl+H – View | Reading mode
 
