@@ -181,6 +181,7 @@ git config --list
 git log
 git log --format=oneline|--graph
 git log --graph --full-history --all --pretty=format:"%h%x09%d%x20%s"
+git log --pretty=format: --name-status | cut -f2- | sort -u > C:/Temp2/list.txt
 
 git show-branch --current
 git show-branch -a      <==> git branch [-a]
@@ -203,11 +204,16 @@ git diff --cached
 git remote update + git status -uno
 
 git rm --cached -r somedir
+git commit --amend -CHEAD
 
 git remote set-url|add origin https://github.com/USERNAME/OTHERREPOSITORY.git
 + git remote -v
 
 git reset HEAD~ + git reset --hard + git push -f origin master
+
+Remove files from history:
+git filter-branch --index-filter "git rm -rf --cached --ignore-unmatch path_to_file" HEAD <- https://myopswork.com/how-remove-files-completely-from-git-repository-history-47ed3e0c4c35
+git push origin --force --all <- https://help.github.com/en/articles/removing-sensitive-data-from-a-repository
 
 [remote "origin"]
 	url = https://github.com/Roman-Tarasiuk/DirectoryTreePaths
@@ -289,6 +295,10 @@ Adding existing code to github:
 4. git add .
 5. git commit -a -m "Initial commit."
 6. git push --set-upstream origin master
+
+git config core.quotepath off
+or
+git config --global core.quotepath off
 
 
 ** Greasemonkey
@@ -1256,6 +1266,7 @@ install-package package_name
 
 NuGet Package Explorer
 
+C:\Users\username\.nuget\packages
 C:\Users\username\AppData\Roaming\NuGet\NuGet.Config
 nuget.exe config -set http_proxy=http://proxy:port
 nuget.exe config -set http_proxy.user=username <- without domain
