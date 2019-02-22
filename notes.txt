@@ -1194,6 +1194,8 @@ Ctrl+Shift+\ – Go to closing bracket
 C# FixFormat
 "csharpfixformat.style.braces.onSameLine": false
 
+vscode-solution-explorer
+
 
 ** .NET
 set path="C:\Windows\Microsoft.NET\Framework\v4.0.30319\";%path%
