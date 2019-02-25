@@ -918,6 +918,7 @@ F9 – Toggle menu
 F8 – Toggle toolbar
 Ctrl+K – Edit | Preferences
 Ctrl+H – View | Reading mode
+Ctrl+Shift+N – Go to page
 
 
 ** Far
@@ -1193,11 +1194,13 @@ Ctrl+Shift+\ – Go to closing bracket
 
 C# FixFormat
 "csharpfixformat.style.braces.onSameLine": false
+"csharpfixformat.style.spaces.beforeParenthesis": false
 
 vscode-solution-explorer
 
 
 ** .NET
+** dotnet
 set path="C:\Windows\Microsoft.NET\Framework\v4.0.30319\";%path%
 
 msbuild Solution.sln /t:Build /p:Configuration=Release
@@ -1208,6 +1211,9 @@ MSBuild.Extension.Pack.4.0.15.0.zip
 
 dotnet new sln
 dotnet sln add ConsoleApplication1.csproj
+
+(dir (Get-Command dotnet).Path.Replace('dotnet.exe', 'shared\Microsoft.NETCore.App')).Name
+(dir (Get-Command dotnet).Path.Replace('dotnet.exe', 'sdk')).Name
 
 
 ** C#
@@ -1261,6 +1267,11 @@ Convert.ToString(v, 2).PadLeft(32, '0')
 https://docs.microsoft.com/en-us/dotnet/framework/winforms/controls/how-to-make-thread-safe-calls-to-windows-forms-controls
 
 http://it-ebooks.directory/book-0735667454.html
+
+
+** Database
+** DB
+Connection string: create udl file and open it to setup.
 
 
 ** nuget
