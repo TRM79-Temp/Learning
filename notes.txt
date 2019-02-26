@@ -1173,8 +1173,11 @@ files.hotExit
     "extensions.autoUpdate": false,
     "update.channel": "none",
     "editor.showFoldingControls": "mouseover",
-    "http.proxyStrictSSL":false,
+    "http.proxyStrictSSL": false,
     "workbench.activityBar.visible": false,
+    "workbench.list.openMode": "doubleClick", <-
+    "explorer.autoReveal": false,             <-
+    "debug.toolBarLocation": "docked",        <-
     "csharp.referencesCodeLens.enabled": false, // <- References count of a method.
     "workbench.colorCustomizations": {
         "activityBar.background": "#ccc",
