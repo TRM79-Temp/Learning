@@ -1201,6 +1201,11 @@ C# FixFormat
 
 vscode-solution-explorer
 
+Custom commands shortcuts:
+Format: ^k^f
+Command palette: ^+p
+Save all: ^ks
+
 
 ** .NET
 ** dotnet
