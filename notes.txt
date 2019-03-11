@@ -1184,6 +1184,10 @@ files.hotExit
         "editor.selectionBackground": "#9cf",
         "editor.selectionHighlightBackground": "#9cf"
     }
+    "workbench.tree.indent": 16,
+    "files.exclude": {
+        "**/.git": false <-- Show hidden folders.
+    }
 }
 
 Ctrl+Shift+P -> Configure Language -> en
