@@ -326,12 +326,18 @@ https://www.mozilla.org/en-US/firefox/developer/all/
 https://www.mozilla.org/en-US/firefox/all/
 https://ftp.mozilla.org/pub/firefox/releases/
 
-REDIRECTOR Add-On:
+** REDIRECTOR Add-On:
 >> MSDN Google Search Results
 Example URL:        https://docs.microsoft.com/ru-ru/dotnet/api/system.windows.forms.richtextbox.selectionchanged?view=netframework-4.7.2
 Include pattern:    http([s]?):\/\/(docs|msdn)\.microsoft\.com\/ru-ru\/(.*)
 Redirect to:        http$1://$2.microsoft.com/en-us/$3
 Pattern type:       Regular Expression
+
+>> MDN Google Search Results
+                    https://developer.mozilla.org/ru/docs/Web/HTML/Element/label
+                    http([s]?):\/\/developer\.mozilla\.org\/(?:ru|uk)\/(.*)
+                    http$1://developer.mozilla.org/en-us/$2
+                    Regular Expression
 
 browser.tabs.warnOnCloseOtherTabs
 
@@ -437,6 +443,10 @@ Input:1 2 3 4 5 6 7 8 9 10
 Regular expression:(\d+)
 Replace to:+ (match[$1] ? ', \'' + match[$1] + '\'' : '')
 [Replace]
+
+Skip lines that contain a badword (works on https://regex101.com/):
+^(?:(?!badword).)*$
+
 
 ** SQL
 sqlplus, sqlplusw tools
@@ -1206,9 +1216,12 @@ C# FixFormat
 vscode-solution-explorer
 
 Custom commands shortcuts:
-Format: ^k^f
-Command palette: ^+p
-Save all: ^ks
+Format Selection: ^k^f
+Command Palette: ^+p
+Save All: ^ks
+
+Analog of class view in Visual Studio Code
+CTRL+Shift+O
 
 
 ** .NET
