@@ -300,6 +300,10 @@ git config core.quotepath off
 or
 git config --global core.quotepath off
 
+Displaying and real a file's urls:
+https://               github.com/Apress/pro-csharp-7/blob/master/Chapter_19/TestPictures/city.jpg
+https://raw.githubusercontent.com/Apress/pro-csharp-7/     master/Chapter_19/TestPictures/city.jpg
+
 
 ** Greasemonkey
 C:\Users\UserName\AppData\Roaming\Mozilla\Firefox\Profiles\ProfileName\gm_scripts\OALD\OALD.user.js
@@ -1197,7 +1201,8 @@ files.hotExit
     "workbench.tree.indent": 16,
     "files.exclude": {
         "**/.git": false <-- Show hidden folders.
-    }
+    },
+    "git.enableSmartCommit": true
 }
 
 Ctrl+Shift+P -> Configure Language -> en
@@ -1292,6 +1297,8 @@ Convert.ToString(v, 2).PadLeft(32, '0')
 https://docs.microsoft.com/en-us/dotnet/framework/winforms/controls/how-to-make-thread-safe-calls-to-windows-forms-controls
 
 http://it-ebooks.directory/book-0735667454.html
+
+DateTime.Now.ToString("hh:mm:ss.fff")
 
 
 ** Database
@@ -1431,6 +1438,8 @@ Tab – return back
 
 Ctrl+Enter – copy file name to clipboard
 Ctrl+Shift+Enter – copy full file path to clipboard
+
+Configuration | Options... | Display | Color | Others | Compare by contents | Selected lines: Background
 
 
 ** Notes
