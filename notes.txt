@@ -52,6 +52,7 @@ https://habrahabr.ru/post/329436/
   ◄ - 17
   ▲ - 30
   ▼ - 31
+  ▾
   … - 0133
   а́
   о́
@@ -1044,6 +1045,11 @@ C:\Users\username\AppData\Local\Temp\BGInfo.bmp
 Image size
     width : w1 + w2
     height: max(h1, h2)
+
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Wallpapers
+
+HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Control Panel\Desktop
+    ScreenSaveTimeOut
 
 File info:
 wmic datafile where name='C:\\path\\file-name' [get Caption,FileSize,CreationDate,InstallDate,LastAccessed,LastModified] >tmp.txt
