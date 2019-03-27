@@ -361,6 +361,7 @@ or
 http://markdownlivepreview.com/
 or
 ...
+Resource Override Add-On
 
 
 ** coursera.org
@@ -1322,6 +1323,24 @@ C:\Users\username\AppData\Roaming\NuGet\NuGet.Config
 nuget.exe config -set http_proxy=http://proxy:port
 nuget.exe config -set http_proxy.user=username <- without domain
 nuget.exe config -set http_proxy.password=userPassword
+
+nuget help install
+
+nuget install NLog
+In cproj:
+  <ItemGroup>
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.4.6.0\lib\net40-client\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    ...
+  </ItemGroup>
+And put NLog.config in the program folder.
+In the class:
+using NLog;
+Logger logger = LogManager.GetCurrentClassLogger();
 
 
 ** nodejs
