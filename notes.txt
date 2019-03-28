@@ -1228,6 +1228,7 @@ C# FixFormat
 vscode-solution-explorer
 
 Custom commands shortcuts:
+Format Document: +%f
 Format Selection: ^k^f
 Command Palette: ^+p
 Save All: ^ks
@@ -1248,6 +1249,13 @@ MSBuild.Extension.Pack.4.0.15.0.zip
 
 dotnet new sln
 dotnet sln add ConsoleApplication1.csproj
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    ...
+    <LangVersion>7.1</LangVersion>
+  </PropertyGroup>
+</Project>
+
 
 (dir (Get-Command dotnet).Path.Replace('dotnet.exe', 'shared\Microsoft.NETCore.App')).Name
 (dir (Get-Command dotnet).Path.Replace('dotnet.exe', 'sdk')).Name
