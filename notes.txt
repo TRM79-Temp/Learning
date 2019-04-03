@@ -194,6 +194,7 @@ git pull --all
 
 git checkout commithash8digits|branchname
 git checkout -b branchname origin/branchname
+git branch --set-upstream-to=origin/branchname branchname
 
 git reset --hard|--merge|HEAD~
 git reset --soft secondToLastCommit – remove last commit saving changes
@@ -236,7 +237,7 @@ git push origin --force --all <- https://help.github.com/en/articles/removing-se
 	sslVerify = false
 ]]
 
-[[ // Work .npmrc
+[[ // Work .npmrc; See below how to configure this.
 strict-ssl=false
 proxy=http://domain%5Clogin:password@proxy:port/
 https-proxy=-//-
@@ -1220,6 +1221,8 @@ View: Toggle Activity Bar Visibility
 See the 'Regular Expression' section ('Trim code to 80 characters...') for info about replacing.
 
 Ctrl+Shift+\ – Go to closing bracket
+Alt+Left Arrow – Navigate back
+Alt+Right Arrow – Navigate forward
 
 C# FixFormat
 "csharpfixformat.style.braces.onSameLine": false
@@ -1364,6 +1367,7 @@ or
 proxy=http://user:password@proxy:port/ (%-encoded password)
 or using command:
 npm config set proxy http://...
+(See sample file above. See the npm section.)
 
 
 ** npm
@@ -1391,6 +1395,7 @@ npm config set https-proxy http://username:percentage%20password@proxy.server:po
 
 .nmprc file:
 strict-ssl=false
+(See also the nodejs section.)
 
 
 ** Jira
