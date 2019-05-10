@@ -1226,6 +1226,9 @@ See the 'Regular Expression' section ('Trim code to 80 characters...') for info 
 Ctrl+Shift+\ – Go to closing bracket
 Alt+Left Arrow – Navigate back
 Alt+Right Arrow – Navigate forward
+Ctrl+Shift+[ – Fold region
+Ctrl+Shift+[ – Unfold region
+https://code.visualstudio.com/docs/getstarted/keybindings
 
 C# FixFormat
 "csharpfixformat.style.braces.onSameLine": false
