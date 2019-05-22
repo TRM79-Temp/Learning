@@ -14,6 +14,8 @@ https://habrahabr.ru/post/329436/
   ° - 0176
   ± - 0177
   ≈ - none
+  ≤
+  ≥
   ∙ -  249
   · -  250
   Ъ -  154
@@ -456,9 +458,15 @@ Skip lines that contain a badword (works on https://regex101.com/):
 
 
 ** SQL
+
+dba_tables
+all_tables
+user_tables
+
 sqlplus, sqlplusw tools
     (At work they does not work / start.)
 
+Grants:
 select * from ALL_TAB_PRIVS
     order by GRANTEE, TABLE_SCHEMA, TABLE_NAME
 
@@ -513,7 +521,7 @@ Version 3:
   select   *
     from   ALL_TABLES
    where   OWNER = 'xxx'
-order by   TABLE_NAME
+order by   OWNER, TABLE_NAME
 
 
 -- Some value and its count in table:
@@ -577,6 +585,9 @@ Date formatting:
 TO_CHAR(column, 'DD.MM.YYYY HH24:MI:SS')
 Date in query:
 TO_DATE('2016-09-26', 'YYYY-MM-DD')
+
+Currency format:
+to_char(FIELD, '999999999.99')
 
 C:\oracle\ora10g\NETWORK\ADMIN\tnsnames.ora
 C:\app\username\product\11.2.0\client_1\network\admin\tnsnames.ora
@@ -642,11 +653,12 @@ and trim(COLUMN_NAME) not in (
     select trim(COLUMN_NAME) from SCHEMA.TABLE
 )
 
+All tables:
 select   *
 from     ALL_OBJECTS
 where    OBJECT_TYPE = 'TABLE' and
          OWNER = 'SCHEMA-NAME'
-order by OBJECT_TYPE, OBJECT_NAME
+order by OWNER, OBJECT_TYPE, OBJECT_NAME
 
 declare
     -- variable1 type1;
