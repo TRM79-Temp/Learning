@@ -704,6 +704,44 @@ FROM (your query ordered in reverse) alias_name
 WHERE rownum <= Rows_to_return
 ORDER BY rownum DESC;
 
+PL/SQL Developer password decrypt (decode):
+(https://stackoverflow.com/questions/51829482/decrypting-stored-password-on-pl-sql-developer)
+C:\Users\username\AppData\Roaming\PLSQL Developer\Preferences\username\user.prefs, [LogonHistory] section
+* using System;
+* using System;
+* using System.Collections.Generic;
+* using System.IO;
+* 
+* public class Program
+* {
+*   public static void Main()
+*   {
+*     var values = new List<int>();
+*         var ret = string.Empty;
+* 
+*         Console.WriteLine("Enter scrambled login/password:");
+*         string scrambled = Console.ReadLine();
+* 
+*         for (var i = 0; i < scrambled.Length; i += 4)
+*         {
+*             values.Add(Convert.ToInt32(scrambled.Substring(i, 4)));
+*         }
+* 
+*         var key = values[0];
+*         values.RemoveAt(0);
+*         for (var i = 0; i < values.Count; i++)
+*         {
+*             var val = values[i] - 1000;
+*             var mask = key + (10 * (i + 1));
+* 
+*             ret += (char)((val ^ mask) >> 4);
+*         }
+* 
+*     Console.WriteLine(ret);
+* 
+*   }
+* }
+
 
 ** Toad for Oracle
 rgb(121, 188, 255) – comment background
