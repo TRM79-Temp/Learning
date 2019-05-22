@@ -396,6 +396,7 @@ Logs processing:
 Google drive music list:
 F12
 <div class="l-u-Ab-T" aria-label="(.*?) Audio">
+<div class="Q5txwe">([^<]*)</div>
     match[1]+'\n'
     (Except Songs.doc)
 On results – create playlist
@@ -1120,6 +1121,8 @@ net use Drive: /delete
 
 %AppData%\Microsoft\Windows\Recent\
 %userprofile%\AppData\Roaming\Microsoft\Windows\Recent\
+
+control /name Microsoft.Personalization /page pageWallpaper
 
 
 ** Windows Media Player
