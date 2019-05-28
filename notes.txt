@@ -1207,6 +1207,8 @@ https://stackoverflow.com/questions/43390466/visual-studio-community-2017-is-a-3
 
 ** Visual Studio Code
 ** Code
+** VSCode
+** VS Code
 https://code.visualstudio.com/docs?start=true
 files.hotExit
 
@@ -1836,3 +1838,4 @@ ProcessExplorer
 NuGet Package Explorer
 jd-gui
 HxD
+Dependency Walker
