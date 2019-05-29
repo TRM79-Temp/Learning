@@ -1297,6 +1297,18 @@ Save All: ^ks
 Analog of class view in Visual Studio Code
 CTRL+Shift+O
 
+// Go to matching closing/opening tag – add this to the keybindings.json
+{
+    "key":"ctrl+shift+5",
+    "command": "editor.emmet.action.matchTag"
+}
+
+// ?
+{
+    "key": "ctrl+k ctrl+s",
+    "command": "-workbench.action.openGlobalKeybindings"
+}
+
 
 ** .NET
 ** dotnet
