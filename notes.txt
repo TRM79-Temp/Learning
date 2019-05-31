@@ -704,7 +704,7 @@ FROM (your query ordered in reverse) alias_name
 WHERE rownum <= Rows_to_return
 ORDER BY rownum DESC;
 
-PL/SQL Developer password decrypt (decode):
+PL/SQL Developer password decrypt (decode; PLSQL):
 (https://stackoverflow.com/questions/51829482/decrypting-stored-password-on-pl-sql-developer)
 C:\Users\username\AppData\Roaming\PLSQL Developer\Preferences\username\user.prefs, [LogonHistory] section
 * using System;
