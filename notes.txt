@@ -755,6 +755,11 @@ F6       <-- Switch between editor and Data Grid
 
 View | Formatting options
 
+Connections:
+C:\Users\username\AppData\Roaming\Quest Software\Toad for Oracle\9.7\User Files
+    CONNECTIONPWDS.INI
+    CONNECTIONS.INI
+
 
 ** Linux
 ** UNIX
@@ -960,6 +965,9 @@ End Sub
 F6 (NppExec)
 NPP_CONSOLE 0
 sci_sendmsg SCI_SETWORDCHARS 0 "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzАБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯЫЭЁЪабвгґдеєжзиіїйклмнопрстуфхцчшщьюяыэёъ0123456789_-$#:/.="
+
+[А-яҐЄІЇЁґєіїё] <- cyrillic letters.
+[^A-z\d\/\\:.\r\n\t\* -–()] <- some non-standard characters.
 
 shortcuts (remove %APPDATA%\Notepad++\shortcuts.xml to restore defaults)
   Single Line Comment / Uncomment - Ctrl+K / Ctrl+Shift+K
@@ -1475,6 +1483,15 @@ strict-ssl=false
 Change project of task:
 In dashboard in task's menu select 'Move'
 
+http://jira/rest/api/2/issue/proj-NN1
+                                     ?expand=renderedFields|names|schema|operations|editmeta|changelog|... <- See 'expand'
+http://jira/rest/api/2/search?jql=project="Project"
+                                                   &maxResults=10000 <- Use 1 the first time to detect real count.
+                                                   &startAt=15
+http://jira/rest/api/2/project/ <- All projects.
+http://jira/rest/api/2/search?jql=assignee = username
+                                  or any valid query
+
 
 ** Image
 ** Picture
@@ -1786,6 +1803,7 @@ Copy color's RGB from color dialog to a text window (2 top windows in Windows Z-
 Once you know what it is you want to be true, instinct is a very useful device for enabling you to know that it is
 
 https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers
+port, protocol
 20, 21 – FTP
   80 – HTTP
  443 – HTTPS
