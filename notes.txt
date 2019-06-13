@@ -864,6 +864,8 @@ Click, Ctrl+Click – Selects entire sentence.
 ** Microsoft Excel
 ** MS Excel
 ** Excel
+Russian-English formulas: ExcelFormulas.xlsx
+
 milliseconds time format: [h]:mm:ss.000 (or [h]:mm:ss,000) in Ukrainian locale
 PERSONAL.XLSB: C:\Users\<username>\AppData\Roaming\Microsoft\Excel\XLSTART
 
@@ -1029,6 +1031,7 @@ PROMPT=$P$G – Default (or PROMPT without parameters)
 
 echo %cd% – prints current directory
 
+nslookup
 chcp 1251
 
 mstsc /w:1900 /h:1000   : 2; 41; 1916; 1038 (1920x1080; 8px left/bottom/right window border, 30px window caption, 40px Windows taskbar)
