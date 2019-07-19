@@ -36,8 +36,11 @@ https://habrahabr.ru/post/329436/
   « - 0171
   » - 0187
   ø - 0248
+  # -   35
   < -   60
   > -   62
+  [ -   91
+  ] -   93
   ≤ - none &#8804;	&#x2264;
   ≥ - none &#8805;	&#x2265;
   € - 0128
@@ -55,6 +58,9 @@ https://habrahabr.ru/post/329436/
   ▲ - 30
   ▼ - 31
   ▾
+  ^ - Caret
+  ∧ - Wedge
+  ∨ - Vel, descending wedge
   … - 0133
   а́
   о́
@@ -348,6 +354,7 @@ Pattern type:       Regular Expression
                     Regular Expression
 
 browser.tabs.warnOnCloseOtherTabs
+browser.tabs.insertAfterCurrent
 
 
 ** Chrome
@@ -687,7 +694,7 @@ where (FIELD1 = '&acc'       -- text field
        or FIELD2 = '&acc')
    and FIELD3 = &dealdate; -- number field
 
-SUBSTR( string, start_position [, length ] )
+SUBSTR(string, start_position [, length ])
     The first position in the string is always 1.
 
 LIKE <-- starts with
@@ -742,6 +749,25 @@ C:\Users\username\AppData\Roaming\PLSQL Developer\Preferences\username\user.pref
 *   }
 * }
 
+Regular expression to detect procedures and functions (more or less):
+(PROCEDURE|FUNCTION) (.*?)\((.|\n)*?END(;| \2)
+
+(S.SESS_END_TIME - S.SESS_START_TIME)                "X (days)",
+(S.SESS_END_TIME - S.SESS_START_TIME) * 24           "X * 24 (hours)",
+(S.SESS_END_TIME - S.SESS_START_TIME) * 24 * 60      "X * 24 * 60 (minutes)",
+(S.SESS_END_TIME - S.SESS_START_TIME) * 24 * 60 * 60 "X * 24 * 60 * 60 (seconds)",
+
+select
+       trunc      (S.SESS_END_TIME - S.SESS_START_TIME) || ' ' ||                   -- Days
+       trunc (mod((S.SESS_END_TIME - S.SESS_START_TIME) * 24, 24)) || ':' ||        -- Hours
+       trunc (mod((S.SESS_END_TIME - S.SESS_START_TIME) * 24 * 60, 60))  || ':' ||  -- Minutes
+       trunc (mod((S.SESS_END_TIME - S.SESS_START_TIME) * 24 * 60 * 60, 60))        -- Seconds
+           "Duration",
+       s.*
+ from TABLE S
+
+trunc(19.9) <- 19
+
 
 ** Toad for Oracle
 rgb(121, 188, 255) – comment background
@@ -759,6 +785,8 @@ Connections:
 C:\Users\username\AppData\Roaming\Quest Software\Toad for Oracle\9.7\User Files
     CONNECTIONPWDS.INI
     CONNECTIONS.INI
+
+Autocomplete: Ctrl+.
 
 
 ** Linux
@@ -1810,7 +1838,7 @@ port, protocol
 20, 21 – FTP
   80 – HTTP
  443 – HTTPS
-3389 – Remote Desktop Protocol
+3389 – Remote Desktop Protocol, RDP
 1521 – Oracle Database
  445 – SMB
 
