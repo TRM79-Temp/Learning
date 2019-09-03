@@ -464,6 +464,9 @@ Replace to:+ (match[$1] ? ', \'' + match[$1] + '\'' : '')
 Skip lines that contain a badword (works on https://regex101.com/):
 ^(?:(?!badword).)*$
 
+('\d{10}',)\n('\d{10}',)\n('\d{10}',)\n('\d{10}',)\n('\d{10}',)\n('\d{10}',)\n('\d{10}',)\n('\d{10}',)\n('\d{10}',)\n('\d{10}',)\n
+$1 $2 $3 $4 $5 $6 $7 $8 $9 $10\n
+
 
 ** SQL
 
@@ -682,6 +685,12 @@ end;
 -- Packages & ...
 select * from all_source
 
+select name, text
+from all_source s
+where owner = 'OWNER_NAME'
+    and type = 'PACKAGE BODY'
+order by name, line
+
 select * from DBA_USERS
 
 Using variable-like run in Toad for Oracle:
@@ -787,6 +796,15 @@ C:\Users\username\AppData\Roaming\Quest Software\Toad for Oracle\9.7\User Files
     CONNECTIONS.INI
 
 Autocomplete: Ctrl+.
+
+Invalid objects:
+Object Browser | 'Invalid objects' Tab
+
+
+** PL/SQL Developer
+
+Invalid objects:
+Tools | Compile Invalid objects...
 
 
 ** Linux
@@ -928,6 +946,9 @@ Ctrl+Q – Quick Analysis
 Recover a deleted worksheet sheet tab in Excel:
 1. Save your workbook with a different filename (File, Save As…)
 2. Re-open your original workbook.
+
+Shift+F11 <- New Sheet
+'Insert Worksheet' tool
 
 
 ** VBA
@@ -1093,6 +1114,10 @@ IconFile=explorer.exe,3
 [Taskbar]
 Command=ToggleDesktop
 
+Display taskbar groupings as list instead of thumbnail
+HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Taskband
+NumThumbnails (32-Bit DWORD) -> 0; restart explorer.
+
 'Run' window:
 c:\windows\system32\rundll32.exe shell32.dll,#61
 
@@ -1200,6 +1225,13 @@ net use Drive: /delete
 %userprofile%\AppData\Roaming\Microsoft\Windows\Recent\
 
 control /name Microsoft.Personalization /page pageWallpaper
+
+Строковый параметр             – REG_SZ
+Двоичный параметр              – REG_BINARY
+Параметр DWORD (32 бита)       – REG_DWORD
+Параметр QWORD (64 бита)       – REG_QWORD
+Мультистроковый параметр       – REG_MULTI_SZ
+Расширяемый строковый параметр – REG_EXPAND_SZ
 
 
 ** Windows Media Player
