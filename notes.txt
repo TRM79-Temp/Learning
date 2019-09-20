@@ -806,6 +806,8 @@ Object Browser | 'Invalid objects' Tab
 Invalid objects:
 Tools | Compile Invalid objects...
 
+Tools-->Preferences-->Logon History | Store with password
+
 
 ** Linux
 ** UNIX
