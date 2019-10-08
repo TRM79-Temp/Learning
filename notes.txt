@@ -952,6 +952,9 @@ Recover a deleted worksheet sheet tab in Excel:
 Shift+F11 <- New Sheet
 'Insert Worksheet' tool
 
+Add reference to %systemroot%\System32\FM20.dll
+Tools | References
+
 
 ** VBA
 CStr(n) ' Converts to string.
@@ -1234,6 +1237,11 @@ control /name Microsoft.Personalization /page pageWallpaper
 Параметр QWORD (64 бита)       – REG_QWORD
 Мультистроковый параметр       – REG_MULTI_SZ
 Расширяемый строковый параметр – REG_EXPAND_SZ
+
+
+** Hardware
+wmic csproduct get vendor, version
+wmic computersystem get model,name,manufacturer,systemtype
 
 
 ** Windows Media Player
