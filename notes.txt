@@ -474,6 +474,11 @@ dba_tables
 all_tables
 user_tables
 
+-- Object's (e.g. package) last modification time.
+SELECT *
+FROM USER_OBJECTS
+where lower(object_name) = 'package_name'
+
 sqlplus, sqlplusw tools
     (At work they does not work / start.)
 
@@ -521,12 +526,12 @@ SELECT cc.table_name,
                     ELSE NULL
             END TYPE,
         cc.comments
-    FROM   (select * from all_col_comments where owner='xxx') cc
-    JOIN   (select * from all_tab_columns where owner='xxx')  tc
+    FROM   (select * from all_col_comments where owner=:owner) cc
+    JOIN   (select * from all_tab_columns where owner=:owner)  tc
         ON  cc.column_name = tc.column_name
             AND cc.table_name  = tc.table_name
     WHERE  cc.table_name
-        IN (SELECT table_name FROM all_tables where owner='xxx')
+        IN (SELECT table_name FROM all_tables where owner=:owner)
         
 Version 3:
   select   *
@@ -1255,6 +1260,14 @@ schtasks /Delete /TN "Run Screensaver"
 
 CMD
 /C TITLE Read How-To Geek Reminder&ECHO.&ECHO.&ECHO It is currently %TIME%&ECHO.&ECHO.&ECHO Time to go read How-To Geek.&ECHO https://www.howtogeek.com&ECHO.&ECHO.&TIMEOUT 120
+
+
+** WindowsTools
+>> PrintScreen / Screenshot of a window and send it to MS Word (+ interval 100ms):
+%{PRTSC}
+%{TAB}
+^v
+{ENTER}
 
 
 ** PC Serial
