@@ -7,9 +7,10 @@
 </head>
 <body>
     <div class="container">
-        <p><b>Listing 2-9.</b> Adding an Action Method in the HomeController.cs File in the Controllers Folder</p>
+        <p><b>Listing 2-13.</b> Adding a Method in the HomeController.cs File in the Controllers Folder</p>
         <pre><code>
 using Microsoft.AspNetCore.Mvc;
+<b>using PartyInvites.Models;</b>
 
 namespace PartyInvites.Controllers
 {
@@ -23,14 +24,21 @@ namespace PartyInvites.Controllers
         }
     }
 
-    <b>public ViewResult RsvpForm()
+    <b>[HttpGet]</b>
+    public ViewResult RsvpForm()
     {
+        return View();
+    }
+
+    <b>[HttpPost]
+    public ViewResult RsvpForm(GuestResponse guestResponse)
+    {
+        // TODO: store response from guest
         return View();
     }</b>
 }
         </code></pre>
-        <p>Previous version - <a href="./Listing 02-05-C.html">Listing 2-5</a>
-            Next version - <a href="./Listing 02-13-C.html">Listing 2-13</a>.</p>
+        <p>Previous version - <a href="./Listing 02-09-C.html">Listing 2-9</a>.</p>
     </div>
 </body>
 </html>
