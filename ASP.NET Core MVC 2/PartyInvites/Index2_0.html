@@ -5,6 +5,7 @@
     <title>PartyInvites 2.0</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="scripts.js"></script>
 </head>
 <body>
     <div class="container">
@@ -51,6 +52,12 @@
             <span data-listing="Listing 2-12">Listing 2-12</span>,
             <span data-listing="Listing 2-13">Listing 2-13</span>.
         </p>
+    </div>
+    <div>
+        <h4>Settings</h4>
+        <textarea id="commits"></textarea>
+        <br>
+        <button onclick="window.githubApiHelper.saveCommits(document.getElementById('commits').value)">Save</button>
     </div>
 </body>
 </html>

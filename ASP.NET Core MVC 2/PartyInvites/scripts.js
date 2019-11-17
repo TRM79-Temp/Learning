@@ -1,37 +1,5 @@
 console.log('Github API Helper - v.0.11');
 
-//
-// ** Cookies functions
-// http://www.w3schools.com/js/js_cookies.asp
-//
-// Do not forget about cookies symbols - replace ';' to some string before saving and restore it while retrieving
-//
-
-function setCookie(cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-    var expires = "expires=" + d.toUTCString();
-
-    document.cookie = cname + "=" + cvalue + "; " + expires + ";path=/";
-}
-
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-
-    for(var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-
-    return "";
-}
-
 window.githubApiHelper = {
     run: function () {
         var that = this;
@@ -96,10 +64,12 @@ window.githubApiHelper = {
     },
 
     saveCommits: function (txt) {
-        setCookie('gitCommits', txt.replace(/;/g, '$$$'), 1000);
+        // setCookie('gitCommits', txt.replace(/;/g, '$$$'), 1000);
+        localStorage.setItem('gitCommits', txt);
     },
 
     restoreCommits: function () {
-        return getCookie('gitCommits').replace(/\$\$/g, ';');
+        // return getCookie('gitCommits').replace(/\$\$/g, ';');
+        return localStorage.getItem('gitCommits');
     }
 }
