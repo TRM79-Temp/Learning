@@ -1,4 +1,4 @@
-console.log('Github API Helper - v.0.10');
+console.log('Github API Helper - v.0.11');
 
 //
 // ** Cookies functions
@@ -69,7 +69,8 @@ window.githubApiHelper = {
             result.push({
                 url: commit.html_url,
                 message: resultObject[i].commit.message,
-                fileName: commit.files[0].filename
+                fileName: commit.files[0].filename,
+                blob_url: commit.files[0].blob_url
             });
         }
 
