@@ -1,7 +1,7 @@
 console.log('Github API Helper - v.0.11');
 
 window.githubApiHelper = {
-    getCommits: function (commitsApiUrl) {
+    getCommits: function (commitsApiUrl, commitsToLoad) {
         // commitsApiUrl: 'https://api.github.com/repos/TRM79-Temp/ASP-PartyInvites-2.0/commits'
         var that = this;
 
@@ -10,7 +10,12 @@ window.githubApiHelper = {
             var commitsObject = JSON.parse(commitsObjectText);
 
             try {
-                for (var i = 0; i < commitsObject.length; i++) {
+                if (commitsToLoad == 0 || commitsToLoad > commitsObject.length) {
+                    commitsToLoad = commitsObject.length;
+                }
+                var commitsLoaded = 0;
+
+                for (var i = 0; i < commitsObject.length && commitsLoaded < commitsToLoad; i++) {
                     console.log(commitsObject[i].commit.message);
                     var commitText = await that.getCommit(commitsObject[i].url);
                     var commit = JSON.parse(commitText);
@@ -21,6 +26,8 @@ window.githubApiHelper = {
                         fileName: commit.files[0].filename,
                         blob_url: commit.files[0].blob_url
                     });
+
+                    commitsLoaded++;
                 }
             }
             catch (exception) {
@@ -98,15 +105,26 @@ window.onload = function() {
 
         var url = document.getElementById('commitsApiUrl').value;
         if (url == '') {
-            alert('Enter url to the \'Commits API URL\' field.');
+            alert('Enter a valid url to the \'Commits API URL\' field.');
+            return;
+        }
+
+        var commitsToLoadText = document.getElementById('commitsToLoad').value;
+        var commitsToLoad = Number.parseInt(commitsToLoadText);
+        if (isNaN(commitsToLoad)) {
+            alert('Enter a valid number to the \'Commits to load\' field.');
             return;
         }
 
         try {
-            var resultObject = await window.githubApiHelper.getCommits(url);
+            console.log('** Commits to load:');
+            console.log(commitsToLoad);
+
+            var resultObject = await window.githubApiHelper.getCommits(url, commitsToLoad);
             resultObject.reverse();
             console.log('** Result object:');
             console.log(resultObject);
+
             document.getElementById('commits').value =
                 JSON.stringify(resultObject);
         }
@@ -135,7 +153,6 @@ window.onload = function() {
 
     var commits = JSON.parse(commitsText);
     var commitsSpan = document.getElementsByTagName('span');
-    console.log(commitsSpan.length);
 
     for (var i = 0; i < commitsSpan.length; i++) {
         if (commitsSpan[i].hasAttribute('data-listing')) {
