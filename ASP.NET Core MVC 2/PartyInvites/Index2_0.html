@@ -8,7 +8,36 @@
         <script src="scripts.js"></script>
 </head>
 <body>
+    <!-- Settinhs -->
     <div class="container">
+        <button data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"
+            class="float-right">
+            <img src="../img/gear wheel.png">
+        </button>
+        <div class="collapse" id="collapseExample">
+            <h4>Settings</h4>
+            <div class="form-group row">
+                <label for="commitsApiUrl" class="col-sm-2 col-form-label">Commits API URL:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="commitsApiUrl"
+                        placeholder="https://api.github.com/repos/TRM79-Temp/ASP-PartyInvites-2.0/commits"
+                        value="https://api.github.com/repos/TRM79-Temp/ASP-PartyInvites-2.0/commits">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="commits">Commits:</label>
+                <textarea id="commits" class="form-control"></textarea>
+            </div>
+            <button id="btnDownload">Download</button>
+            <button id="btnSave">Save</button>
+            <button id="btnShow">Show</button>
+        </div>
+        <br>
+    </div>
+
+    <!-- Main part -->
+    <div class="container">
+
         <h3>PartyInvites Project</h3>
         <p>The initial content of the project is
             <a href="https://github.com/TRM79-Temp/ASP-PartyInvites-2.0/tree/b065a790515e4e9eca6de095f9ae0d7087ffc1bd">here</a>.</p>
@@ -53,11 +82,11 @@
             <span data-listing="Listing 2-13">Listing 2-13</span>.
         </p>
     </div>
-    <div>
-        <h4>Settings</h4>
-        <textarea id="commits"></textarea>
-        <br>
-        <button onclick="window.githubApiHelper.saveCommits(document.getElementById('commits').value)">Save</button>
-    </div>
+
+    <!-- External JavaScript -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

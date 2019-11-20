@@ -1,52 +1,68 @@
 console.log('Github API Helper - v.0.11');
 
 window.githubApiHelper = {
-    run: function () {
+    getCommits: function (commitsApiUrl) {
+        // commitsApiUrl: 'https://api.github.com/repos/TRM79-Temp/ASP-PartyInvites-2.0/commits'
         var that = this;
-        // console.log('Hello World!');
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = async function() {
-          if (this.readyState == 4 && this.status == 200) {
-            console.log('** Data loaded.');
-            var commits = await that.getCommits(this.responseText);
-            console.log('** Commits:');
-            console.log(commits);
-          }
-          else {
-            console.log('** No data loaded (readyState: ' + this.readyState + ', status: ' + this.status + '):');
-          }
+
+        async function getCommitsInt (commitsObjectText) {
+            var result = [];
+            var commitsObject = JSON.parse(commitsObjectText);
+
+            try {
+                for (var i = 0; i < commitsObject.length; i++) {
+                    console.log(commitsObject[i].commit.message);
+                    var commitText = await that.getCommit(commitsObject[i].url);
+                    var commit = JSON.parse(commitText);
+
+                    result.push({
+                        url: commit.html_url,
+                        message: commitsObject[i].commit.message,
+                        fileName: commit.files[0].filename,
+                        blob_url: commit.files[0].blob_url
+                    });
+                }
+            }
+            catch (exception) {
+                result.push({
+                    message: JSON.stringify(exception)
+                });
+            }
+
+            return result;
         };
-        xhr.open("GET", 'https://api.github.com/repos/TRM79-Temp/ASP-PartyInvites-2.0/commits');
-        xhr.setRequestHeader("Content-type", "application/json");
-        xhr.send();
+
+        return new Promise(function (resolve, reject) {
+            var xhr = new XMLHttpRequest();
+            const maxTries = 10;
+            var tryCount = 1;
+            xhr.onreadystatechange = async function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log('** Commits list loaded.');
+
+                    var commits = await getCommitsInt(this.responseText);
+                    console.log('** Commits loaded.');
+
+                    resolve(commits);
+                }
+                else if (tryCount <= maxTries) {
+                    console.log('** No data loaded (readyState: ' + this.readyState
+                        + ', status: ' + this.status + '), try #' + tryCount + '.');
+                    tryCount++;
+                }
+                else {
+                    console.log('** Rejected (readyState: ' + this.readyState
+                        + ', status: ' + this.status + '), tries: ' + tryCount + '.');
+                    reject(this.status);
+                }
+            };
+            xhr.open("GET", commitsApiUrl);
+            xhr.setRequestHeader("Content-type", "application/json");
+            xhr.send();
+        });
     },
 
-    getCommits: async function(responseText) {
-        document.getElementById('results').value = responseText;
-
-        var result = [];
-
-        var resultObject = JSON.parse(responseText);
-        console.log(resultObject);
-        for (var i in resultObject) {
-            console.log(resultObject[i].commit.message);
-            var commitText = await this.getHTML(resultObject[i].url);
-            var commit = JSON.parse(commitText);
-            // OK console.log(commit.files[0].filename);
-            console.log(commit);
-            result.push({
-                url: commit.html_url,
-                message: resultObject[i].commit.message,
-                fileName: commit.files[0].filename,
-                blob_url: commit.files[0].blob_url
-            });
-        }
-
-        return result;
-    },
-
-
-    getHTML: function (url) {
+    getCommit: function (url) {
         return new Promise(function (resolve, reject) {
             var xhr = new XMLHttpRequest();
             xhr.open('get', url);
@@ -71,5 +87,74 @@ window.githubApiHelper = {
     restoreCommits: function () {
         // return getCookie('gitCommits').replace(/\$\$/g, ';');
         return localStorage.getItem('gitCommits');
+    }
+}
+
+//
+
+window.onload = function() {
+    document.getElementById('btnDownload').onclick = async function() {
+        console.log('Download');
+
+        var url = document.getElementById('commitsApiUrl').value;
+        if (url == '') {
+            alert('Enter url to the \'Commits API URL\' field.');
+            return;
+        }
+
+        try {
+            var resultObject = await window.githubApiHelper.getCommits(url);
+            resultObject.reverse();
+            console.log('** Result object:');
+            console.log(resultObject);
+            document.getElementById('commits').value =
+                JSON.stringify(resultObject);
+        }
+        catch (error) {
+            console.log('** An error woccured while downloading:');
+            console.log(error);
+        }
+    };
+
+    document.getElementById('btnSave').onclick = function() {
+        console.log('Save');
+        window.githubApiHelper.saveCommits(document.getElementById('commits').value);
+    }
+
+    document.getElementById('btnShow').onclick = function() {
+        console.log('Show');
+        document.getElementById('commits').value = window.githubApiHelper.restoreCommits();
+    }
+
+    //
+
+    var commitsText = window.githubApiHelper.restoreCommits();
+    if (typeof(commitsText) == 'undefined' || commitsText == null || commitsText=='') {
+        return;
+    }
+
+    var commits = JSON.parse(commitsText);
+    var commitsSpan = document.getElementsByTagName('span');
+    console.log(commitsSpan.length);
+
+    for (var i = 0; i < commitsSpan.length; i++) {
+        if (commitsSpan[i].hasAttribute('data-listing')) {
+            var listingAttr = commitsSpan[i].getAttribute('data-listing');
+            if (typeof(listingAttr) == 'undefined' || listingAttr == null || listingAttr == '') {
+                continue;
+            }
+
+            var commitIndex = commits.findIndex(el => el.message == listingAttr);
+            if (commitIndex >= 0) {
+                commitsSpan[i].innerHTML =
+                    '<a href="' + commits[commitIndex].blob_url + '">' + listingAttr + '</a>';
+
+                var previousVersionIndex = commits.findIndex(el => el.fileName == commits[commitIndex].fileName);
+                if (previousVersionIndex < commitIndex) {
+                    commitsSpan[i].innerHTML +=
+                        ' (<a href="' + commits[commitIndex].url + '">Δ</a>)'
+                }
+            }
+        }
     }
 }
