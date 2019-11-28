@@ -88,12 +88,12 @@ window.githubApiHelper = {
 
     saveCommits: function (txt) {
         // setCookie('gitCommits', txt.replace(/;/g, '$$$'), 1000);
-        localStorage.setItem('gitCommits', txt);
+        localStorage.setItem('party_Invites_2_0', txt);
     },
 
     restoreCommits: function () {
         // return getCookie('gitCommits').replace(/\$\$/g, ';');
-        return localStorage.getItem('gitCommits');
+        return localStorage.getItem('party_Invites_2_0');
     }
 }
 
