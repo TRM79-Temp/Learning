@@ -1,7 +1,16 @@
-console.log('Github API Helper - v.0.11');
+// localStorage.projects = JSON.stringify([{
+//     name: 'party_Invites_2_0',
+//     active: true,
+//     apiUrl: 'https://api.github.com/repos/TRM79-Temp/ASP-PartyInvites-2.0/commits',
+//     commits: localStorage.party_Invites_2_0
+// }])
 
-window.githubApiHelper = {
-    getCommits: function (commitsApiUrl, commitsToLoad) {
+console.log('Github API Helper - v.0.28');
+
+window.GithubApiHelper = function () {
+    this.projects = JSON.parse(localStorage.getItem('projects'));
+
+    this.getCommits = function (commitsApiUrl, commitsToLoad) {
         // commitsApiUrl: 'https://api.github.com/repos/TRM79-Temp/ASP-PartyInvites-2.0/commits'
         var that = this;
 
@@ -67,9 +76,9 @@ window.githubApiHelper = {
             xhr.setRequestHeader("Content-type", "application/json");
             xhr.send();
         });
-    },
+    };
 
-    getCommit: function (url) {
+    this.getCommit = function (url) {
         return new Promise(function (resolve, reject) {
             var xhr = new XMLHttpRequest();
             xhr.open('get', url);
@@ -84,22 +93,34 @@ window.githubApiHelper = {
             xhr.setRequestHeader("Content-type", "application/json");
             xhr.send();
         });
-    },
+    };
 
-    saveCommits: function (txt) {
+    this.saveCommits = function (txt) {
         // setCookie('gitCommits', txt.replace(/;/g, '$$$'), 1000);
         localStorage.setItem('party_Invites_2_0', txt);
-    },
+    };
 
-    restoreCommits: function () {
+    this.getActiveProject = function () {
         // return getCookie('gitCommits').replace(/\$\$/g, ';');
-        return localStorage.getItem('party_Invites_2_0');
+        for (var i = 0; i < this.projects.length; i++) {
+            if (this.projects[i].active) {
+                return this.projects[i];
+            }
+        }
+
+        return null;
+    }
+
+    this.changeActiveProject = function (project) {
+
     }
 }
 
 //
 
-window.onload = function() {
+window.onload = function () {
+    var githubApiHelper = new window.GithubApiHelper();
+
     document.getElementById('btnDownload').onclick = async function() {
         console.log('Download');
 
@@ -120,7 +141,7 @@ window.onload = function() {
             console.log('** Commits to load:');
             console.log(commitsToLoad);
 
-            var resultObject = await window.githubApiHelper.getCommits(url, commitsToLoad);
+            var resultObject = await githubApiHelper.getCommits(url, commitsToLoad);
             resultObject.reverse();
             console.log('** Result object:');
             console.log(resultObject);
@@ -136,22 +157,33 @@ window.onload = function() {
 
     document.getElementById('btnSave').onclick = function() {
         console.log('Save');
-        window.githubApiHelper.saveCommits(document.getElementById('commits').value);
+        githubApiHelper.saveCommits(document.getElementById('commits').value);
     }
 
     document.getElementById('btnShow').onclick = function() {
         console.log('Show');
-        document.getElementById('commits').value = window.githubApiHelper.restoreCommits();
+        document.getElementById('commits').value = githubApiHelper.restoreCommits();
     }
+
+    document.getElementById('projects').onchange = function() {
+        console.log(this.value);
+    }
+
+    // -------------------------------------------------
+
+    var selectProject = '';
+    for (var i = 0; i < githubApiHelper.projects.length; i++) {
+        selectProject += '<option>' + githubApiHelper.projects[i].name + '</option>';
+    }
+    this.document.getElementById('projects').innerHTML = selectProject;
 
     //
 
-    var commitsText = window.githubApiHelper.restoreCommits();
-    if (typeof(commitsText) == 'undefined' || commitsText == null || commitsText=='') {
-        return;
-    }
+    var activeProject = githubApiHelper.getActiveProject();
 
-    var commits = JSON.parse(commitsText);
+    document.getElementById('commitsApiUrl').value = activeProject.apiUrl;
+
+    var commits = JSON.parse(activeProject.commits);
     var commitsSpan = document.getElementsByTagName('span');
 
     for (var i = 0; i < commitsSpan.length; i++) {
