@@ -10,6 +10,8 @@ console.log('Github API Helper - v.0.28');
 window.GithubApiHelper = function () {
     this.projects = JSON.parse(localStorage.getItem('projects'));
 
+    this.editingMode = (localStorage.editingMode === 'true');
+
     this.getCommits = function (commitsApiUrl, commitsToLoad) {
         // commitsApiUrl: 'https://api.github.com/repos/TRM79-Temp/ASP-PartyInvites-2.0/commits'
         var that = this;
@@ -95,9 +97,29 @@ window.GithubApiHelper = function () {
         });
     };
 
-    this.saveCommits = function (txt) {
+    this.saveCommits = function (name, commitsApiUrl, commits, text) {
         // setCookie('gitCommits', txt.replace(/;/g, '$$$'), 1000);
-        localStorage.setItem('party_Invites_2_0', txt);
+        // localStorage.setItem('party_Invites_2_0', txt);
+        var found = false;
+        for (var i = 0; i < this.projects.length; i++) {
+            if (this.projects[i].name == name) {
+                this.projects[i].apiUrl = commitsApiUrl;
+                this.projects[i].commits = commits;
+                this.projects[i].text = text;
+                found = true;
+            }
+        }
+
+        if (!found) {
+            this.projects.push({
+                name: name,
+                apiUrl: commitsApiUrl,
+                commits: commits,
+                text: text
+            });
+        }
+
+        localStorage.setItem('projects', JSON.stringify(this.projects));
     };
 
     this.getActiveProject = function () {
@@ -157,7 +179,16 @@ window.onload = function () {
 
     document.getElementById('btnSave').onclick = function() {
         console.log('Save');
-        githubApiHelper.saveCommits(document.getElementById('commits').value);
+        // console.log(document.getElementById('projects').value);
+        // console.log(document.getElementById('commitsApiUrl').value);
+        // console.log(document.getElementById('commits').value);
+        // console.log(document.getElementById('textEdit').value);
+        githubApiHelper.saveCommits(
+            document.getElementById('projects').value,
+            document.getElementById('commitsApiUrl').value,
+            document.getElementById('commits').value,
+            document.getElementById('textEdit').value
+        );
     }
 
     document.getElementById('btnShow').onclick = function() {
@@ -169,19 +200,38 @@ window.onload = function () {
         console.log(this.value);
     }
 
+    document.getElementById('editingMode').onchange = function() {
+        localStorage.editingMode = this.checked;
+        githubApiHelper.editingMode = this.checked;
+    }
+
     // -------------------------------------------------
 
     var selectProject = '';
     for (var i = 0; i < githubApiHelper.projects.length; i++) {
         selectProject += '<option>' + githubApiHelper.projects[i].name + '</option>';
     }
+
     this.document.getElementById('projects').innerHTML = selectProject;
 
     //
 
-    var activeProject = githubApiHelper.getActiveProject();
+    document.getElementById('editingMode').checked = githubApiHelper.editingMode;
 
+    //
+
+    var activeProject = githubApiHelper.getActiveProject();
     document.getElementById('commitsApiUrl').value = activeProject.apiUrl;
+    document.getElementById('commits').value = activeProject.commits;
+    document.getElementById('textEdit').value = activeProject.text;
+
+    //
+
+    if (!githubApiHelper.editingMode) {
+        document.getElementById('text').innerHTML = activeProject.text;
+    }
+
+    //
 
     var commits = JSON.parse(activeProject.commits);
     var commitsSpan = document.getElementsByTagName('span');
