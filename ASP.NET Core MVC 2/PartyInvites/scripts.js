@@ -141,6 +141,54 @@ window.GithubApiHelper = function () {
 //
 
 window.onload = function () {
+    function download(data, filename, type) {
+        var file = new Blob([data], {type: type});
+        if (window.navigator.msSaveOrOpenBlob) // IE10+
+            window.navigator.msSaveOrOpenBlob(file, filename);
+        else { // Others
+            var a = document.createElement("a"),
+                    url = URL.createObjectURL(file);
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            setTimeout(function() {
+                document.body.removeChild(a);
+                window.URL.revokeObjectURL(url);
+            }, 0);
+        }
+    }
+
+    async function openFile(event) {
+        var file = event.target.files[0];
+
+        // https://stackoverflow.com/questions/51026420/filereader-readastext-async-issues
+        return new Promise((resolve, reject) => {
+          let content = '';
+          const reader = new FileReader();
+
+          // Wait till complete
+          reader.onloadend = function(e) {
+            content = e.target.result;
+            resolve(content);
+          };
+
+          // Make sure to handle error states
+          reader.onerror = function(e) {
+            reject(e);
+          };
+
+          reader.readAsText(file);
+        });
+    }
+
+    async function importNotes(event) {
+        var notesText = await openFile(event);
+        localStorage.setItem('projects', notesText);
+    }
+
+    //
+
     var githubApiHelper = new window.GithubApiHelper();
 
     document.getElementById('btnDownload').onclick = async function() {
@@ -203,6 +251,14 @@ window.onload = function () {
     document.getElementById('editingMode').onchange = function() {
         localStorage.editingMode = this.checked;
         githubApiHelper.editingMode = this.checked;
+    }
+
+    document.getElementById('btnExport').onclick = function() {
+        download(JSON.stringify(githubApiHelper.projects), 'projects.txt', 'text/plain');
+    }
+
+    document.getElementById('fileImport').onchange = function(event) {
+        importNotes(event);
     }
 
     // -------------------------------------------------

@@ -46,14 +46,24 @@
                 <textarea id="textEdit" class="form-control"></textarea>
             </div>
             <div>
-                <label>
+                <label title="When the 'editingMode' is true the text is loaded from this document, not from the local storage.">
                     <input type="checkbox" id="editingMode"> Editing mode
                 </label>
             </div>
             <button class="btn btn-sm btn-primary" id="btnDownload">Download commits</button>
             <button class="btn btn-sm btn-primary" id="btnShow">Show commits</button>
             <button class="btn btn-sm btn-primary" id="btnSave">Save</button>
-            <button class="btn btn-sm btn-primary" id="btnNew" data-toggle="collapse" data-target="#collapseNew" aria-expanded="false"
+            <button class="btn btn-sm btn-primary" id="btnExport">Export to file</button>
+            <span class="btn btn-sm btn-primary">
+                <label style="margin-bottom: 0;">
+                    Import from file
+                    <input type="file"
+                        id="fileImport"
+                        accept="text/plain"
+                        style="display: none">
+                </label>
+            </span>
+            <button class="btn btn-sm btn-success" id="btnNew" data-toggle="collapse" data-target="#collapseNew" aria-expanded="false"
                 aria-controls="collapseNew">New project</button>
 
             <div class="collapse" id="collapseNew" style="margin-top: 10px;">
@@ -74,75 +84,7 @@
 
     <!-- Main part -->
     <div id="text" class="container">
-        <h3>PartyInvites Project</h3>
-        <p>The initial content of the project is
-            <a href="https://github.com/TRM79-Temp/ASP-PartyInvites-2.0/tree/b065a790515e4e9eca6de095f9ae0d7087ffc1bd">here</a>.</p>
-        <p>The initial content of HomeController class -
-            <a href="https://github.com/TRM79-Temp/ASP-PartyInvites-2.0/blob/b065a790515e4e9eca6de095f9ae0d7087ffc1bd/PartyInvites/Controllers/HomeController.cs">Listing 2-1</a>.
-        </p>
-        <ul>
-            <li><a href="https://github.com/aspnet/AspNetCore/blob/master/src/Mvc/Mvc.ViewFeatures/src/Controller.cs">Controller</a> class</li>
-            <li><a href="https://github.com/aspnet/AspNetCore/blob/master/src/Mvc/Mvc.Abstractions/src/IActionResult.cs">IActionResult</a> interface</li>
-        </ul>
-        <p>A controller's action method can have the <code>string</code> result -
-            <span data-listing="Listing 2-2">Listing 2-2</span>.
-        </p>
-        <p>Using the <code>ViewResult</code> as a action method result -
-            <span data-listing="Listing 2-3">Listing 2-3</span>
-            <br>
-            and creating the MyView view -
-            <span data-listing="Listing 2-4">Listing 2-4</span>.
-        </p>
-        <ul>
-            <li><a href="https://github.com/aspnet/AspNetCore/blob/master/src/Mvc/Mvc.ViewFeatures/src/ViewResult.cs">ViewResult</a> class</li>
-            <li>Old and new Visual Studio template names comparison is <a href="../templates01.html">here</a>.</li>
-            <li>The initial content of a cshtml file is <a href="../initial-cshtml.html">here</a>.</li>
-        </ul>
-        <p>Adding dynamic output -
-            <span data-listing="Listing 2-5">Listing 2-5</span>,
-            <span data-listing="Listing 2-6">Listing 2-6</span>,
-            <span data-listing="Listing 2-7">Listing 2-7</span>.
-        </p>
-        <p>Designing data model -
-            <span data-listing="Listing 2-8">Listing 2-8</span>.
-        </p>
-        <p>Creating a second action and a strongly typed view -
-            <span data-listing="Listing 2-9">Listing 2-9</span>,
-            <span data-listing="Listing 2-10">Listing 2-10</span>.
-        </p>
-        <p>Linking action methods using the <code>asp-action</code> <i>tag helper</i> attribute -
-            <span data-listing="Listing 2-11">Listing 2-11</span>.
-        </p>
-        <p>Building the form using the <code>asp-for</code> tag helper attribute and receiving form data (mockup)<br>
-            using <code>HttpGet</code>, <code>HttpPost</code> controller's method attributes -
-            <span data-listing="Listing 2-12">Listing 2-12</span>,
-            <span data-listing="Listing 2-13">Listing 2-13</span>.
-        </p>
-        <p>Using model binding –
-            adding simple repository <span data-listing="Listing 2-14">Listing 2-14</span>
-            <br>
-            and passing data between views – <span data-listing="Listing 2-15">Listing 2-15</span>,
-            <span data-listing="Listing 2-16">Listing 2-16</span>.
-        </p>
-        <p>Displaying list of responses –
-                <span data-listing="Listing 2-17">Listing 2-17</span>,
-                <span data-listing="Listing 2-18">Listing 2-18</span>.
-        </p>
-        <p>Adding validation –
-            <span data-listing="Listing 2-19">Listing 2-19</span>,
-            <span data-listing="Listing 2-20">Listing 2-20</span>,
-            <span data-listing="Listing 2-21">Listing 2-21</span>,
-            <br>
-            and styling it using css –
-            <span data-listing="Listing 2-22">Listing 2-22</span>,
-            <span data-listing="Listing 2-23">Listing 2-23</span>.
-        </p>
-        <p>Styling the content –
-            <span data-listing="Listing 2-24">Listing 2-24</span>,
-            <span data-listing="Listing 2-25">Listing 2-25</span>,
-            <span data-listing="Listing 2-26">Listing 2-26</span>,
-            <span data-listing="Listing 2-27">Listing 2-27</span>.
-        </p>
+        <p style="display: none;">Add your notes here...</p>
     </div>
 
     <!-- External JavaScript -->
