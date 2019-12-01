@@ -307,7 +307,7 @@ window.onload = function () {
 
     document.getElementById('btnShow').onclick = function() {
         console.log('Show');
-        document.getElementById('commits').value = githubApiHelper.restoreCommits();
+        document.getElementById('commits').value = githubApiHelper.getActiveProject().commits;
     }
 
     document.getElementById('projects').onchange = function() {
