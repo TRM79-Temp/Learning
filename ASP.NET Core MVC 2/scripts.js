@@ -32,10 +32,15 @@ window.GithubApiHelper = function () {
                     var commitText = await that.getCommit(commitsObject[i].url);
                     var commit = JSON.parse(commitText);
 
+                    var files = [];
+                    for (var j = 0; j < commit.files.length; j++) {
+                        files.push(commit.files[j].filename);
+                    }
+
                     result.push({
                         url: commit.html_url,
                         message: commitsObject[i].commit.message,
-                        fileName: commit.files[0].filename,
+                        files: files,
                         blob_url: commit.files[0].blob_url
                     });
 
@@ -249,7 +254,8 @@ window.onload = function () {
                     commitsSpan[i].innerHTML =
                         '<a href="' + commits[commitIndex].blob_url + '">' + listingAttr + '</a>';
 
-                    var previousVersionIndex = commits.findIndex(el => el.fileName == commits[commitIndex].fileName);
+                    // TO DO: Search all file names, not only el.files[0].
+                    var previousVersionIndex = commits.findIndex(el => el.files.indexOf(commits[commitIndex].files[0]) > -1);
                     if (previousVersionIndex < commitIndex) {
                         commitsSpan[i].innerHTML +=
                             ' (<a href="' + commits[commitIndex].url + '">Δ</a>)'
