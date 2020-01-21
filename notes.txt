@@ -1,6 +1,11 @@
 ﻿** Temp
 https://habrahabr.ru/post/329436/
 
+
+** Other
+sitemap.xml
+
+
 ** Alt-Codes
   • -    7
   ◘ -    8
@@ -11,6 +16,8 @@ https://habrahabr.ru/post/329436/
   — - 0151 em dash
     - 0160 (MS Word nonbreaking space)
   © - 0169
+  ™ - 0153
+  ® - 0174
   ° - 0176
   ± - 0177
   ≈ - none
@@ -603,7 +610,9 @@ AS "Col Name"
 Date formatting:
 TO_CHAR(column, 'DD.MM.YYYY HH24:MI:SS')
 Date in query:
-TO_DATE('2016-09-26', 'YYYY-MM-DD')
+TO_DATE('2016-09-26 09:14:59', 'YYYY-MM-DD HH24:MI:SS')
+TO_DATE('2019:12:21 12:05:45 am', 'YYYY:MM:DD HH:MI:SS am') <- 21.12.2019 0:05:45, HH: 1-12
+TO_DATE('2019:12:21 12:05:45 pm', 'YYYY:MM:DD HH:MI:SS pm') <- 21.12.2019 12:05:45
 
 Currency format:
 to_char(FIELD, '999999999.99')
@@ -1094,7 +1103,7 @@ PROMPT=$P$G – Default (or PROMPT without parameters)
 echo %cd% – prints current directory
 
 nslookup
-chcp 1251
+chcp 1251 <- Changes encoding.
 
 mstsc /w:1900 /h:1000   : 2; 41; 1916; 1038 (1920x1080; 8px left/bottom/right window border, 30px window caption, 40px Windows taskbar)
 mstsc /w:1264 /h:986    : 1920; 56; 1280; 1024 (1280x1024)
