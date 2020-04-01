@@ -93,6 +93,10 @@ sitemap.xml
   ∞ – &#8734; &infin;
   &#x301; - Combining Acute Accent (place it after character)
   ×
+  \u003d - =
+  \u0026 - &
+  %3F    - ?
+  %26    - &
 
 
 ** HTML
@@ -183,6 +187,13 @@ https://stackoverflow.com/questions/824349/modify-the-url-without-reloading-the-
 $('.webtop-g').eq(0).dblclick(function(event) {
   event.stopPropagation();
 });
+
+// Reverse childNodes.
+(function reverseChildren(parent) {
+    for (var i = 1; i < parent.childNodes.length; i++){
+        parent.insertBefore(parent.childNodes[i], parent.firstChild);
+    }
+})(frames[0].document.getElementById('activity-stream'));
 
 
 ** git
@@ -342,6 +353,12 @@ firefox -chrome URL – запуск вікна Firefox без меню
 Ctrl+Shift+I (Also F12) - Firefox Tools
 Ctrl+Shift+I – Browser Console
 security.insecure_field_warning.contextual.enabled;true (This connection is not secure. Logins entered here could be compromised.)
+
+Firefox Debug:
+Resume    - F8
+Step over - F10
+Step in   - F11
+Step out  - Shift+F11
 
 https://www.mozilla.org/en-US/firefox/channel/desktop/#aurora
 https://www.mozilla.org/en-US/firefox/developer/all/
@@ -616,7 +633,7 @@ TO_DATE('2019:12:21 12:05:45 am', 'YYYY:MM:DD HH:MI:SS am') <- 21.12.2019 0:05:4
 TO_DATE('2019:12:21 12:05:45 pm', 'YYYY:MM:DD HH:MI:SS pm') <- 21.12.2019 12:05:45
 
 Currency format:
-to_char(FIELD, '999999999.99')
+to_char(FIELD, '999999999999.99')
 
 Long (16 digits) number:
 to_char(field_name)
@@ -686,11 +703,17 @@ and trim(COLUMN_NAME) not in (
 )
 
 All tables:
-select   *
+select   * -- LAST_DDL_TIME
 from     ALL_OBJECTS
 where    OBJECT_TYPE = 'TABLE' and
          OWNER = 'SCHEMA-NAME'
 order by OWNER, OBJECT_TYPE, OBJECT_NAME
+
+Object types:
+select   distinct (OBJECT_TYPE)
+from     ALL_OBJECTS
+where    OWNER = 'SCHEMA-NAME'
+order by OBJECT_TYPE
 
 declare
     -- variable1 type1;
@@ -1243,6 +1266,7 @@ add 'cmd /k' or 'pause' at the end of the batch file.
 A file name can't contain any of the following characters: \ / : * ? " < > |
 
 net user /domain username
+net group "Domain Users" /domain  <- or other group
 
 quser
 
@@ -1261,11 +1285,6 @@ control /name Microsoft.Personalization /page pageWallpaper
 Параметр QWORD (64 бита)       – REG_QWORD
 Мультистроковый параметр       – REG_MULTI_SZ
 Расширяемый строковый параметр – REG_EXPAND_SZ
-
-
-** Hardware
-wmic csproduct get vendor, version
-wmic computersystem get model,name,manufacturer,systemtype
 
 
 ** Windows Media Player
@@ -1290,6 +1309,10 @@ CMD
 
 
 ** PC Serial
+** Hardware
+wmic csproduct get vendor, version
+wmic computersystem get model,name,manufacturer,systemtype
+
 #  https://support.microsoft.com/en-us/kb/558124
 wmic bios get serialnumber
 
@@ -1300,6 +1323,9 @@ gwmi WmiMonitorID -Namespace root\wmi | ForEach-Object {($_.UserFriendlyName -no
 
 # https://technet.microsoft.com/en-us/library/ee156587.aspx
 wscript //B //h:cscript
+
+# List logical drives:
+wmic logicaldisk get * [/format:csv]
 
 
 ** Visual Studio
