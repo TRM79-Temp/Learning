@@ -92,6 +92,7 @@ sitemap.xml
   https://www.compart.com/en/unicode/search?q=Arrowhead#characters
   ∞ – &#8734; &infin;
   &#x301; - Combining Acute Accent (place it after character)
+  ×
 
 
 ** HTML
@@ -617,6 +618,9 @@ TO_DATE('2019:12:21 12:05:45 pm', 'YYYY:MM:DD HH:MI:SS pm') <- 21.12.2019 12:05:
 Currency format:
 to_char(FIELD, '999999999.99')
 
+Long (16 digits) number:
+to_char(field_name)
+
 C:\oracle\ora10g\NETWORK\ADMIN\tnsnames.ora
 C:\app\username\product\11.2.0\client_1\network\admin\tnsnames.ora
 C:\app\username\product\11.2.0\client_1\network\admin\sqlnet.ora (is used by 'tnsping')
@@ -890,6 +894,9 @@ Bookmarks:
 Insert | Links | Bookmarks (Add / Delete / Go to; Hidden bookmarks)
 
 Alt+F9 – Show/Hide Field Codes
+Find = ^d EMBED <-- Find embedded files. Or use Go To | Object.
+
+Links: File | Info | Edit links to files
 
 Hyperlink color:            5,  99, 193
 Followed Hyperlink color: 149,  79, 114
@@ -1320,6 +1327,7 @@ files.hotExit
 
 {
     "editor.renderIndentGuides": false,
+	"editor.detectIndentation": false,
     "workbench.colorTheme": "Default Dark+",
     "workbench.colorCustomizations": {
         "editor.selectionHighlightBackground": "#006622" // "#008800"
@@ -1638,6 +1646,7 @@ XLSX: 50 4B 03 04 14 00
  
  
 ** draw.io
+** drawio
 Add connection points to a shape:
 Ctrl+E
 Default:
