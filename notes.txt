@@ -4,6 +4,11 @@ https://habrahabr.ru/post/329436/
 
 ** Other
 sitemap.xml
+HKEY_CURRENT_USER\Software\Microsoft\Windows\DWM : AccentColorInactive (REG_DWORD)
+
+\r   0D (Carriage Return)
+\n   0A (Line Feed)
+\r\n    (End Of Line)
 
 
 ** Alt-Codes
@@ -97,6 +102,14 @@ sitemap.xml
   \u0026 - &
   %3F    - ?
   %26    - &
+  %25    - %
+  ☝ (Index pointing up)
+  👇 (Backhand Index Pointing Down)
+  👈 (Backhand Index Pointing Left)
+  👉 (Backhand Index Pointing Right)
+  👆 (Backhand Index Pointing Up)
+  ²
+  ³
 
 
 ** HTML
@@ -161,7 +174,7 @@ String.prototype.replaceAllComplete = function(search, replacement) {
         var tmp = target;
         target = target.replaceAll(search, replacement);
     } while (tmp.length != target.length);
-    
+
     return target;
 }
 
@@ -197,6 +210,8 @@ $('.webtop-g').eq(0).dblclick(function(event) {
 
 
 ** git
+SourceTree
+
 https://gitlab.com/eleks-camp-lviv-2/yellow
 https://gitlab.com/eleks-camp-lviv-2/yellow/branches
 https://gitlab.com/eleks-camp-lviv-2/yellow/tree/develop
@@ -333,6 +348,15 @@ Displaying and real a file's urls:
 https://               github.com/Apress/pro-csharp-7/blob/master/Chapter_19/TestPictures/city.jpg
 https://raw.githubusercontent.com/Apress/pro-csharp-7/     master/Chapter_19/TestPictures/city.jpg
 
+Rename commits' text:
+1. git rebase -i HEAD~XX <- the commit from which text will be changed
+   (use formula: XX = commits - N + 1, where N is order number, N >= 2);
+2. press 'i' in editor to switch to edit mode;
+   replace 'pick' -> 'reword' in the commits to be changed;
+   press Esc, then press ':wq!' + Enter;
+3. press 'i' to switch to edit mode; enter new text to commits;
+   press Esc, then press ':wq!' + Enter;
+
 
 ** Greasemonkey
 C:\Users\UserName\AppData\Roaming\Mozilla\Firefox\Profiles\ProfileName\gm_scripts\OALD\OALD.user.js
@@ -364,6 +388,9 @@ https://www.mozilla.org/en-US/firefox/channel/desktop/#aurora
 https://www.mozilla.org/en-US/firefox/developer/all/
 https://www.mozilla.org/en-US/firefox/all/
 https://ftp.mozilla.org/pub/firefox/releases/
+
+about:about
+
 
 ** REDIRECTOR Add-On:
 >> MSDN Google Search Results
@@ -398,6 +425,8 @@ or
 ...
 Resource Override Add-On
 
+chrome://chrome-urls/
+
 
 ** coursera.org
 Coursera Honor Code
@@ -422,6 +451,7 @@ Logs processing:
 .*blah-blah-blah.*(.|\r\n)*?yadda-yadda-yadda.*
 .*blah-blah-blah.*(.|\r?\n)*?yadda-yadda-yadda.* – universal
 .*blah-blah-blah.*(.|\r?\n)*?(yadda-yadda-yadda.*\n*)+ – 'yadda-yadda-yadda' repeats in multiple lines
+\*[^\*\n]* – Some text starts with '*' to the next '*' (in the same line or new line)
 
 (\n/.*?) ((?:.*|\n(?!/))*) <- Table 3-1. Summary of MVC Project Items
 
@@ -462,7 +492,7 @@ Trim code to 80 characters line length
 
 1/2 (there are 80 spaces in the replace):
 (^.*)
-$1                                                                                
+$1
 
 2/2:
 (^.{80})([ \t]*(?!\w)(\n|$))
@@ -545,7 +575,7 @@ Version 2:
 SELECT cc.table_name,
         tc.column_name,
         tc.nullable,
-        tc.data_type 
+        tc.data_type
             || CASE
                     WHEN tc.data_type = 'NUMBER' AND tc.data_precision IS NOT NULL
                         THEN '(' || tc.data_precision || ',' || tc.data_scale || ')'
@@ -560,7 +590,7 @@ SELECT cc.table_name,
             AND cc.table_name  = tc.table_name
     WHERE  cc.table_name
         IN (SELECT table_name FROM all_tables where owner=:owner)
-        
+
 Version 3:
   select   *
     from   ALL_TABLES
@@ -709,6 +739,14 @@ where    OBJECT_TYPE = 'TABLE' and
          OWNER = 'SCHEMA-NAME'
 order by OWNER, OBJECT_TYPE, OBJECT_NAME
 
+Statistics:
+select   to_char(obj.LAST_DDL_TIME, 'YYYY.MM.DD') "Date",
+         count(to_char(obj.LAST_DDL_TIME, 'YYYY.MM.DD')) "Count"
+from     ALL_OBJECTS obj
+where    OWNER = 'SCHEMA-NAME''
+group by to_char(obj.LAST_DDL_TIME, 'YYYY.MM.DD')
+order by to_char(obj.LAST_DDL_TIME, 'YYYY.MM.DD') desc
+
 Object types:
 select   distinct (OBJECT_TYPE)
 from     ALL_OBJECTS
@@ -771,34 +809,34 @@ C:\Users\username\AppData\Roaming\PLSQL Developer\Preferences\username\user.pref
 * using System;
 * using System.Collections.Generic;
 * using System.IO;
-* 
+*
 * public class Program
 * {
 *   public static void Main()
 *   {
 *     var values = new List<int>();
 *         var ret = string.Empty;
-* 
+*
 *         Console.WriteLine("Enter scrambled login/password:");
 *         string scrambled = Console.ReadLine();
-* 
+*
 *         for (var i = 0; i < scrambled.Length; i += 4)
 *         {
 *             values.Add(Convert.ToInt32(scrambled.Substring(i, 4)));
 *         }
-* 
+*
 *         var key = values[0];
 *         values.RemoveAt(0);
 *         for (var i = 0; i < values.Count; i++)
 *         {
 *             var val = values[i] - 1000;
 *             var mask = key + (10 * (i + 1));
-* 
+*
 *             ret += (char)((val ^ mask) >> 4);
 *         }
-* 
+*
 *     Console.WriteLine(ret);
-* 
+*
 *   }
 * }
 
@@ -820,6 +858,17 @@ select
  from TABLE S
 
 trunc(19.9) <- 19
+
+select * from DF3005ENTRYREFS t
+where t.cc3005accountide in ('2600xxx', '3600yyy', '3600zzz', '1199www')
+order by case t.cc3005accountide
+    when '2600xxx' then 1
+    when '3600yyy' then 2
+    when '3600zzz' then 3
+    when '1199www' then 4
+end
+
+ALTER USER user IDENTIFIED BY 'auth_string';
 
 
 ** Toad for Oracle
@@ -1036,12 +1085,12 @@ Sub Worksheet_SelectionChange(ByVal Target As Range)
     If Not p Is Nothing Then
         p.FormatConditions.Delete
     End If
-    
+
     With Target
         .FormatConditions.Add xlExpression, , "TRUE"
         .FormatConditions(1).Interior.Color = RGB(91, 173, 255)
     End With
-    
+
     Set p = Selection
 End Sub
 
@@ -1118,6 +1167,8 @@ Windows Shell Snippets – see 'snippets.txt'
 
 sc stop svhost
 
+shell:startup
+shell:common startup <- Windows 10
 
 for %* in (.) do echo %~nx* > C:\Windows\Temp\tmp.tmp & set /P var1=<C:\Windows\Temp\tmp.tmp
 title %var1% & del C:\Windows\Temp\tmp.tmp & set "var1="
@@ -1174,7 +1225,7 @@ NumThumbnails (32-Bit DWORD) -> 0; restart explorer.
 c:\windows\system32\rundll32.exe shell32.dll,#61
 
 Start bat without console window (vbs file):
-Set oShell = CreateObject ("Wscript.Shell") 
+Set oShell = CreateObject ("Wscript.Shell")
 Dim strArgs
 strArgs = "cmd /c run.bat"
 oShell.Run strArgs, 0, false
@@ -1224,6 +1275,7 @@ File info:
 wmic datafile where name='C:\\path\\file-name' [get Caption,FileSize,CreationDate,InstallDate,LastAccessed,LastModified] >tmp.txt
 
 where.exe
+taskkill
 
 
 <Copy as path explorer context menu>
@@ -1274,17 +1326,20 @@ Msinfo32.exe
 
 net use Drive: /delete
 
+-- Which user:
+wmic netuse where LocalName="Z:" get UserName /value
+
 %AppData%\Microsoft\Windows\Recent\
 %userprofile%\AppData\Roaming\Microsoft\Windows\Recent\
 
 control /name Microsoft.Personalization /page pageWallpaper
 
-Строковый параметр             – REG_SZ
-Двоичный параметр              – REG_BINARY
-Параметр DWORD (32 бита)       – REG_DWORD
-Параметр QWORD (64 бита)       – REG_QWORD
-Мультистроковый параметр       – REG_MULTI_SZ
-Расширяемый строковый параметр – REG_EXPAND_SZ
+String Value / Строковый параметр                        – REG_SZ
+Binary Value / Двоичный параметр                         – REG_BINARY
+DWORD (32-bit) Value / Параметр DWORD (32 бита)          – REG_DWORD
+QWORD (64-bit) Value / Параметр QWORD (64 бита)          – REG_QWORD
+Multi-String Value / Мультистроковый параметр            – REG_MULTI_SZ
+Expandable String Value / Расширяемый строковый параметр – REG_EXPAND_SZ
 
 
 ** Windows Media Player
@@ -1405,7 +1460,8 @@ files.hotExit
     "files.exclude": {
         "**/.git": false <-- Show hidden folders.
     },
-    "git.enableSmartCommit": true
+    "git.enableSmartCommit": true,
+    "editor.find.addExtraSpaceOnTop": true,
 }
 
 Ctrl+Shift+P -> Configure Language -> en
@@ -1669,8 +1725,8 @@ https://github.com/ZadorozhnaOlga
 ** File signatures
 XLSX: 50 4B 03 04 14 00
  RAR: 52 61 72 21 1A 07 00
- 
- 
+
+
 ** draw.io
 ** drawio
 Add connection points to a shape:
@@ -1971,15 +2027,6 @@ Greek alphabet:
 Ω ω	omega, ωμέγα
 
 
-** Regedit
-HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU
-HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run
-    HKLM\Software\Microsoft\Windows\CurrentVersion\RunOnce
-    HKLM\Software\Microsoft\Windows\CurrentVersion\RunOnceEx
-    HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnce
-    HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnceEx
-
-
 мільйон           million           10^6     n=2
 мільярд (більйон) billion           10^9     n=3
 трильйон          trillion          10^12    n=4
@@ -2002,3 +2049,17 @@ NuGet Package Explorer
 jd-gui
 HxD
 Dependency Walker
+
+
+Hexadecimal:
+0   1   2   3   4   5   6   7   8   9   A   B   C   D   E   F
+                                       10  11  12  13  14  15
+
+
+** Regedit
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run
+    HKLM\Software\Microsoft\Windows\CurrentVersion\RunOnce
+    HKLM\Software\Microsoft\Windows\CurrentVersion\RunOnceEx
+    HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnce
+    HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnceEx
