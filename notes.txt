@@ -528,6 +528,11 @@ Multiline comment /*...*/
 
 ** SQL
 
+(INNER) JOIN: Returns records that have matching values in both tables
+LEFT (OUTER) JOIN: Returns all records from the left table, and the matched records from the right table
+RIGHT (OUTER) JOIN: Returns all records from the right table, and the matched records from the left table
+FULL (OUTER) JOIN: Returns all records when there is a match in either left or right table
+
 dba_tables
 all_tables
 user_tables
@@ -869,6 +874,10 @@ order by case t.cc3005accountide
 end
 
 ALTER USER user IDENTIFIED BY 'auth_string';
+
+ALL_TAB_MODIFICATIONS
+    DBA_TAB_MODIFICATIONS
+    USER_TAB_MODIFICATIONS
 
 
 ** Toad for Oracle
@@ -1328,6 +1337,8 @@ net use Drive: /delete
 
 -- Which user:
 wmic netuse where LocalName="Z:" get UserName /value
+
+wmic useraccount where sid='S-1-3-12-XXXXXXX' get name
 
 %AppData%\Microsoft\Windows\Recent\
 %userprofile%\AppData\Roaming\Microsoft\Windows\Recent\
